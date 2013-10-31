@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>UnixTech</title><link href="unixtech.github.io/" rel="alternate"></link><link href="unixtech.github.io/feeds/management-pkg-unix.atom.xml" rel="self"></link><id>unixtech.github.io/</id><updated>2013-11-01T09:45:00+05:30</updated><entry><title>Using PKGNG with FreeBSD</title><link href="unixtech.github.io/pkg.html" rel="alternate"></link><updated>2013-11-01T09:45:00+05:30</updated><author><name>Abhay</name></author><id>tag:unixtech.github.io,2013-11-01:pkg.html</id><summary type="html">&lt;p&gt;&lt;img width="800" src="/images/pkgng_image.jpg"&gt;
+&lt;strong&gt;pkgng&lt;/strong&gt; is new version of package manager to install, upgrade and remove packages from FreeBSD system.&lt;/p&gt;
+&lt;h2&gt;Requirements&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;FreeBSD 9.1 or newer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Installation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;pkgng&lt;/strong&gt; must be install from ports to get latest version&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;On terminal:&lt;/li&gt;
+&lt;li&gt;&lt;kbd&gt; cd /usr/ports/ports-mgmt/pkg &lt;/kbd&gt;&lt;/li&gt;
+&lt;li&gt;&lt;kbd&gt;make&lt;/kbd&gt;&lt;/li&gt;
+&lt;li&gt;&lt;kbd&gt;make install clean&lt;/kbd&gt;
+&lt;strong&gt;Note:&lt;/strong&gt; &lt;em&gt;One pkgng is installed one must convert existing pkg database to newwer format.&lt;/em&gt;
+&lt;strong&gt;Note:&lt;/strong&gt; &lt;em&gt;In case of Major conflict for package just reinstall that particular package from pkgng&lt;/em&gt;
+&lt;kbd&gt;pkg2ng&lt;/kbd&gt;
+It will automatically take care of conflicts.
+&lt;img width="800" src="/images/pkgng_conflicts.jpg"&gt;
+&lt;strong&gt;Important: This will be irreversible step, Once done you can't use Older package management tools.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;To make sure that your ports tree will also use same &lt;strong&gt;pkgng&lt;/strong&gt; tool, Update your &lt;em&gt;make.conf&lt;/em&gt; as follows:
+  &lt;kbd&gt; WITH_PKGNG = yes &lt;/kbd&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Usage&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;To get help
+    &lt;kbd&gt;pkg help install&lt;/kbd&gt;&lt;/li&gt;
+&lt;li&gt;Info for particular package
+    &lt;kbd&gt;pkg info pkg&lt;/kbd&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Installing particular variant of the software 
+  &lt;figure class='code'&gt;
+&lt;figcaption&gt;&lt;span&gt;pkg_usage.sh&lt;/span&gt; &lt;a href='/code/pkg_usage.sh'&gt;download&lt;/a&gt;&lt;/figcaption&gt;&lt;/p&gt;
+&lt;p&gt;:::bash&lt;/p&gt;
+&lt;h1&gt;!/bin/sh&lt;/h1&gt;
+&lt;p&gt;pkg install curl&lt;/p&gt;
+&lt;h1&gt;To install particular version/variant of software&lt;/h1&gt;
+&lt;p&gt;pkg search PKGNAME&lt;/p&gt;
+&lt;h1&gt;This will show all available packages&lt;/h1&gt;
+&lt;p&gt;pkg install PKGNAME_VARIANT&lt;/p&gt;
+&lt;h1&gt;To see all the installed packages&lt;/h1&gt;
+&lt;p&gt;pkg info&lt;/p&gt;
+&lt;h1&gt;Remove package from the system&lt;/h1&gt;
+&lt;p&gt;pkg delete perl&lt;/p&gt;
+&lt;h1&gt;Upgrade all the packages in pkgng database&lt;/h1&gt;
+&lt;p&gt;pkg upgrade &lt;/p&gt;
+&lt;h1&gt;Check packages for known vunerabilities&lt;/h1&gt;
+&lt;p&gt;pkg audir -F&lt;/p&gt;
+&lt;h1&gt;Automatically remove Leftovers&lt;/h1&gt;
+&lt;p&gt;pkg autoremove&lt;/p&gt;
+&lt;h1&gt;To backup Package database&lt;/h1&gt;
+&lt;p&gt;pkg backup -d DBNAME.db&lt;/p&gt;
+&lt;h1&gt;To reinstall package&lt;/h1&gt;
+&lt;p&gt;pkg install -Rf PKGNAME
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/figure&gt;</summary><category term="Unix"></category></entry></feed>

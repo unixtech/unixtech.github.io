@@ -4,7 +4,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>UnixTech</title>
+  <title>Using PKGNG with FreeBSD</title>
   <meta name="author" content="Abhay">
 
 
@@ -53,63 +53,88 @@
 </ul></nav>
   <div id="main">
     <div id="content">
-<div class="blog-index">
-  		<article>
+<div>
+  <article class="hentry" role="article">
 <header>
-      <h1 class="entry-title">
-        <a href="unixtech.github.io/pkg.html">Using PKGNG with FreeBSD</a>
-      </h1>
+      <h1 class="entry-title">Using PKGNG with FreeBSD</h1>
       <p class="meta"><time datetime="2013-11-01T09:45:00" pubdate>Fri 01 November 2013</time></p>
 </header>
 
-  <div class="entry-content"><p>Use FreeBSD's latest PKG manager</p></div>
-  <footer>
-    <a rel="full-article" href="unixtech.github.io/pkg.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="unixtech.github.io/Super.html">We the Python</a>
-      </h1>
-      <p class="meta"><time datetime="2013-09-03T10:20:00" pubdate>Tue 03 September 2013</time></p>
-</header>
+  <div class="entry-content"><p><img width="800" src="/images/pkgng_image.jpg">
+<strong>pkgng</strong> is new version of package manager to install, upgrade and remove packages from FreeBSD system.</p>
+<h2>Requirements</h2>
+<ul>
+<li>FreeBSD 9.1 or newer</li>
+</ul>
+<h2>Installation</h2>
+<ul>
+<li>
+<p><strong>pkgng</strong> must be install from ports to get latest version</p>
+<ul>
+<li>On terminal:</li>
+<li><kbd> cd /usr/ports/ports-mgmt/pkg </kbd></li>
+<li><kbd>make</kbd></li>
+<li><kbd>make install clean</kbd>
+<strong>Note:</strong> <em>One pkgng is installed one must convert existing pkg database to newwer format.</em>
+<strong>Note:</strong> <em>In case of Major conflict for package just reinstall that particular package from pkgng</em>
+<kbd>pkg2ng</kbd>
+It will automatically take care of conflicts.
+<img width="800" src="/images/pkgng_conflicts.jpg">
+<strong>Important: This will be irreversible step, Once done you can't use Older package management tools.</strong></li>
+</ul>
+</li>
+<li>
+<p>To make sure that your ports tree will also use same <strong>pkgng</strong> tool, Update your <em>make.conf</em> as follows:
+  <kbd> WITH_PKGNG = yes </kbd></p>
+</li>
+</ul>
+<h2>Usage</h2>
+<ul>
+<li>To get help
+    <kbd>pkg help install</kbd></li>
+<li>Info for particular package
+    <kbd>pkg info pkg</kbd></li>
+<li>
+<p>Installing particular variant of the software 
+  <figure class='code'>
+<figcaption><span>pkg_usage.sh</span> <a href='/code/pkg_usage.sh'>download</a></figcaption></p>
+<p>:::bash</p>
+<h1>!/bin/sh</h1>
+<p>pkg install curl</p>
+<h1>To install particular version/variant of software</h1>
+<p>pkg search PKGNAME</p>
+<h1>This will show all available packages</h1>
+<p>pkg install PKGNAME_VARIANT</p>
+<h1>To see all the installed packages</h1>
+<p>pkg info</p>
+<h1>Remove package from the system</h1>
+<p>pkg delete perl</p>
+<h1>Upgrade all the packages in pkgng database</h1>
+<p>pkg upgrade </p>
+<h1>Check packages for known vunerabilities</h1>
+<p>pkg audir -F</p>
+<h1>Automatically remove Leftovers</h1>
+<p>pkg autoremove</p>
+<h1>To backup Package database</h1>
+<p>pkg backup -d DBNAME.db</p>
+<h1>To reinstall package</h1>
+<p>pkg install -Rf PKGNAME
+</p>
+</li>
+</ul>
+</figure></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">Abhay</span>
+  </span>
+<time datetime="2013-11-01T09:45:00" pubdate>Fri 01 November 2013</time>  <span class="categories">
+    <a class="category" href="unixtech.github.io/tag/unix.html">Unix</a>
+  </span>
+</p>    </footer>
+  </article>
 
-  <div class="entry-content"><p>We are the python code.</p></div>
-  <footer>
-    <a rel="full-article" href="unixtech.github.io/Super.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="unixtech.github.io/ssh.html">PwlessSSH Deployment</a>
-      </h1>
-      <p class="meta"><time datetime="2011-10-03T09:45:00" pubdate>Mon 03 October 2011</time></p>
-</header>
-
-  <div class="entry-content"><p>Deploy SSH password less logins to enviroment.</p></div>
-  <footer>
-    <a rel="full-article" href="unixtech.github.io/ssh.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-  		<article>
-<header>
-      <h1 class="entry-title">
-        <a href="unixtech.github.io/my-super-post.html">My super title</a>
-      </h1>
-      <p class="meta"><time datetime="2010-12-03T10:20:00" pubdate>Fri 03 December 2010</time></p>
-</header>
-
-  <div class="entry-content"><p>Short version for index and feeds</p></div>
-  <footer>
-    <a rel="full-article" href="unixtech.github.io/my-super-post.html">Read On &crarr;</a>
-  </footer>
-  		</article>
-<div class="pagination">
-
-  <br />
-</div></div>
+</div>
 <aside class="sidebar">
   <section>
     <h1>Recent Posts</h1>

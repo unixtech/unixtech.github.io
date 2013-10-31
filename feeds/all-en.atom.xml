@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>UnixTech</title><link href="unixtech.github.io/" rel="alternate"></link><link href="unixtech.github.io/feeds/all-en.atom.xml" rel="self"></link><id>unixtech.github.io/</id><updated>2013-11-01T09:45:00+05:30</updated><entry><title>Using PKGNG with FreeBSD</title><link href="unixtech.github.io/pkg.html" rel="alternate"></link><updated>2013-11-01T09:45:00+05:30</updated><author><name>Abhay</name></author><id>tag:unixtech.github.io,2013-11-01:pkg.html</id><summary type="html">&lt;p&gt;&lt;img width="800" src="/images/pkgng_image.jpg"&gt;
+&lt;strong&gt;pkgng&lt;/strong&gt; is new version of package manager to install, upgrade and remove packages from FreeBSD system.&lt;/p&gt;
+&lt;h2&gt;Requirements&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;FreeBSD 9.1 or newer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Installation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;pkgng&lt;/strong&gt; must be install from ports to get latest version&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;On terminal:&lt;/li&gt;
+&lt;li&gt;&lt;kbd&gt; cd /usr/ports/ports-mgmt/pkg &lt;/kbd&gt;&lt;/li&gt;
+&lt;li&gt;&lt;kbd&gt;make&lt;/kbd&gt;&lt;/li&gt;
+&lt;li&gt;&lt;kbd&gt;make install clean&lt;/kbd&gt;
+&lt;strong&gt;Note:&lt;/strong&gt; &lt;em&gt;One pkgng is installed one must convert existing pkg database to newwer format.&lt;/em&gt;
+&lt;strong&gt;Note:&lt;/strong&gt; &lt;em&gt;In case of Major conflict for package just reinstall that particular package from pkgng&lt;/em&gt;
+&lt;kbd&gt;pkg2ng&lt;/kbd&gt;
+It will automatically take care of conflicts.
+&lt;img width="800" src="/images/pkgng_conflicts.jpg"&gt;
+&lt;strong&gt;Important: This will be irreversible step, Once done you can't use Older package management tools.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;To make sure that your ports tree will also use same &lt;strong&gt;pkgng&lt;/strong&gt; tool, Update your &lt;em&gt;make.conf&lt;/em&gt; as follows:
+  &lt;kbd&gt; WITH_PKGNG = yes &lt;/kbd&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Usage&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;To get help
+    &lt;kbd&gt;pkg help install&lt;/kbd&gt;&lt;/li&gt;
+&lt;li&gt;Info for particular package
+    &lt;kbd&gt;pkg info pkg&lt;/kbd&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Installing particular variant of the software 
+  &lt;figure class='code'&gt;
+&lt;figcaption&gt;&lt;span&gt;pkg_usage.sh&lt;/span&gt; &lt;a href='/code/pkg_usage.sh'&gt;download&lt;/a&gt;&lt;/figcaption&gt;&lt;/p&gt;
+&lt;p&gt;:::bash&lt;/p&gt;
+&lt;h1&gt;!/bin/sh&lt;/h1&gt;
+&lt;p&gt;pkg install curl&lt;/p&gt;
+&lt;h1&gt;To install particular version/variant of software&lt;/h1&gt;
+&lt;p&gt;pkg search PKGNAME&lt;/p&gt;
+&lt;h1&gt;This will show all available packages&lt;/h1&gt;
+&lt;p&gt;pkg install PKGNAME_VARIANT&lt;/p&gt;
+&lt;h1&gt;To see all the installed packages&lt;/h1&gt;
+&lt;p&gt;pkg info&lt;/p&gt;
+&lt;h1&gt;Remove package from the system&lt;/h1&gt;
+&lt;p&gt;pkg delete perl&lt;/p&gt;
+&lt;h1&gt;Upgrade all the packages in pkgng database&lt;/h1&gt;
+&lt;p&gt;pkg upgrade &lt;/p&gt;
+&lt;h1&gt;Check packages for known vunerabilities&lt;/h1&gt;
+&lt;p&gt;pkg audir -F&lt;/p&gt;
+&lt;h1&gt;Automatically remove Leftovers&lt;/h1&gt;
+&lt;p&gt;pkg autoremove&lt;/p&gt;
+&lt;h1&gt;To backup Package database&lt;/h1&gt;
+&lt;p&gt;pkg backup -d DBNAME.db&lt;/p&gt;
+&lt;h1&gt;To reinstall package&lt;/h1&gt;
+&lt;p&gt;pkg install -Rf PKGNAME
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/figure&gt;</summary><category term="Unix"></category></entry><entry><title>We the Python</title><link href="unixtech.github.io/Super.html" rel="alternate"></link><updated>2013-09-03T10:20:00+05:30</updated><author><name>Abhay</name></author><id>tag:unixtech.github.io,2013-09-03:Super.html</id><summary type="html">&lt;h2&gt;IPython&lt;/h2&gt;
+&lt;h3&gt;ipython is the tool to use.&lt;/h3&gt;
+&lt;p&gt;Reasons:
+  1. We want more and more control
+  2. We want our code to be more and more readable.&lt;/p&gt;
+&lt;!--{% notebook hell.ipynb %}--&gt;
+
+&lt;figure class='code'&gt;
+&lt;figcaption&gt;&lt;span&gt;Hello hello.py&lt;/span&gt; &lt;a href='/code/hello.py'&gt;download&lt;/a&gt;&lt;/figcaption&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;Hel&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hello World&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;img width="800" src="/images/Space_Lunar.jpg"&gt;&lt;/p&gt;</summary><category term="try"></category><category term="python"></category></entry><entry><title>PwlessSSH Deployment</title><link href="unixtech.github.io/ssh.html" rel="alternate"></link><updated>2011-10-03T09:45:00+05:30</updated><author><name>Abhay</name></author><id>tag:unixtech.github.io,2011-10-03:ssh.html</id><summary type="html">&lt;!--&lt;link href="css/ssh_kbd.css" rel="stylesheet"&gt;&lt;/link&gt;--&gt;
+
+&lt;style type="text/css"&gt;
+kbd {
+  margin: 0px 0.1em;
+  padding: 0.1em 0.6em;
+  border-radius: 3px;
+  border: 1px solid rgb(204, 204, 204);
+  color: rgb(51, 51, 51);
+  line-height: 1.4;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 10px;
+  display: inline-block;
+  box-shadow: 0px 1px 0px rgba(0,0,0,0.2), inset 0px 0px 0px 2px #ffffff;
+  background-color: rgb(247, 247, 247);
+  -moz-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #ffffff inset;
+  -webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #ffffff inset;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  text-shadow: 0 1px 0 #fff;
+}
+&lt;/style&gt;
+
+&lt;!--#Pwless SSH Deployment--&gt;
+
+&lt;p&gt;&lt;img width="800" src="/images/ssh_1.jpg"&gt;&lt;/p&gt;
+&lt;h2&gt;Enable login without password ssh&lt;/h2&gt;
+&lt;h4&gt;- Tired of typing SSH password at prompt&lt;/h4&gt;
+&lt;h4&gt;- During runtime in automated scripts?&lt;/h4&gt;
+&lt;h3&gt;Requirements:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Interconnectivity between both servers that you enable password less login.&lt;/li&gt;
+&lt;li&gt;SSH server should be running on server that you want to enable pwless login.&lt;/li&gt;
+&lt;li&gt;If you have firewall enabled then open port 22 in it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Setup&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Just type in &lt;strong&gt;ssh USERNAME@IPADDRESS&lt;/strong&gt; to make sure you can login to the server and exit.&lt;/li&gt;
+&lt;li&gt;At the prompt, again type &lt;p&gt;&lt;kbd&gt;ssh-copy-id&lt;/kbd&gt; &lt;kbd&gt; &lt;strong&gt;USERNAME@IPADDRESS&lt;/strong&gt; &lt;/kbd&gt; &lt;/p&gt;  &lt;/li&gt;
+&lt;li&gt;it will create authorizedkey file in the &lt;strong&gt;.ssh&lt;/strong&gt; directory on the target system.&lt;/li&gt;
+&lt;li&gt;It will place authorized_key file in you .ssh directory.&lt;/li&gt;
+&lt;li&gt;After doing that you will be able to login to remote server without need for password.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class='code'&gt;
+&lt;figcaption&gt;&lt;span&gt;ssh1_pwlogin.sh&lt;/span&gt; &lt;a href='/code/ssh1_pwlogin.sh'&gt;download&lt;/a&gt;&lt;/figcaption&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/bin/sh&lt;/span&gt;
+
+&lt;span class="c"&gt;#Copy your ssh public key to the remote machine&lt;/span&gt;
+ssh-copy-id &lt;span class="nb"&gt;test&lt;/span&gt;@remo
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;img width="800" src="/images/ssh_2.jpg"&gt;
+  &lt;!--&lt;img width="800" src="/images/ssh_4.jpg"&gt;--&gt;
+  &lt;!--&lt;img width="800" src="/images/Space_Lunar.jpg"&gt;--&gt;&lt;/p&gt;
+&lt;h3&gt;Verification:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Now your login to the remote box should be pwless.&lt;/li&gt;
+&lt;li&gt;If any problems please check your &lt;strong&gt;authorized_keys&lt;/strong&gt; file.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;SSH Forever&lt;/h4&gt;</summary><category term="SSH"></category><category term="Secure"></category></entry><entry><title>My super title</title><link href="unixtech.github.io/my-super-post.html" rel="alternate"></link><updated>2010-12-03T10:20:00+05:30</updated><author><name>Abhay</name></author><id>tag:unixtech.github.io,2010-12-03:my-super-post.html</id><summary type="html">&lt;h2&gt;Super title markdonws&lt;/h2&gt;
+&lt;p&gt;This is the content of my super blog post.
+  1. We can or not
+  1. We want
+  1. can't we use it as it is?&lt;/p&gt;
+&lt;figure class='code'&gt;
+&lt;figcaption&gt;&lt;span&gt;Hello hello.py&lt;/span&gt; &lt;a href='/code/hello.py'&gt;download&lt;/a&gt;&lt;/figcaption&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;Hel&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hello World&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;img width="800" src="/images/Space_Lunar.jpg"&gt;&lt;/p&gt;</summary><category term="pelican"></category><category term="publishing"></category></entry></feed>

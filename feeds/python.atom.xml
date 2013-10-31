@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>UnixTech</title><link href="unixtech.github.io/" rel="alternate"></link><link href="unixtech.github.io/feeds/python.atom.xml" rel="self"></link><id>unixtech.github.io/</id><updated>2013-09-03T10:20:00+05:30</updated><entry><title>We the Python</title><link href="unixtech.github.io/Super.html" rel="alternate"></link><updated>2013-09-03T10:20:00+05:30</updated><author><name>Abhay</name></author><id>tag:unixtech.github.io,2013-09-03:Super.html</id><summary type="html">&lt;h2&gt;IPython&lt;/h2&gt;
+&lt;h3&gt;ipython is the tool to use.&lt;/h3&gt;
+&lt;p&gt;Reasons:
+  1. We want more and more control
+  2. We want our code to be more and more readable.&lt;/p&gt;
+&lt;!--{% notebook hell.ipynb %}--&gt;
+
+&lt;figure class='code'&gt;
+&lt;figcaption&gt;&lt;span&gt;Hello hello.py&lt;/span&gt; &lt;a href='/code/hello.py'&gt;download&lt;/a&gt;&lt;/figcaption&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;Hel&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hello World&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;img width="800" src="/images/Space_Lunar.jpg"&gt;&lt;/p&gt;</summary><category term="try"></category><category term="python"></category></entry><entry><title>My super title</title><link href="unixtech.github.io/my-super-post.html" rel="alternate"></link><updated>2010-12-03T10:20:00+05:30</updated><author><name>Abhay</name></author><id>tag:unixtech.github.io,2010-12-03:my-super-post.html</id><summary type="html">&lt;h2&gt;Super title markdonws&lt;/h2&gt;
+&lt;p&gt;This is the content of my super blog post.
+  1. We can or not
+  1. We want
+  1. can't we use it as it is?&lt;/p&gt;
+&lt;figure class='code'&gt;
+&lt;figcaption&gt;&lt;span&gt;Hello hello.py&lt;/span&gt; &lt;a href='/code/hello.py'&gt;download&lt;/a&gt;&lt;/figcaption&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;Hel&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hello World&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;img width="800" src="/images/Space_Lunar.jpg"&gt;&lt;/p&gt;</summary><category term="pelican"></category><category term="publishing"></category></entry></feed>
