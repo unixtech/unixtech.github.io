@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UnixTech</title><link>/</link><description></description><atom:link href="/feeds/ssh-secure-unix.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 03 Oct 2011 09:45:00 +0530</lastBuildDate><item><title>PwlessSSH Deployment</title><link>/ssh.html</link><description>&lt;p&gt;&lt;link href="css/ssh_kbd.css" rel="stylesheet"&gt;&lt;/link&gt;
+&lt;!--#Pwless SSH Deployment--&gt;
+  &lt;img width="800" src="/images/ssh_1.jpg"&gt;&lt;/p&gt;
+&lt;h2&gt;Enable login without password ssh&lt;/h2&gt;
+&lt;h4&gt;- Tired of typing SSH password at prompt&lt;/h4&gt;
+&lt;h4&gt;- During runtime in automated scripts?&lt;/h4&gt;
+&lt;h3&gt;Requirements:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Interconnectivity between both servers that you enable password less login.&lt;/li&gt;
+&lt;li&gt;SSH server should be running on server that you want to enable pwless login.&lt;/li&gt;
+&lt;li&gt;If you have firewall enabled then open port 22 in it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Setup&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Just type in &lt;strong&gt;ssh USERNAME@IPADDRESS&lt;/strong&gt; to make sure you can login to the server and exit.&lt;/li&gt;
+&lt;li&gt;At the prompt, again type &lt;p&gt;&lt;kbd&gt;ssh-copy-id&lt;/kbd&gt; &lt;kbd&gt; &lt;strong&gt;USERNAME@IPADDRESS&lt;/strong&gt; &lt;/kbd&gt; &lt;/p&gt;  &lt;/li&gt;
+&lt;li&gt;it will create authorizedkey file in the &lt;strong&gt;.ssh&lt;/strong&gt; directory on the target system.&lt;/li&gt;
+&lt;li&gt;It will place authorized_key file in you .ssh directory.&lt;/li&gt;
+&lt;li&gt;After doing that you will be able to login to remote server without need for password.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class='code'&gt;
+&lt;figcaption&gt;&lt;span&gt;ssh1_pwlogin.sh&lt;/span&gt; &lt;a href='/code/ssh1_pwlogin.sh'&gt;download&lt;/a&gt;&lt;/figcaption&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/bin/sh&lt;/span&gt;
+
+&lt;span class="c"&gt;#Copy your ssh public key to the remote machine&lt;/span&gt;
+ssh-copy-id &lt;span class="nb"&gt;test&lt;/span&gt;@remo
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;img width="800" src="/images/ssh_2.jpg"&gt;
+  &lt;!--&lt;img width="800" src="/images/ssh_4.jpg"&gt;--&gt;
+  &lt;!--&lt;img width="800" src="/images/Space_Lunar.jpg"&gt;--&gt;&lt;/p&gt;
+&lt;h3&gt;Verification:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Now your login to the remote box should be pwless.&lt;/li&gt;
+&lt;li&gt;If any problems please check your &lt;strong&gt;authorized_keys&lt;/strong&gt; file.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;SSH Forever&lt;/h4&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Abhay</dc:creator><pubDate>Mon, 03 Oct 2011 09:45:00 +0530</pubDate><guid>tag:,2011-10-03:ssh.html</guid><category>SSH</category><category>Secure</category></item></channel></rss>

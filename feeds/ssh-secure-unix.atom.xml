@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>UnixTech</title><link href="unixtech.github.io/" rel="alternate"></link><link href="unixtech.github.io/feeds/ssh-secure-unix.atom.xml" rel="self"></link><id>unixtech.github.io/</id><updated>2011-10-03T09:45:00+05:30</updated><entry><title>PwlessSSH Deployment</title><link href="unixtech.github.io/ssh.html" rel="alternate"></link><updated>2011-10-03T09:45:00+05:30</updated><author><name>Abhay</name></author><id>tag:unixtech.github.io,2011-10-03:ssh.html</id><summary type="html">&lt;!--&lt;link href="css/ssh_kbd.css" rel="stylesheet"&gt;&lt;/link&gt;--&gt;
-
-&lt;style type="text/css"&gt;
-kbd {
-  margin: 0px 0.1em;
-  padding: 0.1em 0.6em;
-  border-radius: 3px;
-  border: 1px solid rgb(204, 204, 204);
-  color: rgb(51, 51, 51);
-  line-height: 1.4;
-  font-family: Arial,Helvetica,sans-serif;
-  font-size: 10px;
-  display: inline-block;
-  box-shadow: 0px 1px 0px rgba(0,0,0,0.2), inset 0px 0px 0px 2px #ffffff;
-  background-color: rgb(247, 247, 247);
-  -moz-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #ffffff inset;
-  -webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #ffffff inset;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  text-shadow: 0 1px 0 #fff;
-}
-&lt;/style&gt;
-
+<feed xmlns="http://www.w3.org/2005/Atom"><title>UnixTech</title><link href="/" rel="alternate"></link><link href="/feeds/ssh-secure-unix.atom.xml" rel="self"></link><id>/</id><updated>2011-10-03T09:45:00+05:30</updated><entry><title>PwlessSSH Deployment</title><link href="/ssh.html" rel="alternate"></link><updated>2011-10-03T09:45:00+05:30</updated><author><name>Abhay</name></author><id>tag:,2011-10-03:ssh.html</id><summary type="html">&lt;p&gt;&lt;link href="css/ssh_kbd.css" rel="stylesheet"&gt;&lt;/link&gt;
 &lt;!--#Pwless SSH Deployment--&gt;
-
-&lt;p&gt;&lt;img width="800" src="/images/ssh_1.jpg"&gt;&lt;/p&gt;
+  &lt;img width="800" src="/images/ssh_1.jpg"&gt;&lt;/p&gt;
 &lt;h2&gt;Enable login without password ssh&lt;/h2&gt;
 &lt;h4&gt;- Tired of typing SSH password at prompt&lt;/h4&gt;
 &lt;h4&gt;- During runtime in automated scripts?&lt;/h4&gt;
