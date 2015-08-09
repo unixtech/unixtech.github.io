@@ -40,8 +40,8 @@ DEFAULT_PAGINATION = 4
 RELATIVE_URLS = True
 
 TWITTER_USER = "abhaytrivedi"
-THEME = "/home/keycto/Documents/python/blog1/octopress-theme"
-SEARCH_BOX = True
+THEME = "pelican-octopress-theme"
+SEARCH_BOX = False
 
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False
