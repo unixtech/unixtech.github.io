@@ -25,10 +25,10 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+#LINKS = (('Pelican', 'http://getpelican.com/'),
+         #('Python.org', 'http://python.org/'),
+         #('Jinja2', 'http://jinja.pocoo.org/'),
+         #('You can modify those links in your config file', '#'),)
 
 # Social widget
 #SOCIAL = (('You can add links in your config file', '#'),
@@ -42,6 +42,7 @@ RELATIVE_URLS = True
 TWITTER_USER = "abhaytrivedi"
 THEME = "pelican-octopress-theme"
 SEARCH_BOX = False
+#X_MIN_READ = True
 
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False
@@ -52,4 +53,4 @@ MENUITEMS = [('About ME', '/'), ('Archives', '/archives.html')]
 
 #Plugin things
 PLUGIN_PATHS = ['pelican-plugins']
-PLUGINS = ['liquid_tags.include_code', 'liquid_tags.img', 'liquid_tags.video', 'liquid_tags.notebook', 'liquid_tags.youtube', 'clean_summary']
+PLUGINS = ['liquid_tags.include_code', 'liquid_tags.img', 'liquid_tags.video', 'liquid_tags.notebook', 'liquid_tags.youtube', 'clean_summary', 'post_stats']
