@@ -11,3 +11,4 @@ FDF
 ###
 
 This is the content of my super blog post.1
+Blog post 2 is not joke otherwie you wouldn't exist.
