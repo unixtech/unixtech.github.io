@@ -44,7 +44,7 @@ RELATIVE_URLS = True
 
 TWITTER_USER = "abhaytrivedi"
 THEME = "themes/pelican-octopress-theme"
-SEARCH_BOX = True
+SEARCH_BOX = False
 X_MIN_READ = True
 
 DISPLAY_CATEGORIES_ON_MENU = False
