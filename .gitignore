@@ -3,4 +3,5 @@
 pelican-plugins
 pelican-octopress-theme
 __pycache__
+__pycache__/.*
 themes
