@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Tech Architectures</title><link href="https://unixtech.github.io/" rel="alternate"></link><link href="https://unixtech.github.io/feeds/server-atom.xml" rel="self"></link><id>https://unixtech.github.io/</id><updated>2015-08-15T17:02:00+05:30</updated><entry><title>Building Enterprize Mail server</title><link href="https://unixtech.github.io/08-2015/OpenSMTPD-as-Mail-server-1.html" rel="alternate"></link><updated>2015-08-15T17:02:00+05:30</updated><author><name>Unixer</name></author><id>tag:unixtech.github.io,2015-08-15:08-2015/OpenSMTPD-as-Mail-server-1.html</id><summary type="html">&lt;!--#OpenSMTPD--&gt;
+
+&lt;h2&gt;Why?&lt;/h2&gt;
+&lt;p&gt;Blaming mail server is very easy when your mail goes to SPAM or mail server doesn't work at all.&lt;/p&gt;
+&lt;p&gt;Mail servers are so important in our lives that it's very hard to imagine life without them. They have outlived many systems such as Chat clients and Social Media netwoks - Still going ever stong.&lt;/p&gt;
+&lt;h2&gt;Components used in&lt;/h2&gt;</summary><category term="Mail"></category><category term="Unix"></category></entry></feed>
