@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Voyager'
 SITENAME = "Tech Architectures"
-SITESUBTITLE = "Tumbling down complexities of technical multiverses"
+SITESUBTITLE = "Tumbling down complexities of technical multiverse"
 SITEURL = 'https://unixtech.github.io'
 
 PATH = 'content'
@@ -27,7 +27,7 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 
-FAVICON_FILENAME = 'favicon.png'
+FAVICON_FILENAME = 'images/favicon.png'
 # Blogroll
 #LINKS = (('Pelican', 'http://getpelican.com/'),
          #('Python.org', 'http://python.org/'),
