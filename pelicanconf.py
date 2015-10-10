@@ -43,10 +43,10 @@ DEFAULT_PAGINATION = 4
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
-TWITTER_USER = "abhaytrivedi"
+# TWITTER_USER = "abhaytrivedi"
 #FACEBOOK_LIKE
-TWITTER_FOLLOW_BUTTON = True
-TWITTER_TWEET_BUTTON = True
+# TWITTER_FOLLOW_BUTTON = True
+# TWITTER_TWEET_BUTTON = True
 
 THEME = "/home/keycto/Documents/python/blog1/pelican-octopress-theme"
 SEARCH_BOX = True
