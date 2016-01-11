@@ -56,18 +56,18 @@
 <header>
       <h1 class="entry-title">Central SSH Key management using CA</h1>
     <p class="meta">
-<time datetime="2014-12-15T13:02:00+05:30" pubdate>Mon 15 December 2014</time>  &ndash; &#128339; 2 min read
+<time datetime="2014-12-15T13:02:00+05:30" pubdate>Mon 15 December 2014</time>  &ndash; &#128339; &#128336; 2 min read
     </p>
 </header>
 
-  <div class="entry-content"><p><img class="center" src="/images/openssh.gif" width="600"></p>
+  <div class="entry-content"><p><img src="/images/openssh.gif" class="center" width="600"></p>
 <h2>Intro</h2>
 <p>It's always challenge in itself to handle SSH private keys, Managing authentication ( Without-password ) and keeping it upto date. Things like taking control of the keys plus revoking the keys as needed is formidable challenge for any senior admin.<br />
 One can do it via traditional <code>authorized_keys</code> file but overtime it becomes messy to maintain and more prone to errors. This becomes all the more important when you can't handle key management to you users whom you deem undesirable to be able to comprehend . </p>
 <p>So, Decided to move to CA based authentication with OpenSSH with OpenLDAP. In this part we will cover just CA based key management later parts we will do it with OpenLDAP integration and how does one maintain the whole ssh keys management via ansible.  </p>
 <p>It doesn't really matter which methods you adopt as long as you have prior policy to deal with regular management of keys.  </p>
 <h2>Lab Topology</h2>
-<p><img class="center" src="/images/sshca_topology1.png" width="600"></p>
+<p><img src="/images/sshca_topology1.png" class="center" width="600"></p>
 <blockquote>
 <p>CA server will only be used to generate CA key and Sign and generate certificates for public keys that you have received from various users.  </p>
 <p>Remember: At no point in time private key of user is supposed to leave his/her computer, Only public keys are required to generate certs. </p>
@@ -147,7 +147,7 @@ To avoid confusion here are the files required on various machines for Host cert
 <thead>
 <tr>
 <th>-s</th>
-<th>Private key of CA that we just created <code>server_ca</code></th>
+<th>Private key of CA that we just created server_ca</th>
 </tr>
 </thead>
 <tbody>
@@ -170,7 +170,6 @@ To avoid confusion here are the files required on various machines for Host cert
   <span class="categories">
     <a class="category" href="../tag/security.html">Security</a>,    <a class="category" href="../tag/ssh.html">SSH</a>  </span>
 </p><div class="sharing">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="../12-2014/Central-SSH-key-management-CA-1.html" data-via="abhaytrivedi" data-counturl="../12-2014/Central-SSH-key-management-CA-1.html" >Tweet</a>
 </div>    </footer>
   </article>
 
@@ -206,13 +205,10 @@ To avoid confusion here are the files required on various machines for Host cert
 
   <section>
   <h1>Tags</h1>
-    <a href="../tag/publishing.html">publishing</a>,    <a href="../tag/security.html">Security</a>,    <a href="../tag/mail.html">Mail</a>,    <a href="../tag/pelican.html">pelican</a>,    <a href="../tag/unix.html">Unix</a>,    <a href="../tag/ssh.html">SSH</a>  </section>
+    <a href="../tag/ssh.html">SSH</a>,    <a href="../tag/publishing.html">publishing</a>,    <a href="../tag/unix.html">Unix</a>,    <a href="../tag/mail.html">Mail</a>,    <a href="../tag/pelican.html">pelican</a>,    <a href="../tag/security.html">Security</a>  </section>
 
 
 
-<section>
-    <a href="http://twitter.com/abhaytrivedi" class="twitter-follow-button" data-show-count="true">Follow @abhaytrivedi</a>
-</section>
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
@@ -222,14 +218,5 @@ To avoid confusion here are the files required on various machines for Host cert
   <script src="../theme/js/modernizr-2.0.js"></script>
   <script src="../theme/js/ender.js"></script>
   <script src="../theme/js/octopress.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 </body>
 </html>

@@ -10,4 +10,6 @@ I am Python programmer and Artist who uses open source tools for earning bread, 
 
 {% img center /images/about.png 600p x 400px "Ping1" %}
 
+Image 1 not image 2
+
 

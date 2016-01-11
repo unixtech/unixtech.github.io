@@ -4,14 +4,14 @@
 &lt;h2&gt;Why?&lt;/h2&gt;
 &lt;p&gt;Blaming mail server is very easy when your mail goes to SPAM or mail server doesn't work at all.&lt;/p&gt;
 &lt;p&gt;Mail servers are so important in our lives that it's very hard to imagine life without them. They have outlived many systems such as Chat clients and Social Media netwoks - Still going ever stong.&lt;/p&gt;
-&lt;h2&gt;Components used in&lt;/h2&gt;</summary><category term="Mail"></category><category term="Unix"></category></entry><entry><title>Central SSH Key management using CA</title><link href="https://unixtech.github.io/12-2014/Central-SSH-key-management-CA-1.html" rel="alternate"></link><updated>2014-12-15T13:02:00+05:30</updated><author><name>Unixer</name></author><id>tag:unixtech.github.io,2014-12-15:12-2014/Central-SSH-key-management-CA-1.html</id><summary type="html">&lt;p&gt;&lt;img class="center" src="/images/openssh.gif" width="600"&gt;&lt;/p&gt;
+&lt;h2&gt;Components used in&lt;/h2&gt;</summary><category term="Mail"></category><category term="Unix"></category></entry><entry><title>Central SSH Key management using CA</title><link href="https://unixtech.github.io/12-2014/Central-SSH-key-management-CA-1.html" rel="alternate"></link><updated>2014-12-15T13:02:00+05:30</updated><author><name>Unixer</name></author><id>tag:unixtech.github.io,2014-12-15:12-2014/Central-SSH-key-management-CA-1.html</id><summary type="html">&lt;p&gt;&lt;img src="/images/openssh.gif" class="center" width="600"&gt;&lt;/p&gt;
 &lt;h2&gt;Intro&lt;/h2&gt;
 &lt;p&gt;It's always challenge in itself to handle SSH private keys, Managing authentication ( Without-password ) and keeping it upto date. Things like taking control of the keys plus revoking the keys as needed is formidable challenge for any senior admin.&lt;br /&gt;
 One can do it via traditional &lt;code&gt;authorized_keys&lt;/code&gt; file but overtime it becomes messy to maintain and more prone to errors. This becomes all the more important when you can't handle key management to you users whom you deem undesirable to be able to comprehend . &lt;/p&gt;
 &lt;p&gt;So, Decided to move to CA based authentication with OpenSSH with OpenLDAP. In this part we will cover just CA based key management later parts we will do it with OpenLDAP integration and how does one maintain the whole ssh keys management via ansible.  &lt;/p&gt;
 &lt;p&gt;It doesn't really matter which methods you adopt as long as you have prior policy to deal with regular management of keys.  &lt;/p&gt;
 &lt;h2&gt;Lab Topology&lt;/h2&gt;
-&lt;p&gt;&lt;img class="center" src="/images/sshca_topology1.png" width="600"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/sshca_topology1.png" class="center" width="600"&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;CA server will only be used to generate CA key and Sign and generate certificates for public keys that you have received from various users.  &lt;/p&gt;
 &lt;p&gt;Remember: At no point in time private key of user is supposed to leave his/her computer, Only public keys are required to generate certs. &lt;/p&gt;
@@ -91,7 +91,7 @@ To avoid confusion here are the files required on various machines for Host cert
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;-s&lt;/th&gt;
-&lt;th&gt;Private key of CA that we just created &lt;code&gt;server_ca&lt;/code&gt;&lt;/th&gt;
+&lt;th&gt;Private key of CA that we just created server_ca&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
@@ -117,7 +117,7 @@ We will be witnessing such thing is unimaginable to me.&lt;/p&gt;
 
 &lt;/figure&gt;
 
-&lt;p&gt;&lt;img class="center" src="/images/2.png" width="600"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/2.png" class="center" width="600"&gt;&lt;/p&gt;
 &lt;p&gt;Title 2&lt;/p&gt;
 &lt;h2&gt;&lt;/h2&gt;
 &lt;ul&gt;
