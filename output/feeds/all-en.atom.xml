@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>UnixTech</title><link href="http://unixtech.github.io/" rel="alternate"></link><link href="http://unixtech.github.io/feeds/all-en.atom.xml" rel="self"></link><id>http://unixtech.github.io/</id><updated>2014-12-06T13:30:00+05:30</updated><entry><title>PF Firewall-1</title><link href="http://unixtech.github.io/12-2014/pf-firewall-1.html" rel="alternate"></link><updated>2014-12-06T13:30:00+05:30</updated><author><name>Unixer</name></author><id>tag:unixtech.github.io,2014-12-04:12-2014/pf-firewall-1.html</id><summary type="html">&lt;h2&gt;FreeBSD and OpenBSD&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>UnixTech</title><link href="https://unixtech.github.io/" rel="alternate"></link><link href="https://unixtech.github.io/feeds/all-en.atom.xml" rel="self"></link><id>https://unixtech.github.io/</id><updated>2014-12-06T13:30:00+05:30</updated><entry><title>PF Firewall-1</title><link href="https://unixtech.github.io/12-2014/pf-firewall-1.html" rel="alternate"></link><updated>2014-12-06T13:30:00+05:30</updated><author><name>Unixer</name></author><id>tag:unixtech.github.io,2014-12-04:12-2014/pf-firewall-1.html</id><summary type="html">&lt;h2&gt;FreeBSD and OpenBSD&lt;/h2&gt;
 &lt;p&gt;PF (Packet filter) is default firewall for OpenBSD and included in other OSes like &lt;a href="http://www.freebsd.org"&gt;FreeBSD&lt;/a&gt; and &lt;a href="http://www.apple.com" title="Apple"&gt;Apple&lt;/a&gt; IOS operating systems. Many other "Commercial firewall" appliances are inspired by PF.&lt;/p&gt;
 &lt;h2&gt;History of PF&lt;/h2&gt;
 &lt;p&gt;PF was originally designed as replacement for Darren Reed's IPFilter, from which it derives much of its rule syntax. IPFilter was removed from OpenBSD's CVS tree due to OpenBSD developers' problems with its license. Specifically, Reed distributed some versions of his software with the license clause, "Derivative or modified works are not permitted without the author's prior consent." Due to this, the OpenBSD team decided to replace the software. This decision became the subject of wrangling among the parties involved, degenerating into a discussion that failed to reach mutual understanding. On the subject, OpenBSD project leader Theo de Raadt wrote, "Software which OpenBSD uses and redistributes must be free to all... for any purpose including... modification."&lt;/p&gt;
@@ -115,7 +115,7 @@ net.inet.ip.forwarding &lt;span class="o"&gt;=&lt;/span&gt; 1
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img width="600" src="/images/pf_rules.png" class="center"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img class="center" width="600" src="/images/pf_rules.png"&gt;&lt;/p&gt;
 &lt;h2&gt;Conclusions&lt;/h2&gt;
 &lt;p&gt;PF is one of the most popular and powerful firewall for managing your network traffic. We have barely even scracthed surface of what PF can provide. It's functionality is much more then many of the commercial offerings offers.&lt;br /&gt;
 We will also cover some extended functionality such as usage of Anchors, Preventing torrent traffic, Blacklisting and preventing brute-forcing attack etc.
