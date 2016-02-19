@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = 'Voyager'
-SITENAME = "Tech Architectures"
-SITESUBTITLE = "Tumbling down complexities of technical multiverse"
+AUTHOR = 'Unixer'
+SITENAME = "UnixTech"
+SITESUBTITLE = "Technology, Creativity, Business - Amplified"
 SITEURL = 'https://unixtech.github.io'
 
 PATH = 'content'
@@ -19,12 +19,12 @@ TIMEZONE = 'Asia/Kolkata'
 DEFAULT_LANG = 'en'
 
 # Feed generation is usually not desired when developing
-FEED_DOMAIN = SITEURL
-FEED_ALL_ATOM = 'feeds/all-atom.xml'
-CATEGORY_FEED_ATOM = 'feeds/%s-atom.xml'
-TRANSLATION_FEED_ATOM = None
-AUTHOR_FEED_ATOM = None
-AUTHOR_FEED_RSS = None
+# FEED_DOMAIN = SITEURL
+# FEED_ALL_ATOM = 'feeds/all-atom.xml'
+# CATEGORY_FEED_ATOM = 'feeds/%s-atom.xml'
+# TRANSLATION_FEED_ATOM = None
+# AUTHOR_FEED_ATOM = None
+# AUTHOR_FEED_RSS = None
 
 
 FAVICON_FILENAME = 'images/favicon.png'
@@ -38,7 +38,7 @@ FAVICON_FILENAME = 'images/favicon.png'
 #SOCIAL = (('You can add links in your config file', '#'),
           #('Another social link', '#'),)
 
-DEFAULT_PAGINATION = 4
+DEFAULT_PAGINATION = 6
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
@@ -48,7 +48,7 @@ RELATIVE_URLS = True
 # TWITTER_FOLLOW_BUTTON = True
 # TWITTER_TWEET_BUTTON = True
 
-THEME = "/home/keycto/Documents/python/blog1/pelican-octopress-theme"
+THEME = "../pelican-octopress-theme"
 SEARCH_BOX = True
 X_MIN_READ = True
 
@@ -60,14 +60,15 @@ MENUITEMS = [('About ME', '/pages/About Unixer.html'), ('Archives', '/archives.h
 
 
 #Plugin things
-PLUGIN_PATHS = ['/home/keycto/Documents/python/blog1/pelican-plugins']
-PLUGINS = ['liquid_tags.include_code', 'liquid_tags.img', 'liquid_tags.video', 'liquid_tags.notebook', 'liquid_tags.youtube', 'clean_summary', 'post_stats', 'render_math', 'latex']
+PLUGIN_PATHS = ['../pelican-plugins']
+PLUGINS = ['liquid_tags.include_code', 'liquid_tags.img', 'liquid_tags.video',  'liquid_tags.youtube', 'clean_summary', 'post_stats', 'render_math', 'latex']
 
 
 #MathJAX Settings
+LATEX = 'article'
 MATH_JAX = {'color':'blue', 'align':'centre'}
 
 #Pure pelican specific settings
 # COVER_IMG_URL = "images/3.jpg"
 # PROFILE_IMAGE_URL = "images/profile.png"
-#SIDEBAR_IMAGE = "images/2.png"
+# SIDEBAR_IMAGE = "images/2.png"
