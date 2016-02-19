@@ -4,8 +4,8 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Central SSH Key management using CA &mdash; Tech Architectures</title>
-  <meta name="author" content="Voyager">
+  <title>Central SSH Key management using CA &mdash; UnixTech</title>
+  <meta name="author" content="Unixer">
 
 
 
@@ -17,10 +17,11 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <meta name="robots" content="noindex, nofollow" />
 
-    <link href="../images/favicon.png" rel="icon">
+    <link href="http://unixtech.github.io/images/favicon.png" rel="icon">
 
-  <link href="../theme/css/main.css" media="screen, projection"
+  <link href="http://unixtech.github.io/theme/css/main.css" media="screen, projection"
         rel="stylesheet" type="text/css">
 
   <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
@@ -31,15 +32,15 @@
 
 <body>
   <header role="banner"><hgroup>
-  <h1><a href="../">Tech Architectures</a></h1>
-    <h2>Tumbling down complexities of technical multiverse</h2>
+  <h1><a href="http://unixtech.github.io/">UnixTech</a></h1>
+    <h2>Technology, Creativity, Business - Amplified</h2>
 </hgroup></header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
 </ul>
 
 <form action="https://www.google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="sitesearch" value="..">
+    <input type="hidden" name="sitesearch" value="unixtech.github.io">
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -56,18 +57,20 @@
 <header>
       <h1 class="entry-title">Central SSH Key management using CA</h1>
     <p class="meta">
-<time datetime="2014-12-15T13:02:00+05:30" pubdate>Mon 15 December 2014</time>  &ndash; &#128339; 2 min read
+<time datetime="2014-12-15T13:02:00+05:30" pubdate>Mon 15 December 2014</time>  &ndash; &#9719; 2 min read
     </p>
 </header>
 
-  <div class="entry-content"><p><img class="center" src="/images/openssh.gif" width="600"></p>
+  <div class="entry-content"><p><img width="600" src="/images/openssh.gif" class="center"></p>
 <h2>Intro</h2>
 <p>It's always challenge in itself to handle SSH private keys, Managing authentication ( Without-password ) and keeping it upto date. Things like taking control of the keys plus revoking the keys as needed is formidable challenge for any senior admin.<br />
 One can do it via traditional <code>authorized_keys</code> file but overtime it becomes messy to maintain and more prone to errors. This becomes all the more important when you can't handle key management to you users whom you deem undesirable to be able to comprehend . </p>
+<p>Menta ike </p>
 <p>So, Decided to move to CA based authentication with OpenSSH with OpenLDAP. In this part we will cover just CA based key management later parts we will do it with OpenLDAP integration and how does one maintain the whole ssh keys management via ansible.  </p>
 <p>It doesn't really matter which methods you adopt as long as you have prior policy to deal with regular management of keys.  </p>
 <h2>Lab Topology</h2>
-<p><img class="center" src="/images/sshca_topology1.png" width="600"></p>
+<p><img width="600" src="/images/sshca_topology1.png" class="center">
+<span  {align= center;}  ><strong> <em>Fig1</em>- Strong SSH manta:</strong> Scopus SSH lie manteld. Mentali menta so. </span></p>
 <blockquote>
 <p>CA server will only be used to generate CA key and Sign and generate certificates for public keys that you have received from various users.  </p>
 <p>Remember: At no point in time private key of user is supposed to leave his/her computer, Only public keys are required to generate certs. </p>
@@ -122,13 +125,13 @@ To avoid confusion here are the files required on various machines for Host cert
 <p>Note: Don't confuse <code>Server</code> and <code>Client</code> here, they interchangeable terms, Mostly depends upon where you need authentication done. </p>
 </blockquote>
 <h3>Generate CA keys</h3>
-<div class="highlight"><pre> <span class="c">#Generate CA for our infrastructure.</span>
+<div class="highlight"><pre> <span class="c1">#Generate CA for our infrastructure.</span>
  ssh-keygen -f server_ca
 </pre></div>
 
 
 <p>Now You should have two files in your CWD.</p>
-<div class="highlight"><pre> <span class="c">#!sh</span>
+<div class="highlight"><pre> <span class="c1">#!sh</span>
  ls
  server_ca  server_ca.pub
 </pre></div>
@@ -147,7 +150,7 @@ To avoid confusion here are the files required on various machines for Host cert
 <thead>
 <tr>
 <th>-s</th>
-<th>Private key of CA that we just created <code>server_ca</code></th>
+<th>Private key of CA that we just created server_ca</th>
 </tr>
 </thead>
 <tbody>
@@ -165,12 +168,11 @@ To avoid confusion here are the files required on various machines for Host cert
     </span>
   </span>
 <time datetime="2014-12-15T13:02:00+05:30" pubdate>Mon 15 December 2014</time>  <span class="categories">
-    <a class='category' href='../category/server.html'>Server</a>
+    <a class='category' href='http://unixtech.github.io/category/server.html'>Server</a>
   </span>
   <span class="categories">
-    <a class="category" href="../tag/security.html">Security</a>,    <a class="category" href="../tag/ssh.html">SSH</a>  </span>
+    <a class="category" href="http://unixtech.github.io/tag/security.html">Security</a>,    <a class="category" href="http://unixtech.github.io/tag/ssh.html">SSH</a>  </span>
 </p><div class="sharing">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="../12-2014/Central-SSH-key-management-CA-1.html" data-via="abhaytrivedi" data-counturl="../12-2014/Central-SSH-key-management-CA-1.html" >Tweet</a>
 </div>    </footer>
   </article>
 
@@ -180,16 +182,7 @@ To avoid confusion here are the files required on various machines for Host cert
     <h1>Recent Posts</h1>
     <ul id="recent_posts">
       <li class="post">
-          <a href="../12-2015/mjy-super-post.html">y super title</a>
-      </li>
-      <li class="post">
-          <a href="../08-2015/OpenSMTPD-as-Mail-server-1.html">Building Enterprize Mail server</a>
-      </li>
-      <li class="post">
-          <a href="../12-2014/Central-SSH-key-management-CA-1.html">Central SSH Key management using CA</a>
-      </li>
-      <li class="post">
-          <a href="../12-2010/mys-super-p2ost.html">my super titsle</a>
+          <a href="http://unixtech.github.io/12-2014/pf-firewall-1.html">PF Firewall-1</a>
       </li>
     </ul>
   </section>
@@ -197,39 +190,42 @@ To avoid confusion here are the files required on various machines for Host cert
       
     <h1>Categories</h1>
     <ul id="recent_posts">
-        <li><a href="../category/server.html">Server</a></li>
-        <li><a href="../category/super.html">Super</a></li>
-        <li><a href="../category/super1.html">Super1</a></li>
+        <li><a href="http://unixtech.github.io/category/unix.html">Unix</a></li>
     </ul>
   </section>
  
 
   <section>
   <h1>Tags</h1>
-    <a href="../tag/publishing.html">publishing</a>,    <a href="../tag/security.html">Security</a>,    <a href="../tag/mail.html">Mail</a>,    <a href="../tag/pelican.html">pelican</a>,    <a href="../tag/unix.html">Unix</a>,    <a href="../tag/ssh.html">SSH</a>  </section>
+    <a href="http://unixtech.github.io/tag/monitor.html">Monitor</a>,    <a href="http://unixtech.github.io/tag/unix.html">Unix</a>  </section>
 
 
 
-<section>
-    <a href="http://twitter.com/abhaytrivedi" class="twitter-follow-button" data-show-count="true">Follow @abhaytrivedi</a>
-</section>
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-    Copyright &copy;  2010&ndash;2015  Voyager
-  <!--<span class="credit">Powered by <a href="http://getpelican.com">Pelican</a></span>-->
+    Copyright &copy;  2014  <a href="mailto:unixlama@gmail.com">Unixer  </a>
 </p></footer>
-  <script src="../theme/js/modernizr-2.0.js"></script>
-  <script src="../theme/js/ender.js"></script>
-  <script src="../theme/js/octopress.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+  <script src="http://unixtech.github.io/theme/js/modernizr-2.0.js"></script>
+  <script src="http://unixtech.github.io/theme/js/ender.js"></script>
+  <script src="http://unixtech.github.io/theme/js/octopress.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-66126748-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
-  </script>
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-66126748-1');
+    ga('send', 'pageview');
+</script>
 </body>
 </html>

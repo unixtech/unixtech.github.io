@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>UnixTech</title><link href="http://unixtech.github.io/" rel="alternate"></link><link href="http://unixtech.github.io/feeds/unix.atom.xml" rel="self"></link><id>http://unixtech.github.io/</id><updated>2014-12-06T13:30:00+05:30</updated><entry><title>PF Firewall-1</title><link href="http://unixtech.github.io/12-2014/pf-firewall-1.html" rel="alternate"></link><updated>2014-12-06T13:30:00+05:30</updated><author><name>Unixer</name></author><id>tag:unixtech.github.io,2014-12-04:12-2014/pf-firewall-1.html</id><summary type="html">&lt;h2&gt;FreeBSD and OpenBSD&lt;/h2&gt;
+&lt;p&gt;PF (Packet filter) is default firewall for OpenBSD and included in other OSes like &lt;a href="http://www.freebsd.org"&gt;FreeBSD&lt;/a&gt; and &lt;a href="http://www.apple.com" title="Apple"&gt;Apple&lt;/a&gt; IOS operating systems. Many other "Commercial firewall" appliances are inspired by PF.&lt;/p&gt;
+&lt;h2&gt;History of PF&lt;/h2&gt;
+&lt;p&gt;PF was originally designed as replacement for Darren Reed's IPFilter, from which it derives much of its rule syntax. IPFilter was removed from OpenBSD's CVS tree due to OpenBSD developers' problems with its license. Specifically, Reed distributed some versions of his software with the license clause, "Derivative or modified works are not permitted without the author's prior consent." Due to this, the OpenBSD team decided to replace the software. This decision became the subject of wrangling among the parties involved, degenerating into a discussion that failed to reach mutual understanding. On the subject, OpenBSD project leader Theo de Raadt wrote, "Software which OpenBSD uses and redistributes must be free to all... for any purpose including... modification."&lt;/p&gt;
+&lt;p&gt;PF has since evolved quickly and now has several advantages over other available firewalls. Network Address Translation (NAT) and Quality of Service (QoS) have been integrated into PF, QoS by importing the ALTQ queuing software and linking it with PF's configuration. Features such as pfsync and CARP for failover and redundancy, authpf for session authentication, and ftp-proxy to ease firewalling the difficult FTP protocol, have also extended PF.&lt;/p&gt;
+&lt;p&gt;One of the many innovative feature is PF's logging. Logging is configurable per rule within the pf.conf and logs are provided from PF by a pseudo-network interface called pflog. Logs may be monitored using standard utilities such as tcpdump, which in OpenBSD has been extended especially for the purpose, or saved to disk in a modified tcpdump/pcap binary format using the pflogd daemon.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For more info, &lt;strong&gt;Read  - &lt;a href="http://en.wikipedia.org/wiki/PF_%28firewall%29"&gt;History of pf&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;PF setup&lt;/h2&gt;
+&lt;p&gt;Usually &lt;code&gt;PF&lt;/code&gt; is deployed  in conjuction with other tools provided by OpenBSD ecosystem.
+These includes:
+&lt;em&gt; HFSC Queuing system for QoS
+&lt;/em&gt; FTP-Proxy
+&lt;em&gt; Application proxies such as Relayd ( Mainly used as HTTPs termination point )
+&lt;/em&gt; OS detection using fingerprint - &lt;code&gt;pf.os&lt;/code&gt;
+* CARP firewall failover for HA environments ( UCARP for FreeBSD users )&lt;/p&gt;
+&lt;h3&gt;How to deploy PF firewall in your environment&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note: Both OpenBSD and FreeBSD OS uses different syntax for maintaining &lt;code&gt;PF&lt;/code&gt; firewall.
+We will mainly focus on OpenBSD OS but there are benefits of using &lt;code&gt;PF&lt;/code&gt; with FreeBSD OS since it provides multi-processing capable version of &lt;code&gt;PF&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;!--{% include_code pf.conf [lang:sh] [pf.conf] %}--&gt;
+
+&lt;p&gt;File - &lt;code&gt;/etc/rc.conf.local&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;pf&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;YES
+&lt;span class="nv"&gt;pf_rules&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/etc/pf.conf
+&lt;span class="nv"&gt;pflogd_flags&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;-s 1500&amp;quot;&lt;/span&gt; &lt;span class="c1"&gt;# Ex. Snaplen, Log filename&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;File - &lt;code&gt;/etc/pf.conf&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;### My master pf.conf&lt;/span&gt;
+
+&lt;span class="c1"&gt;### Interfaces&lt;/span&gt;
+&lt;span class="nv"&gt;EXTIF&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;em0&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;INTIF&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;em1&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;DMZ&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;em2&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;EXTRAIF&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;em3&amp;quot;&lt;/span&gt;
+
+&lt;span class="c1"&gt;### Hosts&lt;/span&gt;
+&lt;span class="nv"&gt;ADMIN&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;10.0.11.1&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;ADMIN1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;10.0.11.31&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;BOTHADMIN&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;{&amp;quot;&lt;/span&gt; &lt;span class="nv"&gt;$AD&lt;/span&gt;MIN &lt;span class="nv"&gt;$AD&lt;/span&gt;MIN1 &lt;span class="s2"&gt;&amp;quot;}&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;EXTDNSSERVER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;4.2.2.2&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;INTDNSSERVER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;$&lt;span class="s2"&gt;INTIF:0&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;#DNSSERVERS =&amp;quot;{&amp;quot; $INTDNSSERVER $EXTDNSSERVER &amp;quot;}&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;DNSSERVER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;{&lt;/span&gt;$&lt;span class="s2"&gt;INTDNSSERVER}&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;LOGSERVER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;{ 10.0.11.22, 10.0.11.31  }&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;All these variable defined are called MACROS inside &lt;code&gt;pf.conf&lt;/code&gt; file.&lt;/li&gt;
+&lt;li&gt;These are used for convinience and ease of use&lt;/li&gt;
+&lt;li&gt;Defining nested macros are possible as well.&lt;/li&gt;
+&lt;li&gt;Take a look at &lt;code&gt;INTIF&lt;/code&gt; macro, If you want to include that whole internal network in your rules then &lt;code&gt;INTIF:network&lt;/code&gt; in your rule.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now, We will have a look at some of the rules itself.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;#External Interface&lt;/span&gt;
+&lt;span class="c1"&gt;#Block all on External interface&lt;/span&gt;
+block log on &lt;span class="nv"&gt;$E&lt;/span&gt;XTIF
+
+&lt;span class="c1"&gt;## Network address translation with outgoing source &lt;/span&gt;
+&lt;span class="c1"&gt;#match out log on $EXTIF from $INTIF to any received-on $INTIF tag EGRESS nat-to ($EXTIF:0) &lt;/span&gt;
+match out log on &lt;span class="nv"&gt;$E&lt;/span&gt;XTIF from $INTIF:network to any received-on $INTIF tag EGRESS nat-to &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$E&lt;/span&gt;XTIF:0&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;#If you have difficulties with any box with static port forwarding then you should use&lt;/span&gt;
+&lt;span class="c1"&gt;#match out log on $EXTIF from $INTIF to any received-on $INTIF tag EGRESS nat-to ($EXTIF:0) static-port&lt;/span&gt;
+
+&lt;span class="c1"&gt;#Traffic generated from firewall it self will be tagged as EGRESS&lt;/span&gt;
+match out log on &lt;span class="nv"&gt;$E&lt;/span&gt;XTIF from &lt;span class="nv"&gt;$E&lt;/span&gt;XTIF to any tag EGRESS
+&lt;span class="c1"&gt;#More on these later on.&lt;/span&gt;
+
+&lt;span class="c1"&gt;#EXTIF inbound&lt;/span&gt;
+pass in log &lt;span class="o"&gt;(&lt;/span&gt;to pflog1&lt;span class="o"&gt;)&lt;/span&gt; on &lt;span class="nv"&gt;$E&lt;/span&gt;XTIF inet proto tcp from any to any port &lt;span class="m"&gt;22&lt;/span&gt; 
+pass in on &lt;span class="nv"&gt;$E&lt;/span&gt;XTIF inet proto tcp from any to &lt;span class="nv"&gt;$E&lt;/span&gt;XTIF port &amp;gt;10000
+
+&lt;span class="c1"&gt;#External interface outbound&lt;/span&gt;
+pass out log on &lt;span class="nv"&gt;$E&lt;/span&gt;XTIF inet  from &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$E&lt;/span&gt;XTIF&lt;span class="o"&gt;)&lt;/span&gt; to any $TCPSTATE &lt;span class="nv"&gt;$E&lt;/span&gt;XTIFSTO queue &lt;span class="o"&gt;(&lt;/span&gt;bulk, ack&lt;span class="o"&gt;)&lt;/span&gt; tagged EGRESS
+&lt;span class="c1"&gt;#pass out log on $EXTIF inet proto udp from ($EXTIF) to any $UDPSTATE $EXTIFSTO queue (bulk, ack) tagged EGRESS&lt;/span&gt;
+pass out log on &lt;span class="nv"&gt;$E&lt;/span&gt;XTIF inet proto tcp from &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$E&lt;/span&gt;XTIF&lt;span class="o"&gt;)&lt;/span&gt; to any port $TCPPORTS $TCPSTATE &lt;span class="nv"&gt;$E&lt;/span&gt;XTIFSTO queue &lt;span class="o"&gt;(&lt;/span&gt;web, ack&lt;span class="o"&gt;)&lt;/span&gt; tagged EGRESS
+pass out log on &lt;span class="nv"&gt;$E&lt;/span&gt;XTIF inet proto udp from &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$E&lt;/span&gt;XTIF&lt;span class="o"&gt;)&lt;/span&gt; to any port &lt;span class="m"&gt;53&lt;/span&gt; $UDPSTATE &lt;span class="nv"&gt;$E&lt;/span&gt;XTIFSTO queue &lt;span class="o"&gt;(&lt;/span&gt;dns, ack&lt;span class="o"&gt;)&lt;/span&gt; tagged EGRESS
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;These are some of the rules that I have defined in my DMZ firewall to prevent other users from coming in from outside.&lt;/li&gt;
+&lt;li&gt;After deploying this ruleset only SSH is allowed from outside interface of firewall. &lt;/li&gt;
+&lt;li&gt;From inside essential end-user services such as Internet browsing, DNS are enabled. &lt;/li&gt;
+&lt;li&gt;Take a look at &lt;code&gt;match out&lt;/code&gt; rules on &lt;code&gt;EXTIF&lt;/code&gt; to have a look at how nat rules are working. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Turning on routing&lt;/h3&gt;
+&lt;p&gt;To turn on routing functionality of the box, You need to make sure you have enabled ip forwarding in &lt;code&gt;sysctl&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;# To check the ip forwarding status&lt;/span&gt;
+sysctl net.inet.ip.forwarding
+&lt;span class="c1"&gt;# If it&amp;#39;s 0 then turn it on&lt;/span&gt;
+sysctl net.inet.ip.forwarding&lt;span class="o"&gt;=&lt;/span&gt;1
+
+&lt;span class="c1"&gt;#To make it permanent &lt;/span&gt;
+&lt;span class="c1"&gt;### /etc/sysctl.conf&lt;/span&gt;
+net.inet.ip.forwarding &lt;span class="o"&gt;=&lt;/span&gt; 1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;PFCTL utility&lt;/h3&gt;
+&lt;p&gt;After making changes inside &lt;code&gt;pf.conf&lt;/code&gt; file, rules are not automatically loaded. To load the rules We need to use &lt;code&gt;pfctl&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;To load rules - Assuming rule file is &lt;code&gt;/etc/pf.conf&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;pfctl -vf /etc/pf.conf
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To see which rules are currently loaded, It will also show related counters. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;pfctl -vsr
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;img width="600" src="/images/pf_rules.png" class="center"&gt;&lt;/p&gt;
+&lt;h2&gt;Conclusions&lt;/h2&gt;
+&lt;p&gt;PF is one of the most popular and powerful firewall for managing your network traffic. We have barely even scracthed surface of what PF can provide. It's functionality is much more then many of the commercial offerings offers.&lt;br /&gt;
+We will also cover some extended functionality such as usage of Anchors, Preventing torrent traffic, Blacklisting and preventing brute-forcing attack etc.
+Being open-source it places no restrictions on usage. Users can use it any which way they would prefer.  &lt;/p&gt;
+&lt;p&gt;Having been used PF and openBSD for nearly 10 years in all of my setups I can say PF is most secure firewall there is and With combination of OpenBSD and PF you can be pretty sure you are one step ahead then rest  in process of being NSA proof.&lt;/p&gt;</summary><category term="Unix"></category><category term="Monitor"></category></entry></feed>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>PF Firewall-1 &mdash; UnixTech</title>
+  <meta name="author" content="Unixer">
+
+
+
+
+
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="http://unixtech.github.io/images/favicon.png" rel="icon">
+
+  <link href="http://unixtech.github.io/theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+
+  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
+        rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <header role="banner"><hgroup>
+  <h1><a href="http://unixtech.github.io/">UnixTech</a></h1>
+    <h2>Technology, Creativity, Business - Amplified</h2>
+</hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+</ul>
+
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="unixtech.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+
+<ul class="main-navigation">
+    <li><a href="/pages/About Unixer.html">About ME</a></li>
+    <li><a href="/archives.html">Archives</a></li>
+    <li><a href="/pages/contact-me.html">Contact</a></li>
+</ul></nav>
+  <div id="main">
+    <div id="content">
+<div>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">PF Firewall-1</h1>
+    <p class="meta">
+<time datetime="2014-12-04T13:02:00+05:30" pubdate>Thu 04 December 2014</time>  &ndash; &#9719; 4 min read
+    </p>
+</header>
+
+  <div class="entry-content"><h2>FreeBSD and OpenBSD</h2>
+<p>PF (Packet filter) is default firewall for OpenBSD and included in other OSes like <a href="http://www.freebsd.org">FreeBSD</a> and <a href="http://www.apple.com" title="Apple">Apple</a> IOS operating systems. Many other "Commercial firewall" appliances are inspired by PF.</p>
+<h2>History of PF</h2>
+<p>PF was originally designed as replacement for Darren Reed's IPFilter, from which it derives much of its rule syntax. IPFilter was removed from OpenBSD's CVS tree due to OpenBSD developers' problems with its license. Specifically, Reed distributed some versions of his software with the license clause, "Derivative or modified works are not permitted without the author's prior consent." Due to this, the OpenBSD team decided to replace the software. This decision became the subject of wrangling among the parties involved, degenerating into a discussion that failed to reach mutual understanding. On the subject, OpenBSD project leader Theo de Raadt wrote, "Software which OpenBSD uses and redistributes must be free to all... for any purpose including... modification."</p>
+<p>PF has since evolved quickly and now has several advantages over other available firewalls. Network Address Translation (NAT) and Quality of Service (QoS) have been integrated into PF, QoS by importing the ALTQ queuing software and linking it with PF's configuration. Features such as pfsync and CARP for failover and redundancy, authpf for session authentication, and ftp-proxy to ease firewalling the difficult FTP protocol, have also extended PF.</p>
+<p>One of the many innovative feature is PF's logging. Logging is configurable per rule within the pf.conf and logs are provided from PF by a pseudo-network interface called pflog. Logs may be monitored using standard utilities such as tcpdump, which in OpenBSD has been extended especially for the purpose, or saved to disk in a modified tcpdump/pcap binary format using the pflogd daemon.</p>
+<blockquote>
+<p>For more info, <strong>Read  - <a href="http://en.wikipedia.org/wiki/PF_%28firewall%29">History of pf</a></strong></p>
+</blockquote>
+<h2>PF setup</h2>
+<p>Usually <code>PF</code> is deployed  in conjuction with other tools provided by OpenBSD ecosystem.
+These includes:
+<em> HFSC Queuing system for QoS
+</em> FTP-Proxy
+<em> Application proxies such as Relayd ( Mainly used as HTTPs termination point )
+</em> OS detection using fingerprint - <code>pf.os</code>
+* CARP firewall failover for HA environments ( UCARP for FreeBSD users )</p>
+<h3>How to deploy PF firewall in your environment</h3>
+<blockquote>
+<p>Note: Both OpenBSD and FreeBSD OS uses different syntax for maintaining <code>PF</code> firewall.
+We will mainly focus on OpenBSD OS but there are benefits of using <code>PF</code> with FreeBSD OS since it provides multi-processing capable version of <code>PF</code>.</p>
+</blockquote>
+<!--{% include_code pf.conf [lang:sh] [pf.conf] %}-->
+
+<p>File - <code>/etc/rc.conf.local</code></p>
+<div class="highlight"><pre><span class="nv">pf</span><span class="o">=</span>YES
+<span class="nv">pf_rules</span><span class="o">=</span>/etc/pf.conf
+<span class="nv">pflogd_flags</span><span class="o">=</span><span class="s2">&quot;-s 1500&quot;</span> <span class="c1"># Ex. Snaplen, Log filename</span>
+</pre></div>
+
+
+<p>File - <code>/etc/pf.conf</code></p>
+<div class="highlight"><pre><span class="c1">### My master pf.conf</span>
+
+<span class="c1">### Interfaces</span>
+<span class="nv">EXTIF</span> <span class="o">=</span><span class="s2">&quot;em0&quot;</span>
+<span class="nv">INTIF</span> <span class="o">=</span><span class="s2">&quot;em1&quot;</span>
+<span class="nv">DMZ</span> <span class="o">=</span> <span class="s2">&quot;em2&quot;</span>
+<span class="nv">EXTRAIF</span> <span class="o">=</span><span class="s2">&quot;em3&quot;</span>
+
+<span class="c1">### Hosts</span>
+<span class="nv">ADMIN</span> <span class="o">=</span><span class="s2">&quot;10.0.11.1&quot;</span>
+<span class="nv">ADMIN1</span> <span class="o">=</span><span class="s2">&quot;10.0.11.31&quot;</span>
+<span class="nv">BOTHADMIN</span> <span class="o">=</span><span class="s2">&quot;{&quot;</span> <span class="nv">$AD</span>MIN <span class="nv">$AD</span>MIN1 <span class="s2">&quot;}&quot;</span>
+<span class="nv">EXTDNSSERVER</span> <span class="o">=</span><span class="s2">&quot;4.2.2.2&quot;</span>
+<span class="nv">INTDNSSERVER</span> <span class="o">=</span><span class="s2">&quot;</span>$<span class="s2">INTIF:0&quot;</span>
+<span class="c1">#DNSSERVERS =&quot;{&quot; $INTDNSSERVER $EXTDNSSERVER &quot;}&quot;</span>
+<span class="nv">DNSSERVER</span> <span class="o">=</span><span class="s2">&quot;{</span>$<span class="s2">INTDNSSERVER}&quot;</span>
+<span class="nv">LOGSERVER</span> <span class="o">=</span> <span class="s2">&quot;{ 10.0.11.22, 10.0.11.31  }&quot;</span>
+</pre></div>
+
+
+<ul>
+<li>All these variable defined are called MACROS inside <code>pf.conf</code> file.</li>
+<li>These are used for convinience and ease of use</li>
+<li>Defining nested macros are possible as well.</li>
+<li>Take a look at <code>INTIF</code> macro, If you want to include that whole internal network in your rules then <code>INTIF:network</code> in your rule.</li>
+</ul>
+<p>Now, We will have a look at some of the rules itself.</p>
+<div class="highlight"><pre><span class="c1">#External Interface</span>
+<span class="c1">#Block all on External interface</span>
+block log on <span class="nv">$E</span>XTIF
+
+<span class="c1">## Network address translation with outgoing source </span>
+<span class="c1">#match out log on $EXTIF from $INTIF to any received-on $INTIF tag EGRESS nat-to ($EXTIF:0) </span>
+match out log on <span class="nv">$E</span>XTIF from $INTIF:network to any received-on $INTIF tag EGRESS nat-to <span class="o">(</span><span class="nv">$E</span>XTIF:0<span class="o">)</span>
+<span class="c1">#If you have difficulties with any box with static port forwarding then you should use</span>
+<span class="c1">#match out log on $EXTIF from $INTIF to any received-on $INTIF tag EGRESS nat-to ($EXTIF:0) static-port</span>
+
+<span class="c1">#Traffic generated from firewall it self will be tagged as EGRESS</span>
+match out log on <span class="nv">$E</span>XTIF from <span class="nv">$E</span>XTIF to any tag EGRESS
+<span class="c1">#More on these later on.</span>
+
+<span class="c1">#EXTIF inbound</span>
+pass in log <span class="o">(</span>to pflog1<span class="o">)</span> on <span class="nv">$E</span>XTIF inet proto tcp from any to any port <span class="m">22</span> 
+pass in on <span class="nv">$E</span>XTIF inet proto tcp from any to <span class="nv">$E</span>XTIF port &gt;10000
+
+<span class="c1">#External interface outbound</span>
+pass out log on <span class="nv">$E</span>XTIF inet  from <span class="o">(</span><span class="nv">$E</span>XTIF<span class="o">)</span> to any $TCPSTATE <span class="nv">$E</span>XTIFSTO queue <span class="o">(</span>bulk, ack<span class="o">)</span> tagged EGRESS
+<span class="c1">#pass out log on $EXTIF inet proto udp from ($EXTIF) to any $UDPSTATE $EXTIFSTO queue (bulk, ack) tagged EGRESS</span>
+pass out log on <span class="nv">$E</span>XTIF inet proto tcp from <span class="o">(</span><span class="nv">$E</span>XTIF<span class="o">)</span> to any port $TCPPORTS $TCPSTATE <span class="nv">$E</span>XTIFSTO queue <span class="o">(</span>web, ack<span class="o">)</span> tagged EGRESS
+pass out log on <span class="nv">$E</span>XTIF inet proto udp from <span class="o">(</span><span class="nv">$E</span>XTIF<span class="o">)</span> to any port <span class="m">53</span> $UDPSTATE <span class="nv">$E</span>XTIFSTO queue <span class="o">(</span>dns, ack<span class="o">)</span> tagged EGRESS
+</pre></div>
+
+
+<ul>
+<li>These are some of the rules that I have defined in my DMZ firewall to prevent other users from coming in from outside.</li>
+<li>After deploying this ruleset only SSH is allowed from outside interface of firewall. </li>
+<li>From inside essential end-user services such as Internet browsing, DNS are enabled. </li>
+<li>Take a look at <code>match out</code> rules on <code>EXTIF</code> to have a look at how nat rules are working. </li>
+</ul>
+<h3>Turning on routing</h3>
+<p>To turn on routing functionality of the box, You need to make sure you have enabled ip forwarding in <code>sysctl</code></p>
+<div class="highlight"><pre><span class="c1"># To check the ip forwarding status</span>
+sysctl net.inet.ip.forwarding
+<span class="c1"># If it&#39;s 0 then turn it on</span>
+sysctl net.inet.ip.forwarding<span class="o">=</span>1
+
+<span class="c1">#To make it permanent </span>
+<span class="c1">### /etc/sysctl.conf</span>
+net.inet.ip.forwarding <span class="o">=</span> 1
+</pre></div>
+
+
+<h3>PFCTL utility</h3>
+<p>After making changes inside <code>pf.conf</code> file, rules are not automatically loaded. To load the rules We need to use <code>pfctl</code></p>
+<p>To load rules - Assuming rule file is <code>/etc/pf.conf</code></p>
+<div class="highlight"><pre>pfctl -vf /etc/pf.conf
+</pre></div>
+
+
+<p>To see which rules are currently loaded, It will also show related counters. </p>
+<div class="highlight"><pre>pfctl -vsr
+</pre></div>
+
+
+<p><img width="600" src="/images/pf_rules.png" class="center"></p>
+<h2>Conclusions</h2>
+<p>PF is one of the most popular and powerful firewall for managing your network traffic. We have barely even scracthed surface of what PF can provide. It's functionality is much more then many of the commercial offerings offers.<br />
+We will also cover some extended functionality such as usage of Anchors, Preventing torrent traffic, Blacklisting and preventing brute-forcing attack etc.
+Being open-source it places no restrictions on usage. Users can use it any which way they would prefer.  </p>
+<p>Having been used PF and openBSD for nearly 10 years in all of my setups I can say PF is most secure firewall there is and With combination of OpenBSD and PF you can be pretty sure you are one step ahead then rest  in process of being NSA proof.</p></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        Unixer
+    </span>
+  </span>
+<time datetime="2014-12-04T13:02:00+05:30" pubdate>Thu 04 December 2014</time>  <span class="categories">
+    <a class='category' href='http://unixtech.github.io/category/unix.html'>Unix</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="http://unixtech.github.io/tag/unix.html">Unix</a>,    <a class="category" href="http://unixtech.github.io/tag/monitor.html">Monitor</a>  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
+</div>
+<aside class="sidebar">
+  <section>
+    <h1>Recent Posts</h1>
+    <ul id="recent_posts">
+      <li class="post">
+          <a href="http://unixtech.github.io/12-2014/pf-firewall-1.html">PF Firewall-1</a>
+      </li>
+    </ul>
+  </section>
+  <section>
+      
+    <h1>Categories</h1>
+    <ul id="recent_posts">
+        <li><a href="http://unixtech.github.io/category/unix.html">Unix</a></li>
+    </ul>
+  </section>
+ 
+
+  <section>
+  <h1>Tags</h1>
+    <a href="http://unixtech.github.io/tag/monitor.html">Monitor</a>,    <a href="http://unixtech.github.io/tag/unix.html">Unix</a>  </section>
+
+
+
+</aside>    </div>
+  </div>
+  <footer role="contentinfo"><p>
+    Copyright &copy;  2014  <a href="mailto:unixlama@gmail.com">Unixer  </a>
+</p></footer>
+  <script src="http://unixtech.github.io/theme/js/modernizr-2.0.js"></script>
+  <script src="http://unixtech.github.io/theme/js/ender.js"></script>
+  <script src="http://unixtech.github.io/theme/js/octopress.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-66126748-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-66126748-1');
+    ga('send', 'pageview');
+</script>
+</body>
+</html>
