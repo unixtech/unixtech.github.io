@@ -1,0 +1,11 @@
+@font-face {
+    font-family: Lit1;
+    src: url(literata-regular.otf);
+}
+
+
+p {
+    font-size: 22px;
+    font-family: Lit1 !important ;
+
+}
