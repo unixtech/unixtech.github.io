@@ -24,6 +24,7 @@
         rel="stylesheet" type="text/css">
 <link href="../theme/css/custom.css" media="screen, projection"
         rel="stylesheet" type="text/css">
+<link href="../theme/css/font-awesome-4.5.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
 
   <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
         rel="stylesheet" type="text/css">
@@ -58,12 +59,13 @@
 <header>
       <h1 class="entry-title">PF Firewall-1</h1>
     <p class="meta">
-<time datetime="2014-12-04T13:02:00+05:30" pubdate>Thu 04 December 2014</time>  &ndash; &#9719; 4 min read
+<time datetime="2014-12-04T13:02:00+05:30" pubdate>Thu 04 December 2014</time>  <!--&ndash; &#9719; 4 min read-->
+  &ndash;  <i class="fa fa-clock-o term"> </i> 4 min read
     </p>
 </header>
 
   <div class="entry-content"><h2>FreeBSD and OpenBSD</h2>
-<p>PF (Packet filter) is default firewall for OpenBSD and included in other OSes like <a href="http://www.freebsd.org">FreeBSD</a> and <a href="http://www.apple.com" title="Apple">Apple</a> IOS operating systems. Many other "Commercial firewall" appliances are inspired by PF.</p>
+<p>PF (Packet filter) is default firewall for OpenBSD and included in other OS's like <a href="http://www.freebsd.org">FreeBSD</a> and <a href="http://www.apple.com" title="Apple">Apple</a> IOS operating systems. Many other "Commercial firewall" appliances are inspired by PF.</p>
 <h2>History of PF</h2>
 <p>PF was originally designed as replacement for Darren Reed's IPFilter, from which it derives much of its rule syntax. IPFilter was removed from OpenBSD's CVS tree due to OpenBSD developers' problems with its license. Specifically, Reed distributed some versions of his software with the license clause, "Derivative or modified works are not permitted without the author's prior consent." Due to this, the OpenBSD team decided to replace the software. This decision became the subject of wrangling among the parties involved, degenerating into a discussion that failed to reach mutual understanding. On the subject, OpenBSD project leader Theo de Raadt wrote, "Software which OpenBSD uses and redistributes must be free to all... for any purpose including... modification."</p>
 <p>PF has since evolved quickly and now has several advantages over other available firewalls. Network Address Translation (NAT) and Quality of Service (QoS) have been integrated into PF, QoS by importing the ALTQ queuing software and linking it with PF's configuration. Features such as pfsync and CARP for failover and redundancy, authpf for session authentication, and ftp-proxy to ease firewalling the difficult FTP protocol, have also extended PF.</p>
@@ -180,10 +182,10 @@ net.inet.ip.forwarding <span class="o">=</span> 1
 
 <p><img class="center" width="600" src="/images/pf_rules.png"></p>
 <h2>Conclusions</h2>
-<p>PF is one of the most popular and powerful firewall for managing your network traffic. We have barely even scracthed surface of what PF can provide. It's functionality is much more then many of the commercial offerings offers.<br />
+<p>PF is one of the most popular and powerful firewall for managing your network traffic. We have barely even scratched surface of what PF can provide. It's functionality is much more then many of the commercial offerings offers.<br />
 We will also cover some extended functionality such as usage of Anchors, Preventing torrent traffic, Blacklisting and preventing brute-forcing attack etc.
 Being open-source it places no restrictions on usage. Users can use it any which way they would prefer.  </p>
-<p>Having been used PF and openBSD for nearly 10 years in all of my setups I can say PF is most secure firewall there is and With combination of OpenBSD and PF you can be pretty sure you are one step ahead then rest  in process of being NSA proof.</p></div>
+<p>Having been used PF and OpenBSD for nearly 10 years in all of my setups I can say PF is most secure firewall there is and With combination of OpenBSD and PF you can be pretty sure you are one step ahead then rest  in process of being NSA proof.</p></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">

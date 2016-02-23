@@ -3,9 +3,66 @@
     src: url(literata-regular.otf);
 }
 
+/*Make Content background solarized!*/
+#content {
+    background-color:#eee8d5; color:#002b36 !important; 
+}
 
+/*Add specialized readable fonts to your pages :D*/
 p {
     font-size: 22px;
     font-family: Lit1 !important ;
+}
 
+h1 {
+    font-size: 2.6em;
+    font-family: Lit1 !important;
+    transition: all 0.3s ease-out 0s
+    /*transition: all .2s ease-in-out;*/
+
+}
+
+h2, h3, h4, h5, h6 {
+     font-family: Lit1 !important;
+}
+
+img:hover {
+     transform: scale(1.3);
+}
+
+h2:hover {
+     /*transform: scale(1.1);*/
+}
+ul li {
+    font-size: 22px;
+    font-family: Lit1 !important ;
+}
+
+.term {
+     /*color: red !important;*/
+     padding: 2px ;
+
+.term:hover {
+     transform: scale(1.1);
+}
+
+/*.highlight {*/
+ /*font-family: Monaco !important;*/
+ /*font-size: 1.3em;*/
+/*}*/
+
+/*.gist-highlight {*/
+     /*font-family: Monaco !important;*/
+     /*font-size: 1.3em;*/
+/*}*/
+
+body > nav form .search {
+     padding: 3px; 
+     z-index: 1;
+}
+
+body > nav a {
+     text-shadow: 2px 1px 2px #ebebeb;
+}
+body > nav a:hover {
 }
