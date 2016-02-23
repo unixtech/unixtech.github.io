@@ -8,7 +8,7 @@ Authors: Unixer
 Summary: Securing your environment via `PF`
 
 ## FreeBSD and OpenBSD 
-PF (Packet filter) is default firewall for OpenBSD and included in other OSes like [FreeBSD](http://www.freebsd.org) and [Apple](http://www.apple.com "Apple") IOS operating systems. Many other "Commercial firewall" appliances are inspired by PF.
+PF (Packet filter) is default firewall for OpenBSD and included in other OS's like [FreeBSD](http://www.freebsd.org) and [Apple](http://www.apple.com "Apple") IOS operating systems. Many other "Commercial firewall" appliances are inspired by PF.
 
 ##History of PF
 
@@ -131,10 +131,10 @@ To see which rules are currently loaded, It will also show related counters.
 
 
 ## Conclusions
-PF is one of the most popular and powerful firewall for managing your network traffic. We have barely even scracthed surface of what PF can provide. It's functionality is much more then many of the commercial offerings offers.  
+PF is one of the most popular and powerful firewall for managing your network traffic. We have barely even scratched surface of what PF can provide. It's functionality is much more then many of the commercial offerings offers.  
 We will also cover some extended functionality such as usage of Anchors, Preventing torrent traffic, Blacklisting and preventing brute-forcing attack etc.
 Being open-source it places no restrictions on usage. Users can use it any which way they would prefer.  
 
-Having been used PF and openBSD for nearly 10 years in all of my setups I can say PF is most secure firewall there is and With combination of OpenBSD and PF you can be pretty sure you are one step ahead then rest  in process of being NSA proof.
+Having been used PF and OpenBSD for nearly 10 years in all of my setups I can say PF is most secure firewall there is and With combination of OpenBSD and PF you can be pretty sure you are one step ahead then rest  in process of being NSA proof.
 
 
