@@ -2,7 +2,7 @@ Title: PF Firewall-1
 Date: 2014-12-04 13:02
 Modified: 2014-12-06 13:30
 Category: Unix    
-Tags: Unix, Monitor
+Tags: Unix, Firewall
 Slug: pf-firewall-1 
 Authors: Unixer
 Summary: Securing your environment via `PF`

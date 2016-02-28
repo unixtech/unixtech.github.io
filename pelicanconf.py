@@ -27,7 +27,7 @@ DEFAULT_LANG = 'en'
 # AUTHOR_FEED_RSS = None
 
 
-FAVICON_FILENAME = 'images/favicon.png'
+FAVICON_FILENAME = 'images/favicon.ico'
 # Blogroll
 #LINKS = (('Pelican', 'http://getpelican.com/'),
          #('Python.org', 'http://python.org/'),
@@ -38,7 +38,7 @@ FAVICON_FILENAME = 'images/favicon.png'
 #SOCIAL = (('You can add links in your config file', '#'),
           #('Another social link', '#'),)
 
-DEFAULT_PAGINATION = 6
+DEFAULT_PAGINATION = 4
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
@@ -55,8 +55,8 @@ X_MIN_READ = True
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False
 LOAD_CONTENT_CACHE = False
-#"Menu setting
-MENUITEMS = [('About ME', '/pages/About Unixer.html'), ('Archives', '/archives.html'), ('Contact', '/pages/contact-me.html')]
+#"Menu setting Twitter persona
+MENUITEMS = [('About ME', '/pages/About.html'), ('Archives', '/archives.html') ]
 
 
 #Plugin things
