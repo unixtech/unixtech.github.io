@@ -26,15 +26,16 @@
         rel="stylesheet" type="text/css">
 <link href="../theme/css/font-awesome-4.5.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
 
-  <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
-        rel="stylesheet" type="text/css">
-  <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"
-        rel="stylesheet" type="text/css">
+  <!--<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"-->
+        <!--rel="stylesheet" type="text/css">-->
+  <!--<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"-->
+        <!--rel="stylesheet" type="text/css">-->
 </head>
 
 <body>
   <header role="banner"><hgroup>
-  <h1><a href="../">UnixTech</a></h1>
+<!--<h1><span class="logo1"><img class="logo2" src=../images/favicon.ico height="64" width="64"></span><a href="../">UnixTech</a></h1>-->
+<h1><span class="logo1"><a href="../">UnixTech</a></h1>
     <h2>Technology, Creativity, Business - Amplified</h2>
 </hgroup></header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
@@ -58,8 +59,8 @@
 <header>
       <h1 class="entry-title">PF Firewall-1</h1>
     <p class="meta">
-<time datetime="2014-12-04T13:02:00+05:30" pubdate>Thu 04 December 2014</time>  <!--&ndash; &#9719; 4 min read-->
-  &ndash;  <i class="fa fa-clock-o term"> </i> 4 min read
+<time datetime="2014-12-04T13:02:00+05:30" pubdate>Thu 04 December 2014</time>  <!--&ndash; &#9719; 5 min read-->
+  &ndash;  <i class="fa fa-clock-o term"> </i> 5 min read
     </p>
 </header>
 
@@ -109,7 +110,7 @@ We will mainly focus on OpenBSD OS but there are benefits of using <code>PF</cod
 <span class="nv">BOTHADMIN</span> <span class="o">=</span><span class="s2">&quot;{&quot;</span> <span class="nv">$AD</span>MIN <span class="nv">$AD</span>MIN1 <span class="s2">&quot;}&quot;</span>
 <span class="nv">EXTDNSSERVER</span> <span class="o">=</span><span class="s2">&quot;4.2.2.2&quot;</span>
 <span class="nv">INTDNSSERVER</span> <span class="o">=</span><span class="s2">&quot;</span>$<span class="s2">INTIF:0&quot;</span>
-<span class="c1">#DNSSERVERS =&quot;{&quot; $INTDNSSERVER $EXTDNSSERVER &quot;}&quot;</span>
+<span class="c1">#DNSSERVERS =&quot;{&#39; $INTDNSSERVER $EXTDNSSERVER &#39;}&quot;</span>
 <span class="nv">DNSSERVER</span> <span class="o">=</span><span class="s2">&quot;{</span>$<span class="s2">INTDNSSERVER}&quot;</span>
 <span class="nv">LOGSERVER</span> <span class="o">=</span> <span class="s2">&quot;{ 10.0.11.22, 10.0.11.31  }&quot;</span>
 </pre></div>
@@ -184,7 +185,22 @@ net.inet.ip.forwarding <span class="o">=</span> 1
 <p>PF is one of the most popular and powerful firewall for managing your network traffic. We have barely even scratched surface of what PF can provide. It's functionality is much more then many of the commercial offerings offers.<br />
 We will also cover some extended functionality such as usage of Anchors, Preventing torrent traffic, Blacklisting and preventing brute-forcing attack etc.
 Being open-source it places no restrictions on usage. Users can use it any which way they would prefer.  </p>
-<p>Having been used PF and OpenBSD for nearly 10 years in all of my setups I can say PF is most secure firewall there is and With combination of OpenBSD and PF you can be pretty sure you are one step ahead then rest  in process of being NSA proof.</p></div>
+<p>Having  used PF and OpenBSD for nearly 10 years in all of my setups I can say PF is most secure firewall there is and With combination of OpenBSD and PF you can be pretty sure you are one step ahead then rest  in process of being NSA proof.</p>
+<script type="text/babel">
+var CommentBox = React.createClass({
+  render: function() {
+    return (
+      <div className="commentBox">
+        Hello, world! I am a CommentBox.
+      </div>
+    );
+  }
+});
+ReactDOM.render(
+  <CommentBox />,
+  document.getElementById('comment')
+);
+</script></div>
     <footer>
 <p class="meta">
   <span class="byline author vcard">
@@ -222,7 +238,7 @@ Being open-source it places no restrictions on usage. Users can use it any which
 
   <section>
   <h1>Tags</h1>
-    <a href="../tag/firewall.html">Firewall</a>,    <a href="../tag/unix.html">Unix</a>  </section>
+    <a href="../tag/unix.html">Unix</a>,    <a href="../tag/firewall.html">Firewall</a>  </section>
 
 
 
@@ -234,5 +250,9 @@ Being open-source it places no restrictions on usage. Users can use it any which
   <script src="../theme/js/modernizr-2.0.js"></script>
   <script src="../theme/js/ender.js"></script>
   <script src="../theme/js/octopress.js" type="text/javascript"></script>
+  <script src="../theme/js/react/build/react-with-addons.min.js" type="text/javascript"></script>
+  <script src="../theme/js/react/build/react-dom.min.js" type="text/javascript"></script>
+  <script src="../theme/js/react/build/browser.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
 </body>
 </html>

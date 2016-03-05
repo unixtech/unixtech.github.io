@@ -60,7 +60,7 @@ File - `/etc/pf.conf`
     BOTHADMIN ="{" $ADMIN $ADMIN1 "}"
     EXTDNSSERVER ="4.2.2.2"
     INTDNSSERVER ="$INTIF:0"
-    #DNSSERVERS ="{" $INTDNSSERVER $EXTDNSSERVER "}"
+    #DNSSERVERS ="{' $INTDNSSERVER $EXTDNSSERVER '}"
     DNSSERVER ="{$INTDNSSERVER}"
     LOGSERVER = "{ 10.0.11.22, 10.0.11.31  }"
 
@@ -135,6 +135,21 @@ PF is one of the most popular and powerful firewall for managing your network tr
 We will also cover some extended functionality such as usage of Anchors, Preventing torrent traffic, Blacklisting and preventing brute-forcing attack etc.
 Being open-source it places no restrictions on usage. Users can use it any which way they would prefer.  
 
-Having been used PF and OpenBSD for nearly 10 years in all of my setups I can say PF is most secure firewall there is and With combination of OpenBSD and PF you can be pretty sure you are one step ahead then rest  in process of being NSA proof.
+Having  used PF and OpenBSD for nearly 10 years in all of my setups I can say PF is most secure firewall there is and With combination of OpenBSD and PF you can be pretty sure you are one step ahead then rest  in process of being NSA proof.
 
 
+<script type="text/babel">
+var CommentBox = React.createClass({
+  render: function() {
+    return (
+      <div className="commentBox">
+        Hello, world! I am a CommentBox.
+      </div>
+    );
+  }
+});
+ReactDOM.render(
+  <CommentBox />,
+  document.getElementById('comment')
+);
+</script>

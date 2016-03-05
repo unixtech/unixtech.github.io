@@ -15,6 +15,11 @@ FDF
 This is the content of my super blog post.1
 We will be witnessing such thing is unimaginable to me.
 
+<!--{% include_code /static/code/hello.py %}-->
+
+<!--{% include_code /path/to/code.py [lang:python] [lines:X-Y] [:hi-->
+<!--defilename:] [title] %}-->
+<!--{% include_code hello1.py %}-->
 {% img center /images/2.png 600px 400px "Ping1" %}
 
 ##Title 2

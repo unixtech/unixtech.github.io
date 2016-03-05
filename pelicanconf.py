@@ -8,7 +8,7 @@ SITESUBTITLE = "Technology, Creativity, Business - Amplified"
 SITEURL = 'https://unixtech.github.io'
 
 PATH = 'content'
-STATIC_PATHS = ['images', 'downloads', 'static/code']
+STATIC_PATHS = ['images', 'downloads', 'static/code' ]
 CODE_DIR = 'static/code'
 ARTICLE_PATHS = ['blog']
 ARTICLE_SAVE_AS = '{date:%m-%Y}/{slug}.html'
@@ -61,8 +61,9 @@ MENUITEMS = [('About ME', '/pages/About.html'), ('Archives', '/archives.html') ]
 
 #Plugin things
 PLUGIN_PATHS = ['../pelican-plugins']
-PLUGINS = ['liquid_tags.include_code', 'liquid_tags.img', 'liquid_tags.video',  'liquid_tags.youtube', 'clean_summary', 'post_stats', 'render_math', 'latex']
+PLUGINS = ['liquid_tags.include_code', 'liquid_tags.img', 'liquid_tags.video',  'liquid_tags.youtube', 'clean_summary', 'post_stats', 'render_math', 'latex', 'tipue_search']
 
+# DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'authors', 'archives', 'search'))
 
 #MathJAX Settings
 LATEX = 'article'
