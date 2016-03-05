@@ -3,9 +3,13 @@
     src: url(literata-regular.otf);
 }
 
+@font-face {
+    font-family: Aller;
+    src: url(Aller_Rg.ttf);
+}
 /*Make Content background solarized!*/
 #content {
-    background-color:#eee8d5; color:#002b36 !important; 
+    background-color:#fdf6e3; color:#002b36 !important; 
 }
 
 /*Add specialized readable fonts to your pages :D*/
@@ -27,7 +31,7 @@ h2, h3, h4, h5, h6 {
 }
 
 img:hover {
-     transform: scale(1.1);
+     transform: scale(1.02);
 }
 
 h2:hover {
@@ -41,28 +45,39 @@ ul li {
 .term {
      /*color: red !important;*/
      padding: 2px ;
+ }
 
 .term:hover {
      transform: scale(1.1);
 }
 
-/*.highlight {*/
- /*font-family: Monaco !important;*/
- /*font-size: 1.3em;*/
-/*}*/
+#content .blog-index a[rel="full-article"] {
+    background: none; color:#002b36 !important; 
+    border-radius: 50px;
+    box-shadow: 5px 3px 8px #eee, inset 0px 2px 3px #fff;
+    z-index: 1;
+    border: 2.3px solid;
+}
 
-/*.gist-highlight {*/
-     /*font-family: Monaco !important;*/
-     /*font-size: 1.3em;*/
-/*}*/
+#content .blog-index a[rel="full-article"]:hover {
+    background: none;
+    color: #002b36 !important; 
+    border: 3px solid;
+    transform: scale(1.08);
+}
 
+body > nav a { 
+    font-family: Aller !important ;
+}
 body > nav form .search {
      padding: 3px; 
      z-index: 1;
+     color: #00ee66;
 }
 
-body > nav a {
-     text-shadow: 2px 1px 2px #ebebeb;
+body > nav ul li {
+     /*text-shadow: 2px 1px 2px #ebebeb;*/
+    color: black !important;
 }
-body > nav a:hover {
-}
+
+

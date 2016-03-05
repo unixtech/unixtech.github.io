@@ -45,7 +45,7 @@ We will mainly focus on OpenBSD OS but there are benefits of using &lt;code&gt;P
 &lt;span class="nv"&gt;BOTHADMIN&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;{&amp;quot;&lt;/span&gt; &lt;span class="nv"&gt;$AD&lt;/span&gt;MIN &lt;span class="nv"&gt;$AD&lt;/span&gt;MIN1 &lt;span class="s2"&gt;&amp;quot;}&amp;quot;&lt;/span&gt;
 &lt;span class="nv"&gt;EXTDNSSERVER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;4.2.2.2&amp;quot;&lt;/span&gt;
 &lt;span class="nv"&gt;INTDNSSERVER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;$&lt;span class="s2"&gt;INTIF:0&amp;quot;&lt;/span&gt;
-&lt;span class="c1"&gt;#DNSSERVERS =&amp;quot;{&amp;quot; $INTDNSSERVER $EXTDNSSERVER &amp;quot;}&amp;quot;&lt;/span&gt;
+&lt;span class="c1"&gt;#DNSSERVERS =&amp;quot;{&amp;#39; $INTDNSSERVER $EXTDNSSERVER &amp;#39;}&amp;quot;&lt;/span&gt;
 &lt;span class="nv"&gt;DNSSERVER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;{&lt;/span&gt;$&lt;span class="s2"&gt;INTDNSSERVER}&amp;quot;&lt;/span&gt;
 &lt;span class="nv"&gt;LOGSERVER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;{ 10.0.11.22, 10.0.11.31  }&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -120,4 +120,19 @@ net.inet.ip.forwarding &lt;span class="o"&gt;=&lt;/span&gt; 1
 &lt;p&gt;PF is one of the most popular and powerful firewall for managing your network traffic. We have barely even scratched surface of what PF can provide. It's functionality is much more then many of the commercial offerings offers.&lt;br /&gt;
 We will also cover some extended functionality such as usage of Anchors, Preventing torrent traffic, Blacklisting and preventing brute-forcing attack etc.
 Being open-source it places no restrictions on usage. Users can use it any which way they would prefer.  &lt;/p&gt;
-&lt;p&gt;Having been used PF and OpenBSD for nearly 10 years in all of my setups I can say PF is most secure firewall there is and With combination of OpenBSD and PF you can be pretty sure you are one step ahead then rest  in process of being NSA proof.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Unixer</dc:creator><pubDate>Sat, 06 Dec 2014 13:30:00 +0530</pubDate><guid>tag:unixtech.github.io,2014-12-04:12-2014/pf-firewall-1.html</guid><category>Unix</category><category>Firewall</category></item></channel></rss>
+&lt;p&gt;Having  used PF and OpenBSD for nearly 10 years in all of my setups I can say PF is most secure firewall there is and With combination of OpenBSD and PF you can be pretty sure you are one step ahead then rest  in process of being NSA proof.&lt;/p&gt;
+&lt;script type="text/babel"&gt;
+var CommentBox = React.createClass({
+  render: function() {
+    return (
+      &lt;div className="commentBox"&gt;
+        Hello, world! I am a CommentBox.
+      &lt;/div&gt;
+    );
+  }
+});
+ReactDOM.render(
+  &lt;CommentBox /&gt;,
+  document.getElementById('comment')
+);
+&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Unixer</dc:creator><pubDate>Sat, 06 Dec 2014 13:30:00 +0530</pubDate><guid>tag:unixtech.github.io,2014-12-04:12-2014/pf-firewall-1.html</guid><category>Unix</category><category>Firewall</category></item></channel></rss>
