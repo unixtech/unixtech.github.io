@@ -115,7 +115,7 @@ net.inet.ip.forwarding &lt;span class="o"&gt;=&lt;/span&gt; 1
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img width="600" class="center" src="/images/pf_rules.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/pf_rules.png" class="center" width="600"&gt;&lt;/p&gt;
 &lt;h2&gt;Conclusions&lt;/h2&gt;
 &lt;p&gt;PF is one of the most popular and powerful firewall for managing your network traffic. We have barely even scratched surface of what PF can provide. It's functionality is much more then many of the commercial offerings offers.&lt;br /&gt;
 We will also cover some extended functionality such as usage of Anchors, Preventing torrent traffic, Blacklisting and preventing brute-forcing attack etc.
@@ -135,4 +135,79 @@ ReactDOM.render(
   &lt;CommentBox /&gt;,
   document.getElementById('comment')
 );
-&lt;/script&gt;</summary><category term="Unix"></category><category term="Firewall"></category></entry></feed>
+&lt;/script&gt;</summary><category term="Unix"></category><category term="Firewall"></category></entry><entry><title>super titsle</title><link href="https://unixtech.github.io/12-2010/mys-super-p2ost.html" rel="alternate"></link><updated>2010-12-05T13:30:00+05:30</updated><author><name>Unixer</name></author><id>tag:unixtech.github.io,2010-12-03:12-2010/mys-super-p2ost.html</id><summary type="html">&lt;p&gt;FDF&lt;/p&gt;
+&lt;h3&gt;&lt;/h3&gt;
+&lt;p&gt;This is the content of my super blog post.1
+We will be witnessing such thing is unimaginable to me.&lt;/p&gt;
+&lt;!--{% include_code /static/code/hello.py %}--&gt;
+
+&lt;!--{% include_code /path/to/code.py [lang:python] [lines:X-Y] [:hi--&gt;
+
+&lt;!--defilename:] [title] %}--&gt;
+
+&lt;!--{% include_code hello1.py %}--&gt;
+
+&lt;p&gt;&lt;img src="/images/2.png" class="center" width="600"&gt;&lt;/p&gt;
+&lt;h2&gt;Title 2&lt;/h2&gt;
+&lt;div class="math"&gt;$$x^2$$&lt;/div&gt;
+&lt;p&gt;
+mulcha&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(x^2\)&lt;/span&gt;  - This is inline math
+&lt;span class="math"&gt;\(e=mc^2\)&lt;/span&gt; - This is perfect. :D&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'blue ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('SansSerif' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_SansSerif');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_SansSerif-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_SansSerif-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_SansSerif-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_SansSerif');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_SansSerif-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_SansSerif-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_SansSerif-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</summary><category term="pelican"></category><category term="publishing"></category></entry></feed>
