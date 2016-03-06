@@ -2,6 +2,7 @@ Title: About
 Slug: About
 Authors: Unixer
 <!--Summary: Short version for index and feeds-->
+Category: Unix    
 
 A Blog about all the things Software - Mainly Unix and friends.  
 I am Python programmer and Artist who uses open source tools for earning bread, So expect stuff on that too.

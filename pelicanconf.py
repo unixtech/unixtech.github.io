@@ -18,7 +18,7 @@ TIMEZONE = 'Asia/Kolkata'
 
 DEFAULT_LANG = 'en'
 
-# Feed generation is usually not desired when developing
+# Feed generation is usually not desired when developing, So better place is to put them inside publishconf
 # FEED_DOMAIN = SITEURL
 # FEED_ALL_ATOM = 'feeds/all-atom.xml'
 # CATEGORY_FEED_ATOM = 'feeds/%s-atom.xml'
@@ -67,7 +67,7 @@ PLUGINS = ['liquid_tags.include_code', 'liquid_tags.img', 'liquid_tags.video',  
 
 #MathJAX Settings
 LATEX = 'article'
-MATH_JAX = {'color':'blue', 'align':'centre'}
+MATH_JAX = {'color':'blue', 'align':'centre', 'mathjax_font':'sanserif'}
 
 #Pure pelican specific settings
 # COVER_IMG_URL = "images/3.jpg"
