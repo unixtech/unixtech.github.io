@@ -5,7 +5,7 @@ Category: Super1
 Tags: pelican, publishing
 Slug: mys-super-p2ost
 Authors: Unixer
-Status: published
+Status: draft
 Summary: Short version for index and feeds
 LATEX:
 
