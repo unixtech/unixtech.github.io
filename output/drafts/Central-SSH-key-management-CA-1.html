@@ -65,7 +65,7 @@
     </p>
 </header>
 
-  <div class="entry-content"><p><img src="/images/openssh.gif" class="center" width="600"></p>
+  <div class="entry-content"><p><img width="600" class="center" src="/images/openssh.gif"></p>
 <h2>Intro</h2>
 <p>It's always challenge in itself to handle SSH private keys, Managing authentication ( Without-password ) and keeping it upto date. Things like taking control of the keys plus revoking the keys as needed is formidable challenge for any senior admin.<br />
 One can do it via traditional <code>authorized_keys</code> file but overtime it becomes messy to maintain and more prone to errors. This becomes all the more important when you can't handle key management to you users whom you deem undesirable to be able to comprehend . </p>
@@ -73,7 +73,7 @@ One can do it via traditional <code>authorized_keys</code> file but overtime it 
 <p>So, Decided to move to CA based authentication with OpenSSH with OpenLDAP. In this part we will cover just CA based key management later parts we will do it with OpenLDAP integration and how does one maintain the whole ssh keys management via ansible.  </p>
 <p>It doesn't really matter which methods you adopt as long as you have prior policy to deal with regular management of keys.  </p>
 <h2>Lab Topology</h2>
-<p><img src="/images/sshca_topology1.png" class="center" width="600">
+<p><img width="600" class="center" src="/images/sshca_topology1.png">
 <span  {align= center;}  ><strong> <em>Fig1</em>- Strong SSH manta:</strong> Scopus SSH lie manteld. Mentali menta so. </span></p>
 <blockquote>
 <p>CA server will only be used to generate CA key and Sign and generate certificates for public keys that you have received from various users.  </p>
@@ -205,7 +205,7 @@ To avoid confusion here are the files required on various machines for Host cert
 
   <section>
   <h1>Tags</h1>
-    <a href="../tag/unix.html">Unix</a>,    <a href="../tag/pelican.html">pelican</a>,    <a href="../tag/firewall.html">Firewall</a>,    <a href="../tag/publishing.html">publishing</a>  </section>
+    <a href="../tag/publishing.html">publishing</a>,    <a href="../tag/unix.html">Unix</a>,    <a href="../tag/pelican.html">pelican</a>,    <a href="../tag/firewall.html">Firewall</a>  </section>
 
 
 

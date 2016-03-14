@@ -48,7 +48,7 @@ RELATIVE_URLS = True
 # TWITTER_FOLLOW_BUTTON = True
 # TWITTER_TWEET_BUTTON = True
 
-THEME = "../pelican-octopress-theme"
+THEME = "pelican-octopress-theme"
 SEARCH_BOX = True
 X_MIN_READ = True
 
@@ -60,7 +60,7 @@ MENUITEMS = [('About ME', '/pages/About.html'), ('Archives', '/archives.html') ]
 
 
 #Plugin things
-PLUGIN_PATHS = ['../pelican-plugins']
+PLUGIN_PATHS = ['pelican-plugins']
 PLUGINS = ['liquid_tags.include_code', 'liquid_tags.img', 'liquid_tags.video',  'liquid_tags.youtube', 'clean_summary', 'post_stats', 'render_math', 'latex', 'tipue_search']
 
 # DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'authors', 'archives', 'search'))

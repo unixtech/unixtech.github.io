@@ -72,7 +72,7 @@ body > nav a {
 body > nav form .search {
      padding: 3px; 
      z-index: 1;
-     color: #00ee66;
+     /*color: #0f2f36;*/
 }
 
 body > nav ul li {

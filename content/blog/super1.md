@@ -30,3 +30,5 @@ mulcha
 
 $x^2$  - This is inline math
 $e=mc^2$ - This is perfect. :D
+
+In normal series In-line math is working but in reveals you can't use In line math if you are doing some sort of Markdown presentations.
