@@ -135,79 +135,201 @@ ReactDOM.render(
   &lt;CommentBox /&gt;,
   document.getElementById('comment')
 );
-&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Unixer</dc:creator><pubDate>Sat, 06 Dec 2014 13:30:00 +0530</pubDate><guid>tag:unixtech.github.io,2014-12-04:12-2014/pf-firewall-1.html</guid><category>Unix</category><category>Firewall</category></item><item><title>super titsle</title><link>https://unixtech.github.io/12-2010/mys-super-p2ost.html</link><description>&lt;p&gt;FDF&lt;/p&gt;
-&lt;h3&gt;&lt;/h3&gt;
-&lt;p&gt;This is the content of my super blog post.1
-We will be witnessing such thing is unimaginable to me.&lt;/p&gt;
-&lt;!--{% include_code /static/code/hello.py %}--&gt;
+&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Unixer</dc:creator><pubDate>Sat, 06 Dec 2014 13:30:00 +0530</pubDate><guid>tag:unixtech.github.io,2014-12-04:12-2014/pf-firewall-1.html</guid><category>Unix</category><category>Firewall</category></item><item><title>Unix essentials-1 Find</title><link>https://unixtech.github.io/01-2010/practical-find.html</link><description>&lt;p&gt;The &lt;code&gt;Find&lt;/code&gt; utility in Linux is very useful in the sense that it quickly locates and searches through list of files and directories.
+It can do so based on condition that you pass through arguments. 
+&lt;code&gt;Find&lt;/code&gt; can find files using different conditions like:  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Permissions&lt;/li&gt;
+&lt;li&gt;Users&lt;/li&gt;
+&lt;li&gt;Groups&lt;/li&gt;
+&lt;li&gt;File type&lt;/li&gt;
+&lt;li&gt;Date&lt;/li&gt;
+&lt;li&gt;Size and more.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Basic Usage&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Find file in current directory&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt; &lt;span class="c1"&gt;# Find by filename in Current dir&lt;/span&gt;
+ find . -name unixtech.txt
 
-&lt;!--{% include_code /path/to/code.py [lang:python] [lines:X-Y] [:hi--&gt;
+ &lt;span class="c1"&gt;#Output&lt;/span&gt;
+ ./unixtech.txt
+&lt;/pre&gt;&lt;/div&gt;
 
-&lt;!--defilename:] [title] %}--&gt;
 
-&lt;!--{% include_code hello1.py %}--&gt;
+&lt;ul&gt;
+&lt;li&gt;Find file in current directory &lt;span class="fa fa-arrow-right"&gt;&lt;/span&gt; Case insensitive&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt; &lt;span class="c1"&gt;# Find by filename in Current dir&lt;/span&gt;
+ find . -iname unixtech.txt
 
-&lt;p&gt;&lt;img src="/images/2.png" class="center" width="600"&gt;&lt;/p&gt;
-&lt;h2&gt;Title 2&lt;/h2&gt;
-&lt;div class="math"&gt;$$x^2$$&lt;/div&gt;
-&lt;p&gt;
-mulcha&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(x^2\)&lt;/span&gt;  - This is inline math
-&lt;span class="math"&gt;\(e=mc^2\)&lt;/span&gt; - This is perfect. :D&lt;/p&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
+ &lt;span class="c1"&gt;#Output&lt;/span&gt;
+ ./unixtech.txt
+&lt;/pre&gt;&lt;/div&gt;
 
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
 
-    var mathjaxscript = document.createElement('script');
-    var location_protocol = (false) ? 'https' : document.location.protocol;
-    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'blue ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('SansSerif' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_SansSerif');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_SansSerif-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_SansSerif-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_SansSerif-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_SansSerif');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_SansSerif-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_SansSerif-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_SansSerif-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Unixer</dc:creator><pubDate>Sun, 05 Dec 2010 13:30:00 +0530</pubDate><guid>tag:unixtech.github.io,2010-12-03:12-2010/mys-super-p2ost.html</guid><category>pelican</category><category>publishing</category></item></channel></rss>
+&lt;ul&gt;
+&lt;li&gt;Recursively searching file in all in whole system&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;# Recurse through whole file system&lt;/span&gt;
+find / -name &lt;span class="nv"&gt;$F&lt;/span&gt;ILENAME
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Find files based on permissions&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Find files certain permissions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;# Find only files with full 777 permissions&lt;/span&gt;
+find / -perm &lt;span class="m"&gt;0777&lt;/span&gt; -print
+&lt;span class="c1"&gt;# Find files with SGID bit set &lt;/span&gt;
+find / -perm 2644
+&lt;span class="c1"&gt;# Or&lt;/span&gt;
+find / -perm /g+s
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Find all files based on user permissions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;#Find all files with READ permission&lt;/span&gt;
+find / -perm /u&lt;span class="o"&gt;=&lt;/span&gt;r -print
+
+&lt;span class="c1"&gt;# Find all files with executable bit set&lt;/span&gt;
+find / -perm /a&lt;span class="o"&gt;=&lt;/span&gt;x -print
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Find can also execute command on found files based on given criterion.
+In addition to just printing list of files, You can modify, change permission and also delete files using &lt;code&gt;-exec&lt;/code&gt; flag in find command.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So, If you want to change all the files that have permission set to &lt;code&gt;777&lt;/code&gt; to something that only you can modify in your home directory, You may execute following variation of &lt;code&gt;find&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Find all files with &lt;code&gt;777&lt;/code&gt; permission and change it to &lt;code&gt;644&lt;/code&gt; inside your home directory&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;#Find and exec &lt;/span&gt;
+find ~USERNAME -perm &lt;span class="m"&gt;777&lt;/span&gt; -print -exec chmod &lt;span class="m"&gt;644&lt;/span&gt; &lt;span class="o"&gt;{}&lt;/span&gt; &lt;span class="se"&gt;\;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;{}&lt;/td&gt;
+&lt;td&gt;Shell expander which will put current file name from list in &lt;code&gt;-exec&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\;&lt;/td&gt;
+&lt;td&gt;'\' is Shell escape and ';' is Unix chaining symbol&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Here thing to remember is You have to put {} symbol where you want INPUT filename to be, and chain it with \; symbol.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Same thing if you want to remove or list files&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;#List files that matches certain crieteria&lt;/span&gt;
+find / -perm &lt;span class="m"&gt;777&lt;/span&gt; -print -exec ls -la &lt;span class="o"&gt;{}&lt;/span&gt; &lt;span class="se"&gt;\;&lt;/span&gt;
+
+&lt;span class="c1"&gt;#Removing files that matches certain crieteria&lt;/span&gt;
+find / -perm &lt;span class="m"&gt;777&lt;/span&gt; -print -exec rm -rf &lt;span class="o"&gt;{}&lt;/span&gt; &lt;span class="se"&gt;\;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Finding files based on user/group ownership&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;#Find files owned by particular user&lt;/span&gt;
+find / -user unixtech -print
+
+&lt;span class="c1"&gt;#Find files owned by group&lt;/span&gt;
+find / -group unixgroup -print
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Finding files based on modification/changed/accessed date time&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Find files modified 3 days back&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;find / -mtime 3
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;find all the files those are changed last hour&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;#Will return all the files changed in last 60 mins&lt;/span&gt;
+find / -cmin -60
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; '-' sign in front of 60 includes all the files that changed within that timeframe, Ex. It will include files that are changed 3, 5, 10 mins back and so on.
+Notice different criterion for finding files such as &lt;code&gt;-mmin&lt;/code&gt;, &lt;code&gt;cmin&lt;/code&gt;, &lt;code&gt;amin&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th align="center"&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Access time&lt;/td&gt;
+&lt;td align="center"&gt;If you list/delete/open this file then &lt;code&gt;atime&lt;/code&gt; will be modified&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Changed time&lt;/td&gt;
+&lt;td align="center"&gt;Modifying data of the file changes &lt;code&gt;ctime&lt;/code&gt; parameter of file&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Modification time&lt;/td&gt;
+&lt;td align="center"&gt;Same as Changed time but will also be changed upon changes in meta data of the file.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;Use &lt;code&gt;find&lt;/code&gt; to search files based on size&lt;/h2&gt;
+&lt;p&gt;This one is quite useful in case you want to find largest files in your home directory, files that are eating away space on hard drive. &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Find all the  files between 10 MB - 100 MB&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;find /home -size +10M -size -100M
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Find all the files larger then 1GB and delete em&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;#Find larger files and list them first&lt;/span&gt;
+find /home -size +1G -exec ls -la &lt;span class="o"&gt;{}&lt;/span&gt; &lt;span class="se"&gt;\;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# If you see desired files then remove them&lt;/span&gt;
+find /home -size +1G -exec rm -rf &lt;span class="o"&gt;{}&lt;/span&gt; &lt;span class="se"&gt;\;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Find all the movie files larger then 100MB and delete &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;# Find and list files first&lt;/span&gt;
+find /home -size +100M -print -iname &lt;span class="s2"&gt;&amp;quot;*mp4|wmv|mov&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# After listing them just press `UP` arrow, change the CMD and  delete &lt;/span&gt;
+find /home -size +100M -iname &lt;span class="s2"&gt;&amp;quot;*mp4|wmv|mov&amp;quot;&lt;/span&gt; -exec rm -rf &lt;span class="o"&gt;{}&lt;/span&gt; &lt;span class="se"&gt;\;&lt;/span&gt;
+&lt;span class="c1"&gt;#Be careful while executing that command.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Find supports extended regular expressions too. &lt;br /&gt;
+Regular expressions are swiss army knife for solving many kind of problem but they also come with added difficulty of maintaining and generating them. If none&amp;gt; of the above meets your requirement then as last resort only you should use Re&amp;gt;gExes in &lt;code&gt;find&lt;/code&gt; utility.&lt;/p&gt;
+&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Unixer</dc:creator><pubDate>Sun, 03 Jan 2010 18:02:00 +0530</pubDate><guid>tag:unixtech.github.io,2010-01-03:01-2010/practical-find.html</guid><category>Unix</category><category>Essentials</category></item></channel></rss>

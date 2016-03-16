@@ -77,13 +77,14 @@ We will be witnessing such thing is unimaginable to me.</p>
 
 <!--{% include_code hello1.py %}-->
 
-<p><img class="center" width="600" src="/images/2.png"></p>
+<p><img src="/images/2.png" class="center" width="600"></p>
 <h2>Title 2</h2>
 <div class="math">$$x^2$$</div>
 <p>
 mulcha</p>
 <p><span class="math">\(x^2\)</span>  - This is inline math
 <span class="math">\(e=mc^2\)</span> - This is perfect. :D</p>
+<p>In normal series In-line math is working but in reveals you can't use In line math if you are doing some sort of Markdown presentations.</p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -122,20 +123,20 @@ mulcha</p>
         "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
         "    }, " +
         "}); " +
-        "if ('default' !== 'default') {" +
+        "if ('SansSerif' !== 'default') {" +
             "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
                 "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['normal'].fonts.unshift('MathJax_SansSerif');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_SansSerif-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_SansSerif-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_SansSerif-italic');" +
             "});" +
             "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
                 "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['normal'].fonts.unshift('MathJax_SansSerif');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_SansSerif-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_SansSerif-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_SansSerif-italic');" +
             "});" +
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
@@ -165,6 +166,9 @@ mulcha</p>
       <li class="post">
           <a href="../12-2014/pf-firewall-1.html">PF Firewall-1</a>
       </li>
+      <li class="post">
+          <a href="../01-2010/practical-find.html">Unix essentials-1 Find</a>
+      </li>
     </ul>
   </section>
   <section>
@@ -178,14 +182,14 @@ mulcha</p>
 
   <section>
   <h1>Tags</h1>
-    <a href="../tag/unix.html">Unix</a>,    <a href="../tag/firewall.html">Firewall</a>  </section>
+    <a href="../tag/firewall.html">Firewall</a>,    <a href="../tag/essentials.html">Essentials</a>,    <a href="../tag/unix.html">Unix</a>  </section>
 
 
 
 </aside>    </div>
   </div>
   <footer role="contentinfo"><p>
-    Copyright &copy;  2014  <a href="mailto:unixlama@gmail.com">Unixer  </a>
+    Copyright &copy;  2010&ndash;2014  <a href="mailto:unixlama@gmail.com">Unixer  </a>
 </p></footer>
   <script src="../theme/js/modernizr-2.0.js"></script>
   <script src="../theme/js/ender.js"></script>
