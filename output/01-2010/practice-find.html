@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Unix essentials-1 Find &mdash; UnixTech</title>
+  <meta name="author" content="Unixer">
+
+
+
+
+
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="../images/favicon.ico" rel="icon">
+
+  <link href="../theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+<link href="../theme/css/custom.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+<link href="../theme/css/font-awesome-4.5.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
+
+  <!--<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"-->
+        <!--rel="stylesheet" type="text/css">-->
+  <!--<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"-->
+        <!--rel="stylesheet" type="text/css">-->
+</head>
+
+<body>
+  <header role="banner"><hgroup>
+<!--<h1><span class="logo1"><img class="logo2" src=../images/favicon.ico height="64" width="64"></span><a href="../">UnixTech</a></h1>-->
+<h1><span class="logo1"><a href="../">UnixTech</a></h1>
+    <h2>Technology, Creativity, Business - Amplified</h2>
+</hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+</ul>
+
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="..">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+
+<ul class="main-navigation">
+    <li><a href="/pages/About.html">About ME</a></li>
+    <li><a href="/archives.html">Archives</a></li>
+</ul></nav>
+  <div id="main">
+    <div id="content">
+<div>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">Unix essentials-1 Find</h1>
+    <p class="meta">
+<time datetime="2010-01-03T18:02:00+05:30" pubdate>Sun 03 January 2010</time>  <!--&ndash; &#9719; 3 min read-->
+  &ndash;  <i class="fa fa-clock-o term"> </i> 3 min read
+    </p>
+</header>
+
+  <div class="entry-content"><p>The <code>Find</code> utility in Linux is very useful in the sense that it quickly locates and searches through list of files and directories.
+It can do so based on condition that you pass through arguments. 
+<code>Find</code> can find files using different conditions like:  </p>
+<ul>
+<li>Permissions</li>
+<li>Users</li>
+<li>Groups</li>
+<li>File type</li>
+<li>Date</li>
+<li>Size and more.</li>
+</ul>
+<h2>Basic Usage</h2>
+<ul>
+<li>Find file in current directory</li>
+</ul>
+<div class="highlight"><pre> <span class="c1"># Find by filename in Current dir</span>
+ find . -name unixtech.txt
+
+ <span class="c1">#Output</span>
+ ./unixtech.txt
+</pre></div>
+
+
+<ul>
+<li>Find file in current directory <span class="fa fa-arrow-right"></span> Case insensitive</li>
+</ul>
+<div class="highlight"><pre> <span class="c1"># Find by filename in Current dir</span>
+ find . -iname unixtech.txt
+
+ <span class="c1">#Output</span>
+ ./unixtech.txt
+</pre></div>
+
+
+<ul>
+<li>Recursively searching file in all in whole system</li>
+</ul>
+<div class="highlight"><pre><span class="c1"># Recurse through whole file system</span>
+find / -name <span class="nv">$F</span>ILENAME
+</pre></div>
+
+
+<h2>Find files based on permissions</h2>
+<ul>
+<li>Find files certain permissions</li>
+</ul>
+<div class="highlight"><pre><span class="c1"># Find only files with full 777 permissions</span>
+find / -perm <span class="m">0777</span> -print
+<span class="c1"># Find files with SGID bit set </span>
+find / -perm 2644
+<span class="c1"># Or</span>
+find / -perm /g+s
+</pre></div>
+
+
+<ul>
+<li>Find all files based on user permissions</li>
+</ul>
+<div class="highlight"><pre><span class="c1">#Find all files with READ permission</span>
+find / -perm /u<span class="o">=</span>r -print
+
+<span class="c1"># Find all files with executable bit set</span>
+find / -perm /a<span class="o">=</span>x -print
+</pre></div>
+
+
+<blockquote>
+<p><strong>Note:</strong> Find can also execute command on found files based on given criterion.
+In addition to just printing list of files, You can modify, change permission and also delete files using <code>-exec</code> flag in find command.</p>
+</blockquote>
+<p>So, If you want to change all the files that have permission set to <code>777</code> to something that only you can modify in your home directory, You may execute following variation of <code>find</code></p>
+<ul>
+<li>Find all files with <code>777</code> permission and change it to <code>644</code> inside your home directory</li>
+</ul>
+<div class="highlight"><pre><span class="c1">#Find and exec </span>
+find ~USERNAME -perm <span class="m">777</span> -print -exec chmod <span class="m">644</span> <span class="o">{}</span> <span class="se">\;</span>
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{}</td>
+<td>Shell expander which will put current file name from list in <code>-exec</code></td>
+</tr>
+<tr>
+<td>\;</td>
+<td>'\' is Shell escape and ';' is Unix chaining symbol</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note:</strong> Here thing to remember is You have to put {} symbol where you want INPUT filename to be, and chain it with \; symbol.</p>
+</blockquote>
+<ul>
+<li>Same thing if you want to remove or list files</li>
+</ul>
+<div class="highlight"><pre><span class="c1">#List files that matches certain crieteria</span>
+find / -perm <span class="m">777</span> -print -exec ls -la <span class="o">{}</span> <span class="se">\;</span>
+
+<span class="c1">#Removing files that matches certain crieteria</span>
+find / -perm <span class="m">777</span> -print -exec rm -rf <span class="o">{}</span> <span class="se">\;</span>
+</pre></div>
+
+
+<h2>Finding files based on user/group ownership</h2>
+<div class="highlight"><pre><span class="c1">#Find files owned by particular user</span>
+find / -user unixtech -print
+
+<span class="c1">#Find files owned by group</span>
+find / -group unixgroup -print
+</pre></div>
+
+
+<h2>Finding files based on modification/changed/accessed date time</h2>
+<ul>
+<li>Find files modified 3 days back</li>
+</ul>
+<div class="highlight"><pre>find / -mtime 3
+</pre></div>
+
+
+<ul>
+<li>find all the files those are changed last hour</li>
+</ul>
+<div class="highlight"><pre><span class="c1">#Will return all the files changed in last 60 mins</span>
+find / -cmin -60
+</pre></div>
+
+
+<blockquote>
+<p><strong>Note:</strong> '-' sign in front of 60 includes all the files that changed within that timeframe, Ex. It will include files that are changed 3, 5, 10 mins back and so on.
+Notice different criterion for finding files such as <code>-mmin</code>, <code>cmin</code>, <code>amin</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access time</td>
+<td align="center">If you list/delete/open this file then <code>atime</code> will be modified</td>
+</tr>
+<tr>
+<td>Changed time</td>
+<td align="center">Modifying data of the file changes <code>ctime</code> parameter of file</td>
+</tr>
+<tr>
+<td>Modification time</td>
+<td align="center">Same as Changed time but will also be changed upon changes in meta data of the file.</td>
+</tr>
+</tbody>
+</table>
+<h2>Used <code>find</code> to search files based on size</h2>
+<p>This one is quite useful in case you want to find largest files in your home directory, files that are eating away space on hard drive. </p>
+<ul>
+<li>Find all the  files between 10 MB - 100 MB</li>
+</ul>
+<div class="highlight"><pre>find /home -size +10M -size -100M
+</pre></div>
+
+
+<ul>
+<li>Find all the files larger then 1GB and delete em</li>
+</ul>
+<div class="highlight"><pre><span class="c1">#Find larger files and list them first</span>
+find /home -size +1G -exec ls -la <span class="o">{}</span> <span class="se">\;</span>
+
+<span class="c1"># If you see desired files then remove them</span>
+find /home -size +1G -exec rm -rf <span class="o">{}</span> <span class="se">\;</span>
+</pre></div>
+
+
+<ul>
+<li>Find all the movie files larger then 100MB and delete </li>
+</ul>
+<div class="highlight"><pre><span class="c1"># Find and list files first</span>
+find /home -size +100M -print -iname <span class="s2">&quot;*mp4|wmv|mov&quot;</span><span class="p">;</span>
+
+<span class="c1"># After listing them just press `UP` arrow, change the CMD and  delete </span>
+find /home -size +100M -iname <span class="s2">&quot;*mp4|wmv|mov&quot;</span> -exec rm -rf <span class="o">{}</span> <span class="se">\;</span>
+<span class="c1">#Be careful while executing that command.</span>
+</pre></div>
+
+
+<blockquote>
+<p><strong>Note:</strong> Find supports extended regular expressions too. <br />
+Regular expressions are swiss army knife for solving many kind of problem but they also come with added difficulty of maintaining and generating them. If none&gt; of the above meets your requirement then as last resort only you should use Re&gt;gExes in <code>find</code> utility.</p>
+</blockquote></div>
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        Unixer
+    </span>
+  </span>
+<time datetime="2010-01-03T18:02:00+05:30" pubdate>Sun 03 January 2010</time>  <span class="categories">
+    <a class='category' href='../category/unix.html'>Unix</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="../tag/unix.html">Unix</a>,    <a class="category" href="../tag/essentials.html">Essentials</a>  </span>
+</p><div class="sharing">
+</div>    </footer>
+  </article>
+
+</div>
+<aside class="sidebar">
+  <section>
+    <h1>Recent Posts</h1>
+    <ul id="recent_posts">
+      <li class="post">
+          <a href="../12-2014/pf-firewall-1.html">PF Firewall-1</a>
+      </li>
+      <li class="post">
+          <a href="../01-2010/practice-find.html">Unix essentials-1 Find</a>
+      </li>
+    </ul>
+  </section>
+  <section>
+      
+    <h1>Categories</h1>
+    <ul id="recent_posts">
+        <li><a href="../category/unix.html">Unix</a></li>
+    </ul>
+  </section>
+ 
+
+  <section>
+  <h1>Tags</h1>
+    <a href="../tag/firewall.html">Firewall</a>,    <a href="../tag/essentials.html">Essentials</a>,    <a href="../tag/unix.html">Unix</a>  </section>
+
+
+
+</aside>    </div>
+  </div>
+  <footer role="contentinfo"><p>
+    Copyright &copy;  2010&ndash;2014  <a href="mailto:unixlama@gmail.com">Unixer  </a>
+</p></footer>
+  <script src="../theme/js/modernizr-2.0.js"></script>
+  <script src="../theme/js/ender.js"></script>
+  <script src="../theme/js/octopress.js" type="text/javascript"></script>
+  <script src="../theme/js/react/build/react-with-addons.min.js" type="text/javascript"></script>
+  <script src="../theme/js/react/build/react-dom.min.js" type="text/javascript"></script>
+  <script src="../theme/js/react/build/browser.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+</body>
+</html>
