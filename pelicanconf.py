@@ -56,7 +56,7 @@ DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False
 LOAD_CONTENT_CACHE = False
 #"Menu setting Twitter persona
-MENUITEMS = [('About ME', '/pages/About.html'), ('Archives', '/archives.html') ]
+MENUITEMS = [('About ME', '/pages/about.html'), ('Archives', '/archives.html') ]
 
 
 #Plugin things

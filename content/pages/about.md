@@ -1,13 +1,35 @@
-Title: About 
+Title: About Unixer
 Slug: about
 Authors: Unixer
+<!--Summary: Short version for index and feeds-->
+<!--Category: Unix    -->
 
-A Blog about all the things Software - Mainly Unix and friends.  
-I am Python programmer and Artist who uses open source tools for earning bread, So expect stuff on that too.
 
+<center>
+##Hi, I am Unixer
+</center>
 
+I study popular tech across wide range of spectrums - Programming languages, Graphical illustrations and more. In doing so I try to uncover some of the best practices of doing certain things.  
+Here, I share it with world!
+
+I am always available to discuss bright product ideas that can bring next revolution!
+
+<center>
+###By being here You can expect to learn on
+</center>
+
+- "Programming" stuff
+- Data science in way it affects human life
+- Tech politics
+
+> Essential question I am trying to answer here is "how to live better".
+
+<!--No, toll claims to answer all questions but will try to clear up things.-->
+
+<p> Have a word with me @: 
+<a href="mailto:unixlama@gmail.com">Unixer</a>  </p>
 <!--{% img center /images/about.png 600p x 400px "Ping1" %}-->
-
+<!--<span class="fa fa-clock-o right">{% img right /images/Por7.png 400p x 200px "Ping1" %}<span class="left"> We can't no longer ignore all this. Messenger is not the issue, Message is the one. We have tp really endure all this in order to make sure we don't become political parayah. We are doing this to ensure support for our cause.</span></span>-->
 
 
 
