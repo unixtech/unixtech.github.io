@@ -115,7 +115,7 @@ net.inet.ip.forwarding &lt;span class="o"&gt;=&lt;/span&gt; 1
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img width="600" class="center" src="/images/pf_rules.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/pf_rules.png" class="center" width="600"&gt;&lt;/p&gt;
 &lt;h2&gt;Conclusions&lt;/h2&gt;
 &lt;p&gt;PF is one of the most popular and powerful firewall for managing your network traffic. We have barely even scratched surface of what PF can provide. It's functionality is much more then many of the commercial offerings offers.&lt;br /&gt;
 We will also cover some extended functionality such as usage of Anchors, Preventing torrent traffic, Blacklisting and preventing brute-forcing attack etc.
