@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = 'Unixer'
 SITENAME = "UnixTech"
 SITESUBTITLE = "Technology, Creativity, Business - Amplified"
-SITEURL = 'https://unixtech.github.io'
+SITEURL = 'http://unixtech.github.io'
 
 PATH = 'content'
 STATIC_PATHS = ['images', 'downloads', 'static/code' ]
@@ -48,7 +48,7 @@ RELATIVE_URLS = True
 # TWITTER_FOLLOW_BUTTON = True
 # TWITTER_TWEET_BUTTON = True
 
-THEME = "pelican-octopress-theme"
+THEME = "../pelican-octopress-theme"
 SEARCH_BOX = True
 X_MIN_READ = True
 
@@ -56,14 +56,14 @@ DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False
 LOAD_CONTENT_CACHE = False
 #"Menu setting Twitter persona
-MENUITEMS = [('About ME', '/pages/about.html'), ('Archives', '/archives.html') ]
+MENUITEMS = [('About ME', '/pages/about.html'), ('Archives', '/archives.html')]
 
 
 #Plugin things
 PLUGIN_PATHS = ['pelican-plugins']
-PLUGINS = ['liquid_tags.include_code', 'liquid_tags.img', 'liquid_tags.video',  'liquid_tags.youtube', 'clean_summary', 'post_stats', 'render_math', 'latex', 'tipue_search']
+PLUGINS = ['liquid_tags.include_code', 'liquid_tags.img', 'liquid_tags.video',  'liquid_tags.youtube', 'clean_summary', 'post_stats', 'render_math', 'latex', 'tipue_search', 'sitemap', 'neighbors']
 
-# DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'authors', 'archives', 'search'))
+DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'authors', 'archives', 'search'))
 
 #MathJAX Settings
 LATEX = 'article'
