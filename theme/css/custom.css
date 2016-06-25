@@ -31,7 +31,10 @@ h2, h3, h4, h5, h6 {
 }
 
 img:hover {
-     transform: scale(1.02);
+     transform: scale(1.01);
+}
+article img, article video, article .flash-video {
+    border: #ffe 0.1em solid;
 }
 
 h2:hover {
