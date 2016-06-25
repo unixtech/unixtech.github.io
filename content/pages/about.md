@@ -12,17 +12,18 @@ Authors: Unixer
 I study popular tech across wide range of spectrums - Programming languages, Graphical illustrations and more. In doing so I try to uncover some of the best practices of doing certain things.  
 Here, I share it with world!
 
-I am always available to discuss bright product ideas that can bring next revolution!
+
 
 <center>
 ###By being here You can expect to learn on
 </center>
 
-- "Programming" stuff
-- Data science in way it affects human life
-- Tech politics
+- Programming 'stuff'
+- Data science
+- Politics in Technology
 
-> Essential question I am trying to answer here is "how to live better".
+
+
 
 <!--No, toll claims to answer all questions but will try to clear up things.-->
 

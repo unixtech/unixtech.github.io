@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Unixer'
 SITENAME = "UnixTech"
-SITESUBTITLE = "Technology, Creativity, Business - Amplified"
+SITESUBTITLE = "Creativity, Business - Amplified"
 SITEURL = 'http://unixtech.github.io'
 
 PATH = 'content'
@@ -60,7 +60,7 @@ MENUITEMS = [('About ME', '/pages/about.html'), ('Archives', '/archives.html')]
 
 
 #Plugin things
-PLUGIN_PATHS = ['pelican-plugins']
+PLUGIN_PATHS = ['../pelican-plugins']
 PLUGINS = ['liquid_tags.include_code', 'liquid_tags.img', 'liquid_tags.video',  'liquid_tags.youtube', 'clean_summary', 'post_stats', 'render_math', 'latex', 'tipue_search', 'sitemap', 'neighbors']
 
 DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'authors', 'archives', 'search'))
