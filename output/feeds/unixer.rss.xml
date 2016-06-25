@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UnixTech</title><link>http://unixtech.github.io/</link><description>Creativity, Business - Amplified</description><atom:link href="http://unixtech.github.io/feeds/unixer.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 15 Jun 2015 16:02:00 +0530</lastBuildDate><item><title>Interviewer's Gaffe-1</title><link>http://unixtech.github.io/06-2015/avoid-doing-interviews-1.html</link><description>&lt;p&gt;&lt;img class="center" width="800" src="/images/bring_star1.png"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img class="center" width="800" src="/images/bring_star2.png"&gt;
-&lt;img class="center" width="800" src="/images/bring_star4.png"&gt;&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UnixTech</title><link>http://unixtech.github.io/</link><description>Creativity, Business - Amplified</description><atom:link href="http://unixtech.github.io/feeds/unixer.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 15 Jun 2015 16:02:00 +0530</lastBuildDate><item><title>Interviewer's Gaffe-1</title><link>http://unixtech.github.io/06-2015/avoid-doing-interviews-1.html</link><description>&lt;p&gt;&lt;img src="/images/bring_star1.png" width="800" class="center"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/bring_star2.png" width="800" class="center"&gt;
+&lt;img src="/images/bring_star4.png" width="800" class="center"&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Plight of Every interviewer&lt;/p&gt;
+&lt;p&gt;Plight of every Interviewer&lt;/p&gt;
 &lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Unixer</dc:creator><pubDate>Mon, 15 Jun 2015 16:02:00 +0530</pubDate><guid>tag:unixtech.github.io,2015-06-15:06-2015/avoid-doing-interviews-1.html</guid><category>Polity</category></item><item><title>PF Firewall-1</title><link>http://unixtech.github.io/12-2014/pf-firewall-1.html</link><description>&lt;h2&gt;FreeBSD and OpenBSD&lt;/h2&gt;
 &lt;p&gt;PF (Packet filter) is default firewall for OpenBSD and included in other OS's like &lt;a href="http://www.freebsd.org"&gt;FreeBSD&lt;/a&gt; and &lt;a href="http://www.apple.com" title="Apple"&gt;Apple&lt;/a&gt; IOS operating systems. Many other "Commercial firewall" appliances are inspired by PF.&lt;/p&gt;
 &lt;h2&gt;History of PF&lt;/h2&gt;
@@ -120,7 +120,7 @@ net.inet.ip.forwarding &lt;span class="o"&gt;=&lt;/span&gt; 1
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img class="center" width="600" src="/images/pf_rules.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/pf_rules.png" width="600" class="center"&gt;&lt;/p&gt;
 &lt;h2&gt;Conclusions&lt;/h2&gt;
 &lt;p&gt;PF is one of the most popular and powerful firewall for managing your network traffic. We have barely even scratched surface of what PF can provide. It's functionality is much more then many of the commercial offerings offers.&lt;br /&gt;
 We will also cover some extended functionality such as usage of Anchors, Preventing torrent traffic, Blacklisting and preventing brute-forcing attack etc.

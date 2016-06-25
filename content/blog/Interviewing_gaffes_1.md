@@ -15,4 +15,4 @@ Summary: While interviewing someone, Don't freak out!
 {% img center /images/bring_star4.png 800px 600px "4" %}
 
 
-> Plight of Every interviewer
+> Plight of every Interviewer

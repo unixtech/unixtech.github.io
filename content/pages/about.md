@@ -1,13 +1,15 @@
 Title: About Unixer
 Slug: about
 Authors: Unixer
-<!--Summary: Short version for index and feeds-->
-<!--Category: Unix    -->
+
 
 
 <center>
-##Hi, I am Unixer
+###Hi, I am Unixer
 </center>
+
+{% img center /images/Por9.png 200p x 140px "Ping1" %}
+
 
 I study popular tech across wide range of spectrums - Programming languages, Graphical illustrations and more. In doing so I try to uncover some of the best practices of doing certain things.  
 Here, I share it with world!
@@ -20,7 +22,7 @@ Here, I share it with world!
 
 - Programming 'stuff'
 - Data science
-- Politics in Technology
+- Wide spectrums of HumTechs
 
 
 
