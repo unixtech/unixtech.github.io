@@ -1,23 +1,23 @@
-Title:  presentation titsle
-Date: 2013-12-03 13:03
+Title:  presentation2 titsle
+Date: 2013-12-04 13:03
 Modified: 2013-12-05 13:30
 Category: presentation    
-Slug: presentation
+Slug: presentation2
 Authors: Unixer
 Status: published
-URL: presentation/presen1.html
-save_as: presentation/presen1.html
+URL: presentation/presen2.html
+save_as: presentation/presen2.html
 Template: presentation
 Summary: Reveals presions
 
 
-<section>
-# Reveal.js presentation
+<section markdown="1">
+# Reveal.js presentation  
 This is my first presentation using reveal.js
 </section>
 
 <section style="text-align: left;">
-<h1>THE END</h1>
+<h2>THE END</h2>
 <p>
 This too is part of it. <br />
 <span markdown="1">$$x^2$$ </span>

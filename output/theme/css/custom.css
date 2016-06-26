@@ -14,14 +14,14 @@
 
 /*Add specialized readable fonts to your pages :D*/
 p {
-    font-size: 22px;
+    font-size: 19px;
     font-family: Lit1 !important ;
 }
 
 h1 {
-    font-size: 2.6em;
+    font-size: 2.4em;
     font-family: Lit1 !important;
-    transition: all 0.3s ease-out 0s
+    /*transition: all 1s ease-out 2s;*/
     /*transition: all .2s ease-in-out;*/
 
 }
@@ -41,7 +41,7 @@ h2:hover {
      /*transform: scale(1.1);*/
 }
 ul li {
-    font-size: 22px;
+    font-size: 19px;
     font-family: Lit1 !important ;
 }
 
@@ -250,7 +250,7 @@ body > nav form {
      background: none !important;
      border: none !important;
      padding: 0 !important;
-     color: white !important;
+     color: #ffd !important;
      font-family: Lit1 !important;
      margin-left: 20px !important;
 
@@ -301,4 +301,10 @@ body > nav form {
     article header p {
          font-size: 0.5em;
     }
+}
+
+.decor1 {
+     background-image: url('img/Decor1_bottom1.png');
+     height: 30px;
+     width: 100%;
 }

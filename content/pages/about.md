@@ -8,7 +8,7 @@ Authors: Unixer
 ###Hi, I am Unixer
 </center>
 
-{% img center /images/Por9.png 200p x 140px "Ping1" %}
+{% img center /images/Por9.png 200p x 160px "Ping1" %}
 
 
 I study popular tech across wide range of spectrums - Programming languages, Graphical illustrations and more. In doing so I try to uncover some of the best practices of doing certain things.  
@@ -22,12 +22,11 @@ Here, I share it with world!
 
 - Programming 'stuff'
 - Data science
-- Wide spectrums of HumTechs
+- Various spectrums of HuTech
 
 
 
 
-<!--No, toll claims to answer all questions but will try to clear up things.-->
 
 <p> Have a word with me @: 
 <a href="mailto:unixlama@gmail.com">Unixer</a>  </p>
@@ -36,3 +35,4 @@ Here, I share it with world!
 
 
 
+<div class="decor1"></div>

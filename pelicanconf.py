@@ -11,8 +11,8 @@ PATH = 'content'
 STATIC_PATHS = ['images', 'downloads', 'static/code' ]
 CODE_DIR = 'static/code'
 ARTICLE_PATHS = ['blog']
-ARTICLE_SAVE_AS = '{date:%m-%Y}/{slug}.html'
-ARTICLE_URL = '{date:%m-%Y}/{slug}.html'
+ARTICLE_SAVE_AS = 'blog/{date:%m-%Y}/{slug}.html'
+ARTICLE_URL = 'blog/{date:%m-%Y}/{slug}.html'
 
 TIMEZONE = 'Asia/Kolkata'
 
@@ -67,7 +67,7 @@ DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'authors', 'archives', 'sear
 
 #MathJAX Settings
 LATEX = 'article'
-MATH_JAX = {'color':'blue', 'align':'centre', 'mathjax_font':'sanserif'}
+MATH_JAX = {'color':'#333', 'align':'centre', 'mathjax_font':'sanserif'}
 
 #Pure pelican specific settings
 # COVER_IMG_URL = "images/3.jpg"
