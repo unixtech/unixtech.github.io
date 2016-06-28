@@ -1,7 +1,190 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>UnixTech</title><link href="http://unixtech.github.io/" rel="alternate"></link><link href="http://unixtech.github.io/feeds/unixer.atom.xml" rel="self"></link><id>http://unixtech.github.io/</id><updated>2015-06-15T16:02:00+05:30</updated><entry><title>Interviewer's Gaffe-1</title><link href="http://unixtech.github.io/blog/06-2015/avoid-doing-interviews-1.html" rel="alternate"></link><updated>2015-06-15T16:02:00+05:30</updated><author><name>Unixer</name></author><id>tag:unixtech.github.io,2015-06-15:blog/06-2015/avoid-doing-interviews-1.html</id><summary type="html">&lt;p&gt;&lt;img class="center" src="/images/bring_star1.png" width="800"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img class="center" src="/images/bring_star2.png" width="800"&gt;
-&lt;img class="center" src="/images/bring_star4.png" width="800"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>UnixTech</title><link href="http://unixtech.github.io/" rel="alternate"></link><link href="http://unixtech.github.io/feeds/unixer.atom.xml" rel="self"></link><id>http://unixtech.github.io/</id><updated>2015-12-07T19:30:00+05:30</updated><entry><title>Relational Algebra - SQL</title><link href="http://unixtech.github.io/blog/12-2015/understanding-sql-1.html" rel="alternate"></link><updated>2015-12-07T19:30:00+05:30</updated><author><name>Unixer</name></author><id>tag:unixtech.github.io,2015-12-06:blog/12-2015/understanding-sql-1.html</id><summary type="html">&lt;p&gt;In the age of ORMs so many developers today doesn't know about very fundamental and basic algorithms that runs SQL. Despite being one of easiest and much useful language many people run away from using SQL directly and take shelter in using some 'wrapper' tool which is not always as good as &lt;code&gt;raw&lt;/code&gt; SQL.&lt;/p&gt;
+&lt;p&gt;Let's start by defining very basic relation in SQL.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Database as Collection of relations ( Tables or Schemas )&lt;/li&gt;
+&lt;li&gt;Being first class predicate - State of database is final state of all relations&lt;/li&gt;
+&lt;li&gt;By &lt;em&gt;joining&lt;/em&gt;, &lt;em&gt;aggregating&lt;/em&gt; data from different relations one can filter out data as desired.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;Relation&lt;/h4&gt;
+&lt;p&gt;Relation in SQL language is defined by several terms.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Tuple&lt;/td&gt;
+&lt;td&gt;One Row in SQL Relation&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Attribute&lt;/td&gt;
+&lt;td&gt;Column in Relation&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Unknown&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Null&lt;/code&gt; in Domain&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:-&lt;/strong&gt; Tuple is represented by (a, b), Attribute(Column) here will have unique domain(name - Relation name) within relation.   &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;Relational Algebra&lt;/h3&gt;
+&lt;p&gt;Relational algebra is superset of &lt;em&gt;set&lt;/em&gt; algebra which defines formal language of relations in Database domain.&lt;br /&gt;
+Each operation done here on relations will return new valid Relation.&lt;/p&gt;
+&lt;p&gt;This algebra has mainly two groups of operations, One it shares with &lt;em&gt;set&lt;/em&gt; theory and other one is specific to &lt;em&gt;Relational&lt;/em&gt; model.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;SET operations&lt;/th&gt;
+&lt;th&gt;Relation specific operations&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;UNION&lt;/td&gt;
+&lt;td&gt;SELECT&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;INTERSECTION&lt;/td&gt;
+&lt;td&gt;PROJECT&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;SET DIFFERENCE&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;CARTESIAN PRODUCT \ CROSS PRODUCT&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Any operations in Relational algebra can be classified mathematically as binary and unary, this fundamental operators have all the power needed to construct complex queries as needed.&lt;br /&gt;
+The main operators are:  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SELECT ( &lt;span class="math"&gt;\(\sigma\)&lt;/span&gt; ) &lt;span class="fa fa-arrow-right"&gt; &lt;/span&gt; Can be described as below
+    &lt;div class="math"&gt;$$ \sigma_\psi RO $$&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Where:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;R&lt;/td&gt;
+&lt;td&gt;Tupels sets in SQL&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;span class="math"&gt;\(\psi\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;Predicate in selection retries from Tuples in R&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;PROJECT ( &lt;span class="math"&gt;\(\pi\)&lt;/span&gt; ) &lt;span class="fa fa-arrow-right"&gt; &lt;/span&gt; Operation which returns columnar structure in vertical dimention, If you remember this is slicing by attributes can be described as&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="math"&gt;$$ \pi_{a1,a2...an} RO $$&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(_{a1,a2..an}\)&lt;/span&gt; are set of attributes names.  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;CARTESIAN\CROSS PRODUCT ( &lt;span class="math"&gt;\(\times\)&lt;/span&gt; ) &lt;span class="fa fa-arrow-right"&gt; &lt;/span&gt; This is binary operation as oppose to unary like previous two, Can be used to generate complex relations by joining each tuple operands together. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(R \times S = {r1, r2...rn,s1,s2...sn}\)&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;UNION (&lt;span class="math"&gt;\(\cup\)&lt;/span&gt;) &lt;span class="fa fa-arrow-right"&gt; &lt;/span&gt; Appends two relations together.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To be successful in this binary operations both relation needs to have same set of attributes.  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="math"&gt;$$ R \cup S = (_{r1, r2...rn}) \cup (_{s1, s2...sn}) $$&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Assuming, &lt;span class="math"&gt;\(S \, \Sigma \, (_{s1,s2...sn}) \quad and \quad R \, \Sigma \, (_{r1,r2...rn})\)&lt;/span&gt;  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;DIFFERENCE ( &lt;span class="math"&gt;\(\setminus or \, -\)&lt;/span&gt; ) &lt;span class="fa fa-arrow-right"&gt; &lt;/span&gt;  A binary operation, as you may have guessed - &lt;span class="math"&gt;\(\cup\)&lt;/span&gt; only but in reverse.&lt;br /&gt;
+Set difference can be described as &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="math"&gt;$$ R\setminus S = (_{r1,r2...rn}) \quad where \quad (_{r1,r2...rn}) \, \Sigma\, R \quad but \quad  (_{r1,r2...rn}) \, \notin \, S $$&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;REMAME(&lt;span class="math"&gt;\(\rho\)&lt;/span&gt;) &lt;span class="fa fa-arrow-right"&gt; &lt;/span&gt; A unary operation that works on attributes and returns new value of attribute, This is mainly used for JOIN operations to differantiate the attributes, can be expressed as&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="math"&gt;$$ \rho_{a\setminus b}R$$&lt;/div&gt;
+&lt;p&gt;With this essential building blocks in place we can now move forward and take a look at more complex queries such as mixing many of these premitives to perform &lt;em&gt;left joins&lt;/em&gt;, &lt;em&gt;right-joins&lt;/em&gt; etc. In addition to these we can also add few more such as &lt;em&gt;sum&lt;/em&gt;, &lt;em&gt;multiplication&lt;/em&gt; to these operations on set of tuples or attributes.&lt;br /&gt;
+These algebric math provides fundamental building block of any SQL algorithm which guarantess ACID standards are followed hence understanding them all the more important.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: '#333 ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('SansSerif' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_SansSerif');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_SansSerif-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_SansSerif-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_SansSerif-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_SansSerif');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_SansSerif-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_SansSerif-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_SansSerif-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</summary><category term="Essentials"></category></entry><entry><title>Interviewer's Gaffe-1</title><link href="http://unixtech.github.io/blog/06-2015/avoid-doing-interviews-1.html" rel="alternate"></link><updated>2015-06-15T16:02:00+05:30</updated><author><name>Unixer</name></author><id>tag:unixtech.github.io,2015-06-15:blog/06-2015/avoid-doing-interviews-1.html</id><summary type="html">&lt;p&gt;&lt;img src="/images/bring_star1.png" class="center" width="800"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/bring_star2.png" class="center" width="800"&gt;
+&lt;img src="/images/bring_star4.png" class="center" width="800"&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Plight of every Interviewer&lt;/p&gt;
 &lt;/blockquote&gt;</summary><category term="Polity"></category></entry><entry><title>PF Firewall-1</title><link href="http://unixtech.github.io/blog/12-2014/pf-firewall-1.html" rel="alternate"></link><updated>2014-12-06T13:30:00+05:30</updated><author><name>Unixer</name></author><id>tag:unixtech.github.io,2014-12-04:blog/12-2014/pf-firewall-1.html</id><summary type="html">&lt;h2&gt;FreeBSD and OpenBSD&lt;/h2&gt;
@@ -120,7 +303,7 @@ net.inet.ip.forwarding &lt;span class="o"&gt;=&lt;/span&gt; 1
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img class="center" src="/images/pf_rules.png" width="600"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/pf_rules.png" class="center" width="600"&gt;&lt;/p&gt;
 &lt;h2&gt;Conclusions&lt;/h2&gt;
 &lt;p&gt;PF is one of the most popular and powerful firewall for managing your network traffic. We have barely even scratched surface of what PF can provide. It's functionality is much more then many of the commercial offerings offers.&lt;br /&gt;
 We will also cover some extended functionality such as usage of Anchors, Preventing torrent traffic, Blacklisting and preventing brute-forcing attack etc.

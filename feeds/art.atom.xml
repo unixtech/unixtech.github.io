@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>UnixTech</title><link href="http://unixtech.github.io/" rel="alternate"></link><link href="http://unixtech.github.io/feeds/art.atom.xml" rel="self"></link><id>http://unixtech.github.io/</id><updated>2015-06-15T16:02:00+05:30</updated><entry><title>Interviewer's Gaffe-1</title><link href="http://unixtech.github.io/blog/06-2015/avoid-doing-interviews-1.html" rel="alternate"></link><updated>2015-06-15T16:02:00+05:30</updated><author><name>Unixer</name></author><id>tag:unixtech.github.io,2015-06-15:blog/06-2015/avoid-doing-interviews-1.html</id><summary type="html">&lt;p&gt;&lt;img class="center" src="/images/bring_star1.png" width="800"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img class="center" src="/images/bring_star2.png" width="800"&gt;
-&lt;img class="center" src="/images/bring_star4.png" width="800"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>UnixTech</title><link href="http://unixtech.github.io/" rel="alternate"></link><link href="http://unixtech.github.io/feeds/art.atom.xml" rel="self"></link><id>http://unixtech.github.io/</id><updated>2015-06-15T16:02:00+05:30</updated><entry><title>Interviewer's Gaffe-1</title><link href="http://unixtech.github.io/blog/06-2015/avoid-doing-interviews-1.html" rel="alternate"></link><updated>2015-06-15T16:02:00+05:30</updated><author><name>Unixer</name></author><id>tag:unixtech.github.io,2015-06-15:blog/06-2015/avoid-doing-interviews-1.html</id><summary type="html">&lt;p&gt;&lt;img src="/images/bring_star1.png" class="center" width="800"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/bring_star2.png" class="center" width="800"&gt;
+&lt;img src="/images/bring_star4.png" class="center" width="800"&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Plight of every Interviewer&lt;/p&gt;
 &lt;/blockquote&gt;</summary><category term="Polity"></category></entry></feed>

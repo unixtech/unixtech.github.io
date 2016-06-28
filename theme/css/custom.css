@@ -1,3 +1,5 @@
+
+
 @font-face {
     font-family: Lit1;
     src: url(literata-regular.otf);
@@ -307,4 +309,15 @@ body > nav form {
      background-image: url('img/Decor1_bottom1.png');
      height: 30px;
      width: 100%;
+
+}
+
+.entry-content table {
+    margin: auto auto 1.3em;
+    font-size: 19px;
+
+}
+
+ol li {
+    font-size: 19px;
 }
