@@ -182,9 +182,9 @@ These algebric math provides fundamental building block of any SQL algorithm whi
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Unixer</dc:creator><pubDate>Mon, 07 Dec 2015 19:30:00 +0530</pubDate><guid>tag:unixtech.github.io,2015-12-06:blog/12-2015/understanding-sql-1.html</guid><category>Essentials</category></item><item><title>Interviewer's Gaffe-1</title><link>http://unixtech.github.io/blog/06-2015/avoid-doing-interviews-1.html</link><description>&lt;p&gt;&lt;img src="/images/bring_star1.png" width="800" class="center"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="/images/bring_star2.png" width="800" class="center"&gt;
-&lt;img src="/images/bring_star4.png" width="800" class="center"&gt;&lt;/p&gt;
+&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Unixer</dc:creator><pubDate>Mon, 07 Dec 2015 19:30:00 +0530</pubDate><guid>tag:unixtech.github.io,2015-12-06:blog/12-2015/understanding-sql-1.html</guid><category>Essentials</category></item><item><title>Interviewer's Gaffe-1</title><link>http://unixtech.github.io/blog/06-2015/avoid-doing-interviews-1.html</link><description>&lt;p&gt;&lt;img src="/images/bring_star1.png" class="center" width="800"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/bring_star2.png" class="center" width="800"&gt;
+&lt;img src="/images/bring_star4.png" class="center" width="800"&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Plight of every Interviewer&lt;/p&gt;
 &lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Unixer</dc:creator><pubDate>Mon, 15 Jun 2015 16:02:00 +0530</pubDate><guid>tag:unixtech.github.io,2015-06-15:blog/06-2015/avoid-doing-interviews-1.html</guid><category>Polity</category></item><item><title>PF Firewall-1</title><link>http://unixtech.github.io/blog/12-2014/pf-firewall-1.html</link><description>&lt;h2&gt;FreeBSD and OpenBSD&lt;/h2&gt;
@@ -303,7 +303,7 @@ net.inet.ip.forwarding &lt;span class="o"&gt;=&lt;/span&gt; 1
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img src="/images/pf_rules.png" width="600" class="center"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/pf_rules.png" class="center" width="600"&gt;&lt;/p&gt;
 &lt;h2&gt;Conclusions&lt;/h2&gt;
 &lt;p&gt;PF is one of the most popular and powerful firewall for managing your network traffic. We have barely even scratched surface of what PF can provide. It's functionality is much more then many of the commercial offerings offers.&lt;br /&gt;
 We will also cover some extended functionality such as usage of Anchors, Preventing torrent traffic, Blacklisting and preventing brute-forcing attack etc.

@@ -5,35 +5,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://unixtech.github.io/</loc>
-<lastmod>2016-06-28T21:26:15-00:00</lastmod>
+<lastmod>2016-06-28T21:27:29-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://unixtech.github.io/archives.html</loc>
-<lastmod>2016-06-28T21:26:15-00:00</lastmod>
+<lastmod>2016-06-28T21:27:29-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://unixtech.github.io/tags.html</loc>
-<lastmod>2016-06-28T21:26:15-00:00</lastmod>
+<lastmod>2016-06-28T21:27:29-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://unixtech.github.io/categories.html</loc>
-<lastmod>2016-06-28T21:26:15-00:00</lastmod>
+<lastmod>2016-06-28T21:27:29-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://unixtech.github.io/pages/about.html</loc>
-<lastmod>2016-06-28T21:26:15-00:00</lastmod>
+<lastmod>2016-06-28T21:27:29-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -102,7 +102,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://unixtech.github.io/tag/polity.html</loc>
+<lastmod>2015-06-15T16:02:00+05:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://unixtech.github.io/tag/firewall.html</loc>
+<lastmod>2014-12-06T13:30:00+05:53</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://unixtech.github.io/tag/unix.html</loc>
 <lastmod>2014-12-06T13:30:00+05:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -111,20 +125,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://unixtech.github.io/tag/essentials.html</loc>
 <lastmod>2015-12-07T19:30:00+05:53</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://unixtech.github.io/tag/polity.html</loc>
-<lastmod>2015-06-15T16:02:00+05:53</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://unixtech.github.io/tag/unix.html</loc>
-<lastmod>2014-12-06T13:30:00+05:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
