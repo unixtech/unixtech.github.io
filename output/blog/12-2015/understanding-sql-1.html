@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Relational Algebra - SQL &mdash; UnixTech</title>
+  <meta name="author" content="Unixer">
+
+
+
+
+
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="../../images/favicon.ico" rel="icon">
+
+  <link href="../../theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+<link href="../../theme/css/custom.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+<link href="../../theme/css/font-awesome-4.5.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="../../theme/css/tipuesearch.css">
+  <!--<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"-->
+        <!--rel="stylesheet" type="text/css">-->
+  <!--<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"-->
+        <!--rel="stylesheet" type="text/css">-->
+</head>
+
+<body>
+  <header role="banner"><hgroup>
+<!--<h1><span class="logo1"><img class="logo2" src=../../images/favicon.ico height="64" width="64"></span><a href="../../">UnixTech</a></h1>-->
+<h1><span class="logo1"><a href="../../">UnixTech</a></h1>
+    <h2>Creativity, Business - Amplified</h2>
+</hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+</ul>
+
+<!---->
+<!--<form action="https://www.google.com/search" method="get">-->
+<!--<fieldset role="search">-->
+<!---->
+<!--<input type="hidden" name="sitesearch" value="../..">-->
+<!---->
+<!--<input class="search" type="text" name="q" results="0" placeholder="Search"/>-->
+<!--</fieldset>-->
+<!--</form>-->
+<!---->
+
+<div class="search-wrapper">
+<form class="navbar-form navbar-left" role="search" action="../../search.html" onsubmit="return validateForm(this.elements['q'].value);">
+    <div class="input-holder">
+        <input type="text" class="search-input" placeholder="Search" name="q" id="tipue_search_input">
+        <button class='search-icon' onclick="searchToggle(this, event);"> <span></span> </button>
+    </div>
+    <span class="close" onclick="searchToggle(this, event);"></span>
+</form>
+</div>
+
+<ul class="main-navigation">
+    <li><a href="/pages/about.html">About ME</a></li>
+    <li><a href="/archives.html">Archives</a></li>
+</ul></nav>
+  <div id="main">
+    <div id="content">
+<div>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">Relational Algebra - SQL</h1>
+    <p class="meta">
+<time datetime="2015-12-06T10:20:00+05:30" pubdate>Sun 06 December 2015</time>  &ndash;  <i class="fa fa-clock-o term"> </i> 3 min read
+    </p>
+</header>
+
+  <div class="entry-content"><p>In the age of ORMs so many developers today doesn't know about very fundamental and basic algorithms that runs SQL. Despite being one of easiest and much useful language many people run away from using SQL directly and take shelter in using some 'wrapper' tool which is not always as good as <code>raw</code> SQL.</p>
+<p>Let's start by defining very basic relation in SQL.</p>
+<ol>
+<li>Database as Collection of relations ( Tables or Schemas )</li>
+<li>Being first class predicate - State of database is final state of all relations</li>
+<li>By <em>joining</em>, <em>aggregating</em> data from different relations one can filter out data as desired.</li>
+</ol>
+<h4>Relation</h4>
+<p>Relation in SQL language is defined by several terms.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tuple</td>
+<td>One Row in SQL Relation</td>
+</tr>
+<tr>
+<td>Attribute</td>
+<td>Column in Relation</td>
+</tr>
+<tr>
+<td>Unknown</td>
+<td><code>Null</code> in Domain</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note:-</strong> Tuple is represented by (a, b), Attribute(Column) here will have unique domain(name - Relation name) within relation.   </p>
+</blockquote>
+<h3>Relational Algebra</h3>
+<p>Relational algebra is superset of <em>set</em> algebra which defines formal language of relations in Database domain.<br />
+Each operation done here on relations will return new valid Relation.</p>
+<p>This algebra has mainly two groups of operations, One it shares with <em>set</em> theory and other one is specific to <em>Relational</em> model.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>SET operations</th>
+<th>Relation specific operations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>UNION</td>
+<td>SELECT</td>
+</tr>
+<tr>
+<td>2</td>
+<td>INTERSECTION</td>
+<td>PROJECT</td>
+</tr>
+<tr>
+<td>3</td>
+<td>SET DIFFERENCE</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>CARTESIAN PRODUCT \ CROSS PRODUCT</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Any operations in Relational algebra can be classified mathematically as binary and unary, this fundamental operators have all the power needed to construct complex queries as needed.<br />
+The main operators are:  </p>
+<ul>
+<li>SELECT ( <span class="math">\(\sigma\)</span> ) <span class="fa fa-arrow-right"> </span> Can be described as below
+    <div class="math">$$ \sigma_\psi RO $$</div>
+</li>
+</ul>
+<p>Where:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R</td>
+<td>Tupels sets in SQL</td>
+</tr>
+<tr>
+<td><span class="math">\(\psi\)</span></td>
+<td>Predicate in selection retries from Tuples in R</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>PROJECT ( <span class="math">\(\pi\)</span> ) <span class="fa fa-arrow-right"> </span> Operation which returns columnar structure in vertical dimention, If you remember this is slicing by attributes can be described as</li>
+</ul>
+<div class="math">$$ \pi_{a1,a2...an} RO $$</div>
+<blockquote>
+<p><span class="math">\(_{a1,a2..an}\)</span> are set of attributes names.  </p>
+</blockquote>
+<ul>
+<li>CARTESIAN\CROSS PRODUCT ( <span class="math">\(\times\)</span> ) <span class="fa fa-arrow-right"> </span> This is binary operation as oppose to unary like previous two, Can be used to generate complex relations by joining each tuple operands together. </li>
+</ul>
+<p><span class="math">\(R \times S = {r1, r2...rn,s1,s2...sn}\)</span></p>
+<ul>
+<li>UNION (<span class="math">\(\cup\)</span>) <span class="fa fa-arrow-right"> </span> Appends two relations together.</li>
+</ul>
+<blockquote>
+<p>To be successful in this binary operations both relation needs to have same set of attributes.  </p>
+</blockquote>
+<div class="math">$$ R \cup S = (_{r1, r2...rn}) \cup (_{s1, s2...sn}) $$</div>
+<blockquote>
+<p>Assuming, <span class="math">\(S \, \Sigma \, (_{s1,s2...sn}) \quad and \quad R \, \Sigma \, (_{r1,r2...rn})\)</span>  </p>
+</blockquote>
+<ul>
+<li>DIFFERENCE ( <span class="math">\(\setminus or \, -\)</span> ) <span class="fa fa-arrow-right"> </span>  A binary operation, as you may have guessed - <span class="math">\(\cup\)</span> only but in reverse.<br />
+Set difference can be described as </li>
+</ul>
+<div class="math">$$ R\setminus S = (_{r1,r2...rn}) \quad where \quad (_{r1,r2...rn}) \, \Sigma\, R \quad but \quad  (_{r1,r2...rn}) \, \notin \, S $$</div>
+<ul>
+<li>REMAME(<span class="math">\(\rho\)</span>) <span class="fa fa-arrow-right"> </span> A unary operation that works on attributes and returns new value of attribute, This is mainly used for JOIN operations to differantiate the attributes, can be expressed as</li>
+</ul>
+<div class="math">$$ \rho_{a\setminus b}R$$</div>
+<p>With this essential building blocks in place we can now move forward and take a look at more complex queries such as mixing many of these premitives to perform <em>left joins</em>, <em>right-joins</em> etc. In addition to these we can also add few more such as <em>sum</em>, <em>multiplication</em> to these operations on set of tuples or attributes.<br />
+These algebric math provides fundamental building block of any SQL algorithm which guarantess ACID standards are followed hence understanding them all the more important.</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' && location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: '#333 ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('SansSerif' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_SansSerif');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_SansSerif-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_SansSerif-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_SansSerif-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_SansSerif');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_SansSerif-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_SansSerif-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_SansSerif-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script></div>
+
+
+  <div class="nav_priv">
+      <!---->
+    <!--<p class="prevpost"><i class="fa fa-arrow-left"></i> Older<br />-->
+    <!--<a href="../../blog/06-2015/avoid-doing-interviews-1.html">Interviewer's Gaffe-1</a></p>-->
+<!---->
+<!---->
+
+    </div>
+
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        Unixer
+    </span>
+  </span>
+<time datetime="2015-12-06T10:20:00+05:30" pubdate>Sun 06 December 2015</time>  <span class="categories">
+    <a class='category' href='../../category/server.html'>Server</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="../../tag/essentials.html">Essentials</a>  </span>
+</p>
+  <div class="decor1"></div><div class="sharing">
+</div>    </footer>
+  </article>
+
+</div>
+<aside class="sidebar">
+  <section>
+    <h1>Recent Posts</h1>
+    <ul id="recent_posts">
+      <li class="post">
+          <a href="../../blog/12-2015/understanding-sql-1.html">Relational Algebra - SQL</a>
+      </li>
+      <li class="post">
+          <a href="../../blog/06-2015/avoid-doing-interviews-1.html">Interviewer's Gaffe-1</a>
+      </li>
+      <li class="post">
+          <a href="../../blog/12-2014/pf-firewall-1.html">PF Firewall-1</a>
+      </li>
+      <li class="post">
+          <a href="../../blog/01-2010/practical-find.html">Unix essentials-1 Find</a>
+      </li>
+    </ul>
+  </section>
+  <section>
+      
+    <h1>Categories</h1>
+    <ul id="recent_posts">
+        <li><a href="../../category/art.html">Art</a></li>
+        <li><a href="../../category/server.html">Server</a></li>
+        <li><a href="../../category/unix.html">Unix</a></li>
+    </ul>
+  </section>
+ 
+
+  <section>
+  <h1>Tags</h1>
+    <a href="../../tag/firewall.html">Firewall</a>,    <a href="../../tag/essentials.html">Essentials</a>,    <a href="../../tag/polity.html">Polity</a>,    <a href="../../tag/unix.html">Unix</a>  </section>
+
+
+
+</aside>    </div>
+  </div>
+  <footer role="contentinfo"><p>
+    Copyright &copy;  2010&ndash;2015  <a href="mailto:unixlama@gmail.com">Unixer  </a>
+</p></footer>
+  <script src="../../theme/js/modernizr-2.0.js"></script>
+  <script src="../../theme/js/ender.js"></script>
+  <script src="../../theme/js/octopress.js" type="text/javascript"></script>
+  <script src="../../theme/js/react/build/react-with-addons.min.js" type="text/javascript"></script>
+  <script src="../../theme/js/react/build/react-dom.min.js" type="text/javascript"></script>
+  <script src="../../theme/js/react/build/browser.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+
+<script>
+function searchToggle(obj, evt){
+    var container = $(obj).closest('.search-wrapper');
+        if(!container.hasClass('active')){
+            container.addClass('active');
+            evt.preventDefault();
+        }
+        else if(container.hasClass('active') && $(obj).closest('.input-holder').length == 0){
+            container.removeClass('active');
+            // clear input
+            container.find('.search-input').val('');
+        }
+}
+</script>
+
+
+</body>
+</html>
