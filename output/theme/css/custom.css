@@ -1,4 +1,7 @@
-
+@font-face { 
+    font-family: overpass1;
+    src: url(overpass/Overpass-Regular.ttf);
+}
 
 @font-face {
     font-family: Lit1;
@@ -17,7 +20,7 @@
 /*Add specialized readable fonts to your pages :D*/
 p {
     font-size: 19px;
-    font-family: Lit1 !important ;
+    font-family: overpass1 !important ;
 }
 
 h1 {
@@ -44,7 +47,7 @@ h2:hover {
 }
 ul li {
     font-size: 19px;
-    font-family: Lit1 !important ;
+    font-family: overpass1 !important ;
 }
 
 .term {
@@ -253,8 +256,10 @@ body > nav form {
      border: none !important;
      padding: 0 !important;
      color: #ffd !important;
-     font-family: Lit1 !important;
+     font: 20px/1.0 "overpass" !important;
      margin-left: 20px !important;
+     text-align: middle;
+
 
 }
 
@@ -315,9 +320,11 @@ body > nav form {
 .entry-content table {
     margin: auto auto 1.3em;
     font-size: 19px;
+    font-family: overpass1;
 
 }
 
 ol li {
     font-size: 19px;
+    font-family: overpass1;
 }

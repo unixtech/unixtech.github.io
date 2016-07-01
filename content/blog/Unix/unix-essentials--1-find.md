@@ -1,4 +1,4 @@
-Title: Unix essentials-1 Find
+Title: Find - Looking for things
 Date: 2010-1-03 18:02
 Category: Unix    
 Tags: Unix, Essentials

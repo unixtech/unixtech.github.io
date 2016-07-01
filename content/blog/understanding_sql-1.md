@@ -60,7 +60,7 @@ Where:
 
 - PROJECT ( $\pi$ ) <span class="fa fa-arrow-right"> </span> Operation which returns columnar structure in vertical dimention, If you remember this is slicing by attributes can be described as
 
-$$ \pi_{a1,a2...an} RO $$ 
+$$ \pi _{a1,a2...an} RO  $$ 
 
 > $_{a1,a2..an}$ are set of attributes names.  
 

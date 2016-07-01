@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>UnixTech</title><link href="http://unixtech.github.io/" rel="alternate"></link><link href="http://unixtech.github.io/feeds/server.atom.xml" rel="self"></link><id>http://unixtech.github.io/</id><updated>2015-12-07T19:30:00+05:30</updated><entry><title>Relational Algebra - SQL</title><link href="http://unixtech.github.io/blog/12-2015/understanding-sql-1.html" rel="alternate"></link><updated>2015-12-07T19:30:00+05:30</updated><author><name>Unixer</name></author><id>tag:unixtech.github.io,2015-12-06:blog/12-2015/understanding-sql-1.html</id><summary type="html">&lt;p&gt;In the age of ORMs so many developers today doesn't know about very fundamental and basic algorithms that runs SQL. Despite being one of easiest and much useful language many people run away from using SQL directly and take shelter in using some 'wrapper' tool which is not always as good as &lt;code&gt;raw&lt;/code&gt; SQL.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>UnixTech</title><link href="http://unixtech.github.io/" rel="alternate"></link><link href="http://unixtech.github.io/feeds/server.atom.xml" rel="self"></link><id>http://unixtech.github.io/</id><updated>2015-12-07T19:30:00+05:30</updated><entry><title>Relational Algebra - SQL</title><link href="http://unixtech.github.io/blog/12-2015/understanding-sql-1.html" rel="alternate"></link><published>2015-12-07T19:30:00+05:30</published><author><name>Unixer</name></author><id>tag:unixtech.github.io,2015-12-06:blog/12-2015/understanding-sql-1.html</id><summary type="html">&lt;p&gt;In the age of ORMs so many developers today doesn't know about very fundamental and basic algorithms that runs SQL. Despite being one of easiest and much useful language many people run away from using SQL directly and take shelter in using some 'wrapper' tool which is not always as good as &lt;code&gt;raw&lt;/code&gt; SQL.&lt;/p&gt;
 &lt;p&gt;Let's start by defining very basic relation in SQL.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Database as Collection of relations ( Tables or Schemas )&lt;/li&gt;
@@ -97,7 +97,7 @@ The main operators are:  &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;PROJECT ( &lt;span class="math"&gt;\(\pi\)&lt;/span&gt; ) &lt;span class="fa fa-arrow-right"&gt; &lt;/span&gt; Operation which returns columnar structure in vertical dimention, If you remember this is slicing by attributes can be described as&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="math"&gt;$$ \pi_{a1,a2...an} RO $$&lt;/div&gt;
+&lt;div class="math"&gt;$$ \pi _{a1,a2...an} RO  $$&lt;/div&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;span class="math"&gt;\(_{a1,a2..an}\)&lt;/span&gt; are set of attributes names.  &lt;/p&gt;
 &lt;/blockquote&gt;

@@ -16,9 +16,7 @@ Here, I share it with world!
 
 
 
-<center>
 ###By being here You can expect to learn on
-</center>
 
 - Programming 'stuff'
 - Data science
