@@ -182,9 +182,9 @@ These algebric math provides fundamental building block of any SQL algorithm whi
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Unixer</dc:creator><pubDate>Mon, 07 Dec 2015 19:30:00 +0530</pubDate><guid isPermaLink="false">tag:unixtech.github.io,2015-12-06:blog/12-2015/understanding-sql-1.html</guid><category>Essentials</category></item><item><title>Interviewer's Gaffe-1</title><link>http://unixtech.github.io/blog/06-2015/avoid-doing-interviews-1.html</link><description>&lt;p&gt;&lt;img src="/images/bring_star1.png" class="center" width="800"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="/images/bring_star2.png" class="center" width="800"&gt;
-&lt;img src="/images/bring_star4.png" class="center" width="800"&gt;&lt;/p&gt;
+&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Unixer</dc:creator><pubDate>Mon, 07 Dec 2015 19:30:00 +0530</pubDate><guid isPermaLink="false">tag:unixtech.github.io,2015-12-06:blog/12-2015/understanding-sql-1.html</guid><category>Essentials</category></item><item><title>Interviewer's Gaffe-1</title><link>http://unixtech.github.io/blog/06-2015/avoid-doing-interviews-1.html</link><description>&lt;p&gt;&lt;img class="center" src="/images/bring_star1.png" width="800"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img class="center" src="/images/bring_star2.png" width="800"&gt;
+&lt;img class="center" src="/images/bring_star4.png" width="800"&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Plight of every Interviewer&lt;/p&gt;
 &lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Unixer</dc:creator><pubDate>Mon, 15 Jun 2015 16:02:00 +0530</pubDate><guid isPermaLink="false">tag:unixtech.github.io,2015-06-15:blog/06-2015/avoid-doing-interviews-1.html</guid><category>Polity</category></item><item><title>Firewall PF</title><link>http://unixtech.github.io/blog/12-2014/pf-firewall-1.html</link><description>&lt;h2&gt;FreeBSD and OpenBSD&lt;/h2&gt;
@@ -303,7 +303,7 @@ net.inet.ip.forwarding &lt;span class="o"&gt;=&lt;/span&gt; 1
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img src="/images/pf_rules.png" class="center" width="600"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img class="center" src="/images/pf_rules.png" width="600"&gt;&lt;/p&gt;
 &lt;h2&gt;Conclusions&lt;/h2&gt;
 &lt;p&gt;PF is one of the most popular and powerful firewall for managing your network traffic. We have barely even scratched surface of what PF can provide. It's functionality is much more then many of the commercial offerings offers.&lt;br /&gt;
 We will also cover some extended functionality such as usage of Anchors, Preventing torrent traffic, Blacklisting and preventing brute-forcing attack etc.
@@ -323,7 +323,78 @@ ReactDOM.render(
   &lt;CommentBox /&gt;,
   document.getElementById('comment')
 );
-&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Unixer</dc:creator><pubDate>Sat, 06 Dec 2014 13:30:00 +0530</pubDate><guid isPermaLink="false">tag:unixtech.github.io,2014-12-04:blog/12-2014/pf-firewall-1.html</guid><category>Unix</category><category>Firewall</category></item><item><title>Find - Looking for things</title><link>http://unixtech.github.io/blog/01-2010/practical-find.html</link><description>&lt;p&gt;The &lt;code&gt;Find&lt;/code&gt; utility in Linux is very useful in the sense that it quickly locates and searches through list of files and directories.
+&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Unixer</dc:creator><pubDate>Sat, 06 Dec 2014 13:30:00 +0530</pubDate><guid isPermaLink="false">tag:unixtech.github.io,2014-12-04:blog/12-2014/pf-firewall-1.html</guid><category>Unix</category><category>Firewall</category></item><item><title>Improve PostgreSQL CLI</title><link>http://unixtech.github.io/blog/12-2013/configuring-postgres-cli.html</link><description>&lt;p&gt;When you work in Terminal/Browser workflow for almost 10 hours a day - 5 days a
+week, It becomes important kind of colors and configs you choose. For me
+Database has been important part of my workflow when configuring various
+business logic for applications.&lt;br /&gt;
+I mainly use PostgreSQL for storing almost everything that has to resambles data, and mostly it will be automated through &lt;code&gt;psycopg2&lt;/code&gt; in &lt;code&gt;python&lt;/code&gt; scripts but time to time I do dwell in CMD option that PostgreSQL provides through &lt;code&gt;psql&lt;/code&gt;.   &lt;br /&gt;
+Given the configurability of &lt;code&gt;psqlrc&lt;/code&gt; and flexibility that is allowed by
+PostgreSQL server, it's almost surprising that how little people take advantage
+of these available features. Aliases and setting up proper History files can be
+useful features that comes in handy.&lt;/p&gt;
+&lt;p&gt;PostgreSQL stores &lt;code&gt;psqrc&lt;/code&gt; at various levels in system.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;System wide &lt;code&gt;psqlrc&lt;/code&gt;  &lt;ul&gt;
+&lt;li&gt;Will Affect all users&lt;/li&gt;
+&lt;li&gt;Can be located using following&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  pg_config --sysconfdir
+  /usr/local/etc/postgresql
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;Note: This is for FreeBSD operating system, location will vary as per your own OS.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Per User &lt;code&gt;psqlrc&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; touch ~/.psqlrc
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You can also have multiple &lt;code&gt;psqlrc&lt;/code&gt; one per major version of PostgreSQL on your
+system.  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;if you have more then one version of PostgreSQL installed on your system,
+then name it accordingly. Ex. For version 9.4 - &lt;code&gt;psqlrc-9.4&lt;/code&gt; or &lt;code&gt;psqlrc-9.4.3&lt;/code&gt;. This way It will enable you to have multiple configuration files for each user and per version as well.  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Now, Decide on which specific configuration file you want to configure - System
+wide or User specific and start customizing your &lt;code&gt;psqlrc&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Actual configuration file&lt;/h3&gt;
+&lt;!--{% include_code psqlrc Title1- %}--&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;-- This is comment.
+&lt;span class="se"&gt;\s&lt;/span&gt;et PROMPT1 &lt;span class="s1"&gt;&amp;#39;%n@%/%R%x%# &amp;#39;&lt;/span&gt;
+&lt;span class="se"&gt;\s&lt;/span&gt;et PROMPT2 &lt;span class="s1"&gt;&amp;#39;[more] %R &amp;gt; &amp;#39;&lt;/span&gt;
+&lt;span class="se"&gt;\p&lt;/span&gt;set null &lt;span class="s1"&gt;&amp;#39;[null]&amp;#39;&lt;/span&gt;
+&lt;span class="se"&gt;\s&lt;/span&gt;et COMP_KEYWORD_CASE upper
+&lt;span class="se"&gt;\t&lt;/span&gt;iming
+&lt;span class="se"&gt;\s&lt;/span&gt;et PAGER less
+&lt;span class="se"&gt;\s&lt;/span&gt;et HISTSIZE 2000
+&lt;span class="se"&gt;\e&lt;/span&gt;ncoding unicode
+&lt;span class="se"&gt;\x&lt;/span&gt; auto
+&lt;span class="se"&gt;\p&lt;/span&gt;set border 2
+&lt;span class="se"&gt;\s&lt;/span&gt;et VERBOSITY verbose
+&lt;span class="se"&gt;\s&lt;/span&gt;et version &lt;span class="s1"&gt;&amp;#39;SELECT version();&amp;#39;&lt;/span&gt;
+
+-- MACRO can be defined like this.
+&lt;span class="se"&gt;\s&lt;/span&gt;et extensions &lt;span class="s1"&gt;&amp;#39;select * from pg_available_extensions;&amp;#39;&lt;/span&gt;
+&lt;span class="se"&gt;\e&lt;/span&gt;cho &lt;span class="s1"&gt;&amp;#39;Welcome to Dev1 PostgreSQL \n&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Final output&lt;/h4&gt;
+&lt;p&gt;&lt;img class="center" src="/images/Selection_2016_07_01_02.png" width="600"&gt;&lt;/p&gt;
+&lt;h3&gt;Wrapping up&lt;/h3&gt;
+&lt;p&gt;These are about the main settings that you would want to configure here, Apart
+from these settings only Aliases as per your convinience should be configured
+inside your PostgreSQL configuration file so repetation can be avoided. Putting
+it in version controlled &lt;code&gt;dotfiles&lt;/code&gt; git repository and you will be able to sync
+same setting across all your DB server regardless So, Give custom configs a
+try!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Unixer</dc:creator><pubDate>Sat, 07 Dec 2013 14:30:00 +0530</pubDate><guid isPermaLink="false">tag:unixtech.github.io,2013-12-06:blog/12-2013/configuring-postgres-cli.html</guid><category>Essentials</category></item><item><title>Find - Looking for things</title><link>http://unixtech.github.io/blog/01-2010/practical-find.html</link><description>&lt;p&gt;The &lt;code&gt;Find&lt;/code&gt; utility in Linux is very useful in the sense that it quickly locates and searches through list of files and directories.
 It can do so based on condition that you pass through arguments. 
 &lt;code&gt;Find&lt;/code&gt; can find files using different conditions like:  &lt;/p&gt;
 &lt;ul&gt;
