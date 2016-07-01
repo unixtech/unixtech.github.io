@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>UnixTech</title><link href="http://unixtech.github.io/" rel="alternate"></link><link href="http://unixtech.github.io/feeds/all.atom.xml" rel="self"></link><id>http://unixtech.github.io/</id><updated>2015-12-07T19:30:00+05:30</updated><entry><title>Relational Algebra - SQL</title><link href="http://unixtech.github.io/blog/12-2015/understanding-sql-1.html" rel="alternate"></link><updated>2015-12-07T19:30:00+05:30</updated><author><name>Unixer</name></author><id>tag:unixtech.github.io,2015-12-06:blog/12-2015/understanding-sql-1.html</id><summary type="html">&lt;p&gt;In the age of ORMs so many developers today doesn't know about very fundamental and basic algorithms that runs SQL. Despite being one of easiest and much useful language many people run away from using SQL directly and take shelter in using some 'wrapper' tool which is not always as good as &lt;code&gt;raw&lt;/code&gt; SQL.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>UnixTech</title><link href="http://unixtech.github.io/" rel="alternate"></link><link href="http://unixtech.github.io/feeds/all.atom.xml" rel="self"></link><id>http://unixtech.github.io/</id><updated>2015-12-07T19:30:00+05:30</updated><entry><title>Relational Algebra - SQL</title><link href="http://unixtech.github.io/blog/12-2015/understanding-sql-1.html" rel="alternate"></link><published>2015-12-07T19:30:00+05:30</published><author><name>Unixer</name></author><id>tag:unixtech.github.io,2015-12-06:blog/12-2015/understanding-sql-1.html</id><summary type="html">&lt;p&gt;In the age of ORMs so many developers today doesn't know about very fundamental and basic algorithms that runs SQL. Despite being one of easiest and much useful language many people run away from using SQL directly and take shelter in using some 'wrapper' tool which is not always as good as &lt;code&gt;raw&lt;/code&gt; SQL.&lt;/p&gt;
 &lt;p&gt;Let's start by defining very basic relation in SQL.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Database as Collection of relations ( Tables or Schemas )&lt;/li&gt;
@@ -97,7 +97,7 @@ The main operators are:  &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;PROJECT ( &lt;span class="math"&gt;\(\pi\)&lt;/span&gt; ) &lt;span class="fa fa-arrow-right"&gt; &lt;/span&gt; Operation which returns columnar structure in vertical dimention, If you remember this is slicing by attributes can be described as&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="math"&gt;$$ \pi_{a1,a2...an} RO $$&lt;/div&gt;
+&lt;div class="math"&gt;$$ \pi _{a1,a2...an} RO  $$&lt;/div&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;span class="math"&gt;\(_{a1,a2..an}\)&lt;/span&gt; are set of attributes names.  &lt;/p&gt;
 &lt;/blockquote&gt;
@@ -182,12 +182,12 @@ These algebric math provides fundamental building block of any SQL algorithm whi
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</summary><category term="Essentials"></category></entry><entry><title>Interviewer's Gaffe-1</title><link href="http://unixtech.github.io/blog/06-2015/avoid-doing-interviews-1.html" rel="alternate"></link><updated>2015-06-15T16:02:00+05:30</updated><author><name>Unixer</name></author><id>tag:unixtech.github.io,2015-06-15:blog/06-2015/avoid-doing-interviews-1.html</id><summary type="html">&lt;p&gt;&lt;img src="/images/bring_star1.png" class="center" width="800"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="/images/bring_star2.png" class="center" width="800"&gt;
-&lt;img src="/images/bring_star4.png" class="center" width="800"&gt;&lt;/p&gt;
+&lt;/script&gt;</summary><category term="Essentials"></category></entry><entry><title>Interviewer's Gaffe-1</title><link href="http://unixtech.github.io/blog/06-2015/avoid-doing-interviews-1.html" rel="alternate"></link><published>2015-06-15T16:02:00+05:30</published><author><name>Unixer</name></author><id>tag:unixtech.github.io,2015-06-15:blog/06-2015/avoid-doing-interviews-1.html</id><summary type="html">&lt;p&gt;&lt;img class="center" src="/images/bring_star1.png" width="800"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img class="center" src="/images/bring_star2.png" width="800"&gt;
+&lt;img class="center" src="/images/bring_star4.png" width="800"&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Plight of every Interviewer&lt;/p&gt;
-&lt;/blockquote&gt;</summary><category term="Polity"></category></entry><entry><title>PF Firewall-1</title><link href="http://unixtech.github.io/blog/12-2014/pf-firewall-1.html" rel="alternate"></link><updated>2014-12-06T13:30:00+05:30</updated><author><name>Unixer</name></author><id>tag:unixtech.github.io,2014-12-04:blog/12-2014/pf-firewall-1.html</id><summary type="html">&lt;h2&gt;FreeBSD and OpenBSD&lt;/h2&gt;
+&lt;/blockquote&gt;</summary><category term="Polity"></category></entry><entry><title>Firewall PF</title><link href="http://unixtech.github.io/blog/12-2014/pf-firewall-1.html" rel="alternate"></link><published>2014-12-06T13:30:00+05:30</published><author><name>Unixer</name></author><id>tag:unixtech.github.io,2014-12-04:blog/12-2014/pf-firewall-1.html</id><summary type="html">&lt;h2&gt;FreeBSD and OpenBSD&lt;/h2&gt;
 &lt;p&gt;PF (Packet filter) is default firewall for OpenBSD and included in other OS's like &lt;a href="http://www.freebsd.org"&gt;FreeBSD&lt;/a&gt; and &lt;a href="http://www.apple.com" title="Apple"&gt;Apple&lt;/a&gt; IOS operating systems. Many other "Commercial firewall" appliances are inspired by PF.&lt;/p&gt;
 &lt;h2&gt;History of PF&lt;/h2&gt;
 &lt;p&gt;PF was originally designed as replacement for Darren Reed's IPFilter, from which it derives much of its rule syntax. IPFilter was removed from OpenBSD's CVS tree due to OpenBSD developers' problems with its license. Specifically, Reed distributed some versions of his software with the license clause, "Derivative or modified works are not permitted without the author's prior consent." Due to this, the OpenBSD team decided to replace the software. This decision became the subject of wrangling among the parties involved, degenerating into a discussion that failed to reach mutual understanding. On the subject, OpenBSD project leader Theo de Raadt wrote, "Software which OpenBSD uses and redistributes must be free to all... for any purpose including... modification."&lt;/p&gt;
@@ -212,14 +212,14 @@ We will mainly focus on OpenBSD OS but there are benefits of using &lt;code&gt;P
 &lt;!--{% include_code pf.conf [lang:sh] [pf.conf] %}--&gt;
 
 &lt;p&gt;File - &lt;code&gt;/etc/rc.conf.local&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;pf&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;YES
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;pf&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;YES
 &lt;span class="nv"&gt;pf_rules&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/etc/pf.conf
 &lt;span class="nv"&gt;pflogd_flags&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;-s 1500&amp;quot;&lt;/span&gt; &lt;span class="c1"&gt;# Ex. Snaplen, Log filename&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;File - &lt;code&gt;/etc/pf.conf&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;### My master pf.conf&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;### My master pf.conf&lt;/span&gt;
 
 &lt;span class="c1"&gt;### Interfaces&lt;/span&gt;
 &lt;span class="nv"&gt;EXTIF&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;em0&amp;quot;&lt;/span&gt;
@@ -230,11 +230,11 @@ We will mainly focus on OpenBSD OS but there are benefits of using &lt;code&gt;P
 &lt;span class="c1"&gt;### Hosts&lt;/span&gt;
 &lt;span class="nv"&gt;ADMIN&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;10.0.11.1&amp;quot;&lt;/span&gt;
 &lt;span class="nv"&gt;ADMIN1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;10.0.11.31&amp;quot;&lt;/span&gt;
-&lt;span class="nv"&gt;BOTHADMIN&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;{&amp;quot;&lt;/span&gt; &lt;span class="nv"&gt;$AD&lt;/span&gt;MIN &lt;span class="nv"&gt;$AD&lt;/span&gt;MIN1 &lt;span class="s2"&gt;&amp;quot;}&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;BOTHADMIN&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;{&amp;quot;&lt;/span&gt; &lt;span class="nv"&gt;$ADMIN&lt;/span&gt; &lt;span class="nv"&gt;$ADMIN1&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;}&amp;quot;&lt;/span&gt;
 &lt;span class="nv"&gt;EXTDNSSERVER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;4.2.2.2&amp;quot;&lt;/span&gt;
-&lt;span class="nv"&gt;INTDNSSERVER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;$&lt;span class="s2"&gt;INTIF:0&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;INTDNSSERVER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$INTIF&lt;/span&gt;&lt;span class="s2"&gt;:0&amp;quot;&lt;/span&gt;
 &lt;span class="c1"&gt;#DNSSERVERS =&amp;quot;{&amp;#39; $INTDNSSERVER $EXTDNSSERVER &amp;#39;}&amp;quot;&lt;/span&gt;
-&lt;span class="nv"&gt;DNSSERVER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;{&lt;/span&gt;$&lt;span class="s2"&gt;INTDNSSERVER}&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;DNSSERVER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;{&lt;/span&gt;&lt;span class="nv"&gt;$INTDNSSERVER&lt;/span&gt;&lt;span class="s2"&gt;}&amp;quot;&lt;/span&gt;
 &lt;span class="nv"&gt;LOGSERVER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;{ 10.0.11.22, 10.0.11.31  }&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -246,29 +246,29 @@ We will mainly focus on OpenBSD OS but there are benefits of using &lt;code&gt;P
 &lt;li&gt;Take a look at &lt;code&gt;INTIF&lt;/code&gt; macro, If you want to include that whole internal network in your rules then &lt;code&gt;INTIF:network&lt;/code&gt; in your rule.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Now, We will have a look at some of the rules itself.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;#External Interface&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#External Interface&lt;/span&gt;
 &lt;span class="c1"&gt;#Block all on External interface&lt;/span&gt;
-block log on &lt;span class="nv"&gt;$E&lt;/span&gt;XTIF
+block log on &lt;span class="nv"&gt;$EXTIF&lt;/span&gt;
 
 &lt;span class="c1"&gt;## Network address translation with outgoing source &lt;/span&gt;
 &lt;span class="c1"&gt;#match out log on $EXTIF from $INTIF to any received-on $INTIF tag EGRESS nat-to ($EXTIF:0) &lt;/span&gt;
-match out log on &lt;span class="nv"&gt;$E&lt;/span&gt;XTIF from $INTIF:network to any received-on $INTIF tag EGRESS nat-to &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$E&lt;/span&gt;XTIF:0&lt;span class="o"&gt;)&lt;/span&gt;
+match out log on &lt;span class="nv"&gt;$EXTIF&lt;/span&gt; from &lt;span class="nv"&gt;$INTIF&lt;/span&gt;:network to any received-on &lt;span class="nv"&gt;$INTIF&lt;/span&gt; tag EGRESS nat-to &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$EXTIF&lt;/span&gt;:0&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;span class="c1"&gt;#If you have difficulties with any box with static port forwarding then you should use&lt;/span&gt;
 &lt;span class="c1"&gt;#match out log on $EXTIF from $INTIF to any received-on $INTIF tag EGRESS nat-to ($EXTIF:0) static-port&lt;/span&gt;
 
 &lt;span class="c1"&gt;#Traffic generated from firewall it self will be tagged as EGRESS&lt;/span&gt;
-match out log on &lt;span class="nv"&gt;$E&lt;/span&gt;XTIF from &lt;span class="nv"&gt;$E&lt;/span&gt;XTIF to any tag EGRESS
+match out log on &lt;span class="nv"&gt;$EXTIF&lt;/span&gt; from &lt;span class="nv"&gt;$EXTIF&lt;/span&gt; to any tag EGRESS
 &lt;span class="c1"&gt;#More on these later on.&lt;/span&gt;
 
 &lt;span class="c1"&gt;#EXTIF inbound&lt;/span&gt;
-pass in log &lt;span class="o"&gt;(&lt;/span&gt;to pflog1&lt;span class="o"&gt;)&lt;/span&gt; on &lt;span class="nv"&gt;$E&lt;/span&gt;XTIF inet proto tcp from any to any port &lt;span class="m"&gt;22&lt;/span&gt; 
-pass in on &lt;span class="nv"&gt;$E&lt;/span&gt;XTIF inet proto tcp from any to &lt;span class="nv"&gt;$E&lt;/span&gt;XTIF port &amp;gt;10000
+pass in log &lt;span class="o"&gt;(&lt;/span&gt;to pflog1&lt;span class="o"&gt;)&lt;/span&gt; on &lt;span class="nv"&gt;$EXTIF&lt;/span&gt; inet proto tcp from any to any port &lt;span class="m"&gt;22&lt;/span&gt; 
+pass in on &lt;span class="nv"&gt;$EXTIF&lt;/span&gt; inet proto tcp from any to &lt;span class="nv"&gt;$EXTIF&lt;/span&gt; port &amp;gt;10000
 
 &lt;span class="c1"&gt;#External interface outbound&lt;/span&gt;
-pass out log on &lt;span class="nv"&gt;$E&lt;/span&gt;XTIF inet  from &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$E&lt;/span&gt;XTIF&lt;span class="o"&gt;)&lt;/span&gt; to any $TCPSTATE &lt;span class="nv"&gt;$E&lt;/span&gt;XTIFSTO queue &lt;span class="o"&gt;(&lt;/span&gt;bulk, ack&lt;span class="o"&gt;)&lt;/span&gt; tagged EGRESS
+pass out log on &lt;span class="nv"&gt;$EXTIF&lt;/span&gt; inet  from &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$EXTIF&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; to any &lt;span class="nv"&gt;$TCPSTATE&lt;/span&gt; &lt;span class="nv"&gt;$EXTIFSTO&lt;/span&gt; queue &lt;span class="o"&gt;(&lt;/span&gt;bulk, ack&lt;span class="o"&gt;)&lt;/span&gt; tagged EGRESS
 &lt;span class="c1"&gt;#pass out log on $EXTIF inet proto udp from ($EXTIF) to any $UDPSTATE $EXTIFSTO queue (bulk, ack) tagged EGRESS&lt;/span&gt;
-pass out log on &lt;span class="nv"&gt;$E&lt;/span&gt;XTIF inet proto tcp from &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$E&lt;/span&gt;XTIF&lt;span class="o"&gt;)&lt;/span&gt; to any port $TCPPORTS $TCPSTATE &lt;span class="nv"&gt;$E&lt;/span&gt;XTIFSTO queue &lt;span class="o"&gt;(&lt;/span&gt;web, ack&lt;span class="o"&gt;)&lt;/span&gt; tagged EGRESS
-pass out log on &lt;span class="nv"&gt;$E&lt;/span&gt;XTIF inet proto udp from &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$E&lt;/span&gt;XTIF&lt;span class="o"&gt;)&lt;/span&gt; to any port &lt;span class="m"&gt;53&lt;/span&gt; $UDPSTATE &lt;span class="nv"&gt;$E&lt;/span&gt;XTIFSTO queue &lt;span class="o"&gt;(&lt;/span&gt;dns, ack&lt;span class="o"&gt;)&lt;/span&gt; tagged EGRESS
+pass out log on &lt;span class="nv"&gt;$EXTIF&lt;/span&gt; inet proto tcp from &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$EXTIF&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; to any port &lt;span class="nv"&gt;$TCPPORTS&lt;/span&gt; &lt;span class="nv"&gt;$TCPSTATE&lt;/span&gt; &lt;span class="nv"&gt;$EXTIFSTO&lt;/span&gt; queue &lt;span class="o"&gt;(&lt;/span&gt;web, ack&lt;span class="o"&gt;)&lt;/span&gt; tagged EGRESS
+pass out log on &lt;span class="nv"&gt;$EXTIF&lt;/span&gt; inet proto udp from &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$EXTIF&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; to any port &lt;span class="m"&gt;53&lt;/span&gt; &lt;span class="nv"&gt;$UDPSTATE&lt;/span&gt; &lt;span class="nv"&gt;$EXTIFSTO&lt;/span&gt; queue &lt;span class="o"&gt;(&lt;/span&gt;dns, ack&lt;span class="o"&gt;)&lt;/span&gt; tagged EGRESS
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -280,7 +280,7 @@ pass out log on &lt;span class="nv"&gt;$E&lt;/span&gt;XTIF inet proto udp from &
 &lt;/ul&gt;
 &lt;h3&gt;Turning on routing&lt;/h3&gt;
 &lt;p&gt;To turn on routing functionality of the box, You need to make sure you have enabled ip forwarding in &lt;code&gt;sysctl&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;# To check the ip forwarding status&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# To check the ip forwarding status&lt;/span&gt;
 sysctl net.inet.ip.forwarding
 &lt;span class="c1"&gt;# If it&amp;#39;s 0 then turn it on&lt;/span&gt;
 sysctl net.inet.ip.forwarding&lt;span class="o"&gt;=&lt;/span&gt;1
@@ -294,16 +294,16 @@ net.inet.ip.forwarding &lt;span class="o"&gt;=&lt;/span&gt; 1
 &lt;h3&gt;PFCTL utility&lt;/h3&gt;
 &lt;p&gt;After making changes inside &lt;code&gt;pf.conf&lt;/code&gt; file, rules are not automatically loaded. To load the rules We need to use &lt;code&gt;pfctl&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;To load rules - Assuming rule file is &lt;code&gt;/etc/pf.conf&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;pfctl -vf /etc/pf.conf
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pfctl -vf /etc/pf.conf
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;To see which rules are currently loaded, It will also show related counters. &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;pfctl -vsr
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pfctl -vsr
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img src="/images/pf_rules.png" class="center" width="600"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img class="center" src="/images/pf_rules.png" width="600"&gt;&lt;/p&gt;
 &lt;h2&gt;Conclusions&lt;/h2&gt;
 &lt;p&gt;PF is one of the most popular and powerful firewall for managing your network traffic. We have barely even scratched surface of what PF can provide. It's functionality is much more then many of the commercial offerings offers.&lt;br /&gt;
 We will also cover some extended functionality such as usage of Anchors, Preventing torrent traffic, Blacklisting and preventing brute-forcing attack etc.
@@ -323,7 +323,78 @@ ReactDOM.render(
   &lt;CommentBox /&gt;,
   document.getElementById('comment')
 );
-&lt;/script&gt;</summary><category term="Unix"></category><category term="Firewall"></category></entry><entry><title>Unix essentials-1 Find</title><link href="http://unixtech.github.io/blog/01-2010/practical-find.html" rel="alternate"></link><updated>2010-01-03T18:02:00+05:30</updated><author><name>Unixer</name></author><id>tag:unixtech.github.io,2010-01-03:blog/01-2010/practical-find.html</id><summary type="html">&lt;p&gt;The &lt;code&gt;Find&lt;/code&gt; utility in Linux is very useful in the sense that it quickly locates and searches through list of files and directories.
+&lt;/script&gt;</summary><category term="Unix"></category><category term="Firewall"></category></entry><entry><title>Improve PostgreSQL CLI</title><link href="http://unixtech.github.io/blog/12-2013/configuring-postgres-cli.html" rel="alternate"></link><published>2013-12-07T14:30:00+05:30</published><author><name>Unixer</name></author><id>tag:unixtech.github.io,2013-12-06:blog/12-2013/configuring-postgres-cli.html</id><summary type="html">&lt;p&gt;When you work in Terminal/Browser workflow for almost 10 hours a day - 5 days a
+week, It becomes important kind of colors and configs you choose. For me
+Database has been important part of my workflow when configuring various
+business logic for applications.&lt;br /&gt;
+I mainly use PostgreSQL for storing almost everything that has to resambles data, and mostly it will be automated through &lt;code&gt;psycopg2&lt;/code&gt; in &lt;code&gt;python&lt;/code&gt; scripts but time to time I do dwell in CMD option that PostgreSQL provides through &lt;code&gt;psql&lt;/code&gt;.   &lt;br /&gt;
+Given the configurability of &lt;code&gt;psqlrc&lt;/code&gt; and flexibility that is allowed by
+PostgreSQL server, it's almost surprising that how little people take advantage
+of these available features. Aliases and setting up proper History files can be
+useful features that comes in handy.&lt;/p&gt;
+&lt;p&gt;PostgreSQL stores &lt;code&gt;psqrc&lt;/code&gt; at various levels in system.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;System wide &lt;code&gt;psqlrc&lt;/code&gt;  &lt;ul&gt;
+&lt;li&gt;Will Affect all users&lt;/li&gt;
+&lt;li&gt;Can be located using following&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  pg_config --sysconfdir
+  /usr/local/etc/postgresql
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;Note: This is for FreeBSD operating system, location will vary as per your own OS.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Per User &lt;code&gt;psqlrc&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; touch ~/.psqlrc
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You can also have multiple &lt;code&gt;psqlrc&lt;/code&gt; one per major version of PostgreSQL on your
+system.  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;if you have more then one version of PostgreSQL installed on your system,
+then name it accordingly. Ex. For version 9.4 - &lt;code&gt;psqlrc-9.4&lt;/code&gt; or &lt;code&gt;psqlrc-9.4.3&lt;/code&gt;. This way It will enable you to have multiple configuration files for each user and per version as well.  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Now, Decide on which specific configuration file you want to configure - System
+wide or User specific and start customizing your &lt;code&gt;psqlrc&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Actual configuration file&lt;/h3&gt;
+&lt;!--{% include_code psqlrc Title1- %}--&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;-- This is comment.
+&lt;span class="se"&gt;\s&lt;/span&gt;et PROMPT1 &lt;span class="s1"&gt;&amp;#39;%n@%/%R%x%# &amp;#39;&lt;/span&gt;
+&lt;span class="se"&gt;\s&lt;/span&gt;et PROMPT2 &lt;span class="s1"&gt;&amp;#39;[more] %R &amp;gt; &amp;#39;&lt;/span&gt;
+&lt;span class="se"&gt;\p&lt;/span&gt;set null &lt;span class="s1"&gt;&amp;#39;[null]&amp;#39;&lt;/span&gt;
+&lt;span class="se"&gt;\s&lt;/span&gt;et COMP_KEYWORD_CASE upper
+&lt;span class="se"&gt;\t&lt;/span&gt;iming
+&lt;span class="se"&gt;\s&lt;/span&gt;et PAGER less
+&lt;span class="se"&gt;\s&lt;/span&gt;et HISTSIZE 2000
+&lt;span class="se"&gt;\e&lt;/span&gt;ncoding unicode
+&lt;span class="se"&gt;\x&lt;/span&gt; auto
+&lt;span class="se"&gt;\p&lt;/span&gt;set border 2
+&lt;span class="se"&gt;\s&lt;/span&gt;et VERBOSITY verbose
+&lt;span class="se"&gt;\s&lt;/span&gt;et version &lt;span class="s1"&gt;&amp;#39;SELECT version();&amp;#39;&lt;/span&gt;
+
+-- MACRO can be defined like this.
+&lt;span class="se"&gt;\s&lt;/span&gt;et extensions &lt;span class="s1"&gt;&amp;#39;select * from pg_available_extensions;&amp;#39;&lt;/span&gt;
+&lt;span class="se"&gt;\e&lt;/span&gt;cho &lt;span class="s1"&gt;&amp;#39;Welcome to Dev1 PostgreSQL \n&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Final output&lt;/h4&gt;
+&lt;p&gt;&lt;img class="center" src="/images/Selection_2016_07_01_02.png" width="600"&gt;&lt;/p&gt;
+&lt;h3&gt;Wrapping up&lt;/h3&gt;
+&lt;p&gt;These are about the main settings that you would want to configure here, Apart
+from these settings only Aliases as per your convinience should be configured
+inside your PostgreSQL configuration file so repetation can be avoided. Putting
+it in version controlled &lt;code&gt;dotfiles&lt;/code&gt; git repository and you will be able to sync
+same setting across all your DB server regardless So, Give custom configs a
+try!&lt;/p&gt;</summary><category term="Essentials"></category></entry><entry><title>Find - Looking for things</title><link href="http://unixtech.github.io/blog/01-2010/practical-find.html" rel="alternate"></link><published>2010-01-03T18:02:00+05:30</published><author><name>Unixer</name></author><id>tag:unixtech.github.io,2010-01-03:blog/01-2010/practical-find.html</id><summary type="html">&lt;p&gt;The &lt;code&gt;Find&lt;/code&gt; utility in Linux is very useful in the sense that it quickly locates and searches through list of files and directories.
 It can do so based on condition that you pass through arguments. 
 &lt;code&gt;Find&lt;/code&gt; can find files using different conditions like:  &lt;/p&gt;
 &lt;ul&gt;
@@ -338,7 +409,7 @@ It can do so based on condition that you pass through arguments.
 &lt;ul&gt;
 &lt;li&gt;Find file in current directory&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt; &lt;span class="c1"&gt;# Find by filename in Current dir&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="c1"&gt;# Find by filename in Current dir&lt;/span&gt;
  find . -name unixtech.txt
 
  &lt;span class="c1"&gt;#Output&lt;/span&gt;
@@ -349,7 +420,7 @@ It can do so based on condition that you pass through arguments.
 &lt;ul&gt;
 &lt;li&gt;Find file in current directory &lt;span class="fa fa-arrow-right"&gt;&lt;/span&gt; Case insensitive&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt; &lt;span class="c1"&gt;# Find by filename in Current dir&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="c1"&gt;# Find by filename in Current dir&lt;/span&gt;
  find . -iname unixtech.txt
 
  &lt;span class="c1"&gt;#Output&lt;/span&gt;
@@ -360,8 +431,8 @@ It can do so based on condition that you pass through arguments.
 &lt;ul&gt;
 &lt;li&gt;Recursively searching file in all in whole system&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;# Recurse through whole file system&lt;/span&gt;
-find / -name &lt;span class="nv"&gt;$F&lt;/span&gt;ILENAME
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Recurse through whole file system&lt;/span&gt;
+find / -name &lt;span class="nv"&gt;$FILENAME&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -369,7 +440,7 @@ find / -name &lt;span class="nv"&gt;$F&lt;/span&gt;ILENAME
 &lt;ul&gt;
 &lt;li&gt;Find files certain permissions&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;# Find only files with full 777 permissions&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Find only files with full 777 permissions&lt;/span&gt;
 find / -perm &lt;span class="m"&gt;0777&lt;/span&gt; -print
 &lt;span class="c1"&gt;# Find files with SGID bit set &lt;/span&gt;
 find / -perm 2644
@@ -381,7 +452,7 @@ find / -perm /g+s
 &lt;ul&gt;
 &lt;li&gt;Find all files based on user permissions&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;#Find all files with READ permission&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#Find all files with READ permission&lt;/span&gt;
 find / -perm /u&lt;span class="o"&gt;=&lt;/span&gt;r -print
 
 &lt;span class="c1"&gt;# Find all files with executable bit set&lt;/span&gt;
@@ -397,7 +468,7 @@ In addition to just printing list of files, You can modify, change permission an
 &lt;ul&gt;
 &lt;li&gt;Find all files with &lt;code&gt;777&lt;/code&gt; permission and change it to &lt;code&gt;644&lt;/code&gt; inside your home directory&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;#Find and exec &lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#Find and exec &lt;/span&gt;
 find ~USERNAME -perm &lt;span class="m"&gt;777&lt;/span&gt; -print -exec chmod &lt;span class="m"&gt;644&lt;/span&gt; &lt;span class="o"&gt;{}&lt;/span&gt; &lt;span class="se"&gt;\;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -426,7 +497,7 @@ find ~USERNAME -perm &lt;span class="m"&gt;777&lt;/span&gt; -print -exec chmod &
 &lt;ul&gt;
 &lt;li&gt;Same thing if you want to remove or list files&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;#List files that matches certain crieteria&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#List files that matches certain crieteria&lt;/span&gt;
 find / -perm &lt;span class="m"&gt;777&lt;/span&gt; -print -exec ls -la &lt;span class="o"&gt;{}&lt;/span&gt; &lt;span class="se"&gt;\;&lt;/span&gt;
 
 &lt;span class="c1"&gt;#Removing files that matches certain crieteria&lt;/span&gt;
@@ -435,7 +506,7 @@ find / -perm &lt;span class="m"&gt;777&lt;/span&gt; -print -exec rm -rf &lt;span
 
 
 &lt;h2&gt;Finding files based on user/group ownership&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;#Find files owned by particular user&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#Find files owned by particular user&lt;/span&gt;
 find / -user unixtech -print
 
 &lt;span class="c1"&gt;#Find files owned by group&lt;/span&gt;
@@ -447,14 +518,14 @@ find / -group unixgroup -print
 &lt;ul&gt;
 &lt;li&gt;Find files modified 3 days back&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;find / -mtime 3
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;find / -mtime 3
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;ul&gt;
 &lt;li&gt;find all the files those are changed last hour&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;#Will return all the files changed in last 60 mins&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#Will return all the files changed in last 60 mins&lt;/span&gt;
 find / -cmin -60
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -490,14 +561,14 @@ Notice different criterion for finding files such as &lt;code&gt;-mmin&lt;/code&
 &lt;ul&gt;
 &lt;li&gt;Find all the  files between 10 MB - 100 MB&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;find /home -size +10M -size -100M
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;find /home -size +10M -size -100M
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;ul&gt;
 &lt;li&gt;Find all the files larger then 1GB and delete em&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;#Find larger files and list them first&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#Find larger files and list them first&lt;/span&gt;
 find /home -size +1G -exec ls -la &lt;span class="o"&gt;{}&lt;/span&gt; &lt;span class="se"&gt;\;&lt;/span&gt;
 
 &lt;span class="c1"&gt;# If you see desired files then remove them&lt;/span&gt;
@@ -508,7 +579,7 @@ find /home -size +1G -exec rm -rf &lt;span class="o"&gt;{}&lt;/span&gt; &lt;span
 &lt;ul&gt;
 &lt;li&gt;Find all the movie files larger then 100MB and delete &lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;# Find and list files first&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Find and list files first&lt;/span&gt;
 find /home -size +100M -print -iname &lt;span class="s2"&gt;&amp;quot;*mp4|wmv|mov&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
 &lt;span class="c1"&gt;# After listing them just press `UP` arrow, change the CMD and  delete &lt;/span&gt;

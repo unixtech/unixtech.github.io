@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Improve PostgreSQL CLI &mdash; UnixTech</title>
+  <meta name="author" content="Unixer">
+
+
+
+
+
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="../../images/favicon.ico" rel="icon">
+
+  <link href="../../theme/css/main.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+<link href="../../theme/css/custom.css" media="screen, projection"
+        rel="stylesheet" type="text/css">
+<link href="../../theme/css/font-awesome-4.5.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="../../theme/css/tipuesearch.css">
+  <!--<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"-->
+        <!--rel="stylesheet" type="text/css">-->
+  <!--<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic"-->
+        <!--rel="stylesheet" type="text/css">-->
+</head>
+
+<body>
+  <header role="banner"><hgroup>
+<!--<h1><span class="logo1"><img class="logo2" src=../../images/favicon.ico height="64" width="64"></span><a href="../../">UnixTech</a></h1>-->
+<h1><span class="logo1"><a href="../../">UnixTech</a></h1>
+    <h2>Creativity, Business - Amplified</h2>
+</hgroup></header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+</ul>
+
+<!---->
+<!--<form action="https://www.google.com/search" method="get">-->
+<!--<fieldset role="search">-->
+<!---->
+<!--<input type="hidden" name="sitesearch" value="../..">-->
+<!---->
+<!--<input class="search" type="text" name="q" results="0" placeholder="Search"/>-->
+<!--</fieldset>-->
+<!--</form>-->
+<!---->
+
+<div class="search-wrapper">
+<form class="navbar-form navbar-left" role="search" action="../../search.html" onsubmit="return validateForm(this.elements['q'].value);">
+    <div class="input-holder">
+        <input type="text" class="search-input" placeholder="Search" name="q" id="tipue_search_input">
+        <button class='search-icon' onclick="searchToggle(this, event);"> <span></span> </button>
+    </div>
+    <span class="close" onclick="searchToggle(this, event);"></span>
+</form>
+</div>
+
+<ul class="main-navigation">
+    <li><a href="/pages/about.html">About ME</a></li>
+    <li><a href="/archives.html">Archives</a></li>
+</ul></nav>
+  <div id="main">
+    <div id="content">
+<div>
+  <article class="hentry" role="article">
+<header>
+      <h1 class="entry-title">Improve PostgreSQL CLI</h1>
+    <p class="meta">
+<time datetime="2013-12-06T10:50:00+05:30" pubdate>Fri 06 December 2013</time>  &ndash;  <i class="fa fa-clock-o term"> </i> 2 min read
+    </p>
+</header>
+
+  <div class="entry-content"><p>When you work in Terminal/Browser workflow for almost 10 hours a day - 5 days a
+week, It becomes important kind of colors and configs you choose. For me
+Database has been important part of my workflow when configuring various
+business logic for applications.<br />
+I mainly use PostgreSQL for storing almost everything that has to resambles data, and mostly it will be automated through <code>psycopg2</code> in <code>python</code> scripts but time to time I do dwell in CMD option that PostgreSQL provides through <code>psql</code>.   <br />
+Given the configurability of <code>psqlrc</code> and flexibility that is allowed by
+PostgreSQL server, it's almost surprising that how little people take advantage
+of these available features. Aliases and setting up proper History files can be
+useful features that comes in handy.</p>
+<p>PostgreSQL stores <code>psqrc</code> at various levels in system.</p>
+<ul>
+<li>System wide <code>psqlrc</code>  <ul>
+<li>Will Affect all users</li>
+<li>Can be located using following</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span>  pg_config --sysconfdir
+  /usr/local/etc/postgresql
+</pre></div>
+
+
+<blockquote>
+<p>Note: This is for FreeBSD operating system, location will vary as per your own OS.</p>
+</blockquote>
+<ul>
+<li>Per User <code>psqlrc</code></li>
+</ul>
+<div class="highlight"><pre><span></span> touch ~/.psqlrc
+</pre></div>
+
+
+<p>You can also have multiple <code>psqlrc</code> one per major version of PostgreSQL on your
+system.  </p>
+<blockquote>
+<p>if you have more then one version of PostgreSQL installed on your system,
+then name it accordingly. Ex. For version 9.4 - <code>psqlrc-9.4</code> or <code>psqlrc-9.4.3</code>. This way It will enable you to have multiple configuration files for each user and per version as well.  </p>
+</blockquote>
+<p>Now, Decide on which specific configuration file you want to configure - System
+wide or User specific and start customizing your <code>psqlrc</code>.</p>
+<h3>Actual configuration file</h3>
+<!--{% include_code psqlrc Title1- %}-->
+
+<div class="highlight"><pre><span></span>-- This is comment.
+<span class="se">\s</span>et PROMPT1 <span class="s1">&#39;%n@%/%R%x%# &#39;</span>
+<span class="se">\s</span>et PROMPT2 <span class="s1">&#39;[more] %R &gt; &#39;</span>
+<span class="se">\p</span>set null <span class="s1">&#39;[null]&#39;</span>
+<span class="se">\s</span>et COMP_KEYWORD_CASE upper
+<span class="se">\t</span>iming
+<span class="se">\s</span>et PAGER less
+<span class="se">\s</span>et HISTSIZE 2000
+<span class="se">\e</span>ncoding unicode
+<span class="se">\x</span> auto
+<span class="se">\p</span>set border 2
+<span class="se">\s</span>et VERBOSITY verbose
+<span class="se">\s</span>et version <span class="s1">&#39;SELECT version();&#39;</span>
+
+-- MACRO can be defined like this.
+<span class="se">\s</span>et extensions <span class="s1">&#39;select * from pg_available_extensions;&#39;</span>
+<span class="se">\e</span>cho <span class="s1">&#39;Welcome to Dev1 PostgreSQL \n&#39;</span>
+</pre></div>
+
+
+<h4>Final output</h4>
+<p><img class="center" src="/images/Selection_2016_07_01_02.png" width="600"></p>
+<h3>Wrapping up</h3>
+<p>These are about the main settings that you would want to configure here, Apart
+from these settings only Aliases as per your convinience should be configured
+inside your PostgreSQL configuration file so repetation can be avoided. Putting
+it in version controlled <code>dotfiles</code> git repository and you will be able to sync
+same setting across all your DB server regardless So, Give custom configs a
+try!</p></div>
+
+
+  <div class="nav_priv">
+      <!---->
+    <!--<p class="prevpost"><i class="fa fa-arrow-left"></i> Older<br />-->
+    <!--<a href="../../blog/01-2010/practical-find.html">Find - Looking for things</a></p>-->
+<!---->
+<!---->
+    <!--<p class="nextpost">Newer <i class="fa fa-arrow-right"></i><br />-->
+    <!--<a href="../../blog/12-2014/pf-firewall-1.html">Firewall PF</a></p>-->
+<!---->
+
+    </div>
+
+    <footer>
+<p class="meta">
+  <span class="byline author vcard">
+    Posted by <span class="fn">
+        Unixer
+    </span>
+  </span>
+<time datetime="2013-12-06T10:50:00+05:30" pubdate>Fri 06 December 2013</time>  <span class="categories">
+    <a class='category' href='../../category/server.html'>Server</a>
+  </span>
+  <span class="categories">
+    <a class="category" href="../../tag/essentials.html">Essentials</a>  </span>
+</p>
+  <div class="decor1"></div><div class="sharing">
+</div>    </footer>
+  </article>
+
+</div>
+<aside class="sidebar">
+  <section>
+    <h1>Recent Posts</h1>
+    <ul id="recent_posts">
+      <li class="post">
+          <a href="../../blog/12-2015/understanding-sql-1.html">Relational Algebra - SQL</a>
+      </li>
+      <li class="post">
+          <a href="../../blog/06-2015/avoid-doing-interviews-1.html">Interviewer's Gaffe-1</a>
+      </li>
+      <li class="post">
+          <a href="../../blog/12-2014/pf-firewall-1.html">Firewall PF</a>
+      </li>
+      <li class="post">
+          <a href="../../blog/12-2013/configuring-postgres-cli.html">Improve PostgreSQL CLI</a>
+      </li>
+      <li class="post">
+          <a href="../../blog/01-2010/practical-find.html">Find - Looking for things</a>
+      </li>
+    </ul>
+  </section>
+  <section>
+      
+    <h1>Categories</h1>
+    <ul id="recent_posts">
+        <li><a href="../../category/art.html">Art</a></li>
+        <li><a href="../../category/server.html">Server</a></li>
+        <li><a href="../../category/unix.html">Unix</a></li>
+    </ul>
+  </section>
+ 
+
+  <section>
+  <h1>Tags</h1>
+    <a href="../../tag/firewall.html">Firewall</a>,    <a href="../../tag/unix.html">Unix</a>,    <a href="../../tag/essentials.html">Essentials</a>,    <a href="../../tag/polity.html">Polity</a>  </section>
+
+
+
+</aside>    </div>
+  </div>
+  <footer role="contentinfo"><p>
+    Copyright &copy;  2010&ndash;2015  <a href="mailto:unixlama@gmail.com">Unixer  </a>
+</p></footer>
+  <script src="../../theme/js/modernizr-2.0.js"></script>
+  <script src="../../theme/js/ender.js"></script>
+  <script src="../../theme/js/octopress.js" type="text/javascript"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+
+<script>
+function searchToggle(obj, evt){
+    var container = $(obj).closest('.search-wrapper');
+        if(!container.hasClass('active')){
+            container.addClass('active');
+            evt.preventDefault();
+        }
+        else if(container.hasClass('active') && $(obj).closest('.input-holder').length == 0){
+            container.removeClass('active');
+            // clear input
+            container.find('.search-input').val('');
+        }
+}
+</script>
+
+
+</body>
+</html>
