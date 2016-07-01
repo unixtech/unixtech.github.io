@@ -25,6 +25,7 @@
 <link href="../../theme/css/custom.css" media="screen, projection"
         rel="stylesheet" type="text/css">
 <link href="../../theme/css/font-awesome-4.5.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
+<link href="../../theme/css/prism.css"  rel="stylesheet" type="text/css">
 
 <link rel="stylesheet" href="../../theme/css/tipuesearch.css">
   <!--<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"-->
@@ -36,7 +37,7 @@
 <body>
   <header role="banner"><hgroup>
 <!--<h1><span class="logo1"><img class="logo2" src=../../images/favicon.ico height="64" width="64"></span><a href="../../">UnixTech</a></h1>-->
-<h1><span class="logo1"><a href="../../">UnixTech</a></h1>
+<h1><span class="logo1"></span><a href="../../">UnixTech</a></h1>
     <h2>Creativity, Business - Amplified</h2>
 </hgroup></header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
@@ -81,8 +82,8 @@
   <div class="entry-content"><p>When you work in Terminal/Browser workflow for almost 10 hours a day - 5 days a
 week, It becomes important kind of colors and configs you choose. For me
 Database has been important part of my workflow when configuring various
-business logic for applications.<br />
-I mainly use PostgreSQL for storing almost everything that has to resambles data, and mostly it will be automated through <code>psycopg2</code> in <code>python</code> scripts but time to time I do dwell in CMD option that PostgreSQL provides through <code>psql</code>.   <br />
+business logic for applications.   </p>
+<p>I mainly use PostgreSQL for storing almost everything that has to resambles data, and mostly it will be automated through <code>psycopg2</code> in <code>python</code> scripts but time to time I do dwell in CMD option that PostgreSQL provides through <code>psql</code>.   <br />
 Given the configurability of <code>psqlrc</code> and flexibility that is allowed by
 PostgreSQL server, it's almost surprising that how little people take advantage
 of these available features. Aliases and setting up proper History files can be
@@ -95,10 +96,9 @@ useful features that comes in handy.</p>
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre><span></span>  pg_config --sysconfdir
+<pre><code class="language-bash">  pg_config --sysconfdir
   /usr/local/etc/postgresql
-</pre></div>
-
+</code></pre>
 
 <blockquote>
 <p>Note: This is for FreeBSD operating system, location will vary as per your own OS.</p>
@@ -106,9 +106,9 @@ useful features that comes in handy.</p>
 <ul>
 <li>Per User <code>psqlrc</code></li>
 </ul>
-<div class="highlight"><pre><span></span> touch ~/.psqlrc
-</pre></div>
+<pre><code class="language-bash"> touch ~/.psqlrc
 
+</code></pre>
 
 <p>You can also have multiple <code>psqlrc</code> one per major version of PostgreSQL on your
 system.  </p>
@@ -121,28 +121,29 @@ wide or User specific and start customizing your <code>psqlrc</code>.</p>
 <h3>Actual configuration file</h3>
 <!--{% include_code psqlrc Title1- %}-->
 
-<div class="highlight"><pre><span></span>-- This is comment.
-<span class="se">\s</span>et PROMPT1 <span class="s1">&#39;%n@%/%R%x%# &#39;</span>
-<span class="se">\s</span>et PROMPT2 <span class="s1">&#39;[more] %R &gt; &#39;</span>
-<span class="se">\p</span>set null <span class="s1">&#39;[null]&#39;</span>
-<span class="se">\s</span>et COMP_KEYWORD_CASE upper
-<span class="se">\t</span>iming
-<span class="se">\s</span>et PAGER less
-<span class="se">\s</span>et HISTSIZE 2000
-<span class="se">\e</span>ncoding unicode
-<span class="se">\x</span> auto
-<span class="se">\p</span>set border 2
-<span class="se">\s</span>et VERBOSITY verbose
-<span class="se">\s</span>et version <span class="s1">&#39;SELECT version();&#39;</span>
+<pre><code class="language-sql">
+-- This is comment.
+\set PROMPT1 '%n@%/%R%x%# '
+\set PROMPT2 '[more] %R &gt; '
+\pset null '[null]'
+\set COMP_KEYWORD_CASE upper
+\timing
+\set PAGER less
+\set HISTSIZE 2000
+\encoding unicode
+\x auto
+\pset border 2
+\set VERBOSITY verbose
+\set version 'SELECT version();'
 
 -- MACRO can be defined like this.
-<span class="se">\s</span>et extensions <span class="s1">&#39;select * from pg_available_extensions;&#39;</span>
-<span class="se">\e</span>cho <span class="s1">&#39;Welcome to Dev1 PostgreSQL \n&#39;</span>
-</pre></div>
+\set extensions 'select * from pg_available_extensions;'
+\echo 'Welcome to Dev1 PostgreSQL \n'
 
+</code></pre>
 
 <h4>Final output</h4>
-<p><img class="center" src="/images/Selection_2016_07_01_02.png" width="600"></p>
+<p><img width="600" class="center" src="/images/Selection_2016_07_01_02.png"></p>
 <h3>Wrapping up</h3>
 <p>These are about the main settings that you would want to configure here, Apart
 from these settings only Aliases as per your convinience should be configured
@@ -216,7 +217,7 @@ try!</p></div>
 
   <section>
   <h1>Tags</h1>
-    <a href="../../tag/firewall.html">Firewall</a>,    <a href="../../tag/unix.html">Unix</a>,    <a href="../../tag/essentials.html">Essentials</a>,    <a href="../../tag/polity.html">Polity</a>  </section>
+    <a href="../../tag/essentials.html">Essentials</a>,    <a href="../../tag/firewall.html">Firewall</a>,    <a href="../../tag/unix.html">Unix</a>,    <a href="../../tag/polity.html">Polity</a>  </section>
 
 
 
@@ -229,7 +230,7 @@ try!</p></div>
   <script src="../../theme/js/ender.js"></script>
   <script src="../../theme/js/octopress.js" type="text/javascript"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>-->
 
 <script>
 function searchToggle(obj, evt){
@@ -246,6 +247,7 @@ function searchToggle(obj, evt){
 }
 </script>
 
+<script src="../../theme/js/prism.js" type="text/javascript"> </script>
 
 </body>
 </html>

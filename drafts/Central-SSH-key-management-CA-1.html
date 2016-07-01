@@ -26,6 +26,7 @@
 <link href="../theme/css/custom.css" media="screen, projection"
         rel="stylesheet" type="text/css">
 <link href="../theme/css/font-awesome-4.5.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
+<link href="../theme/css/prism.css"  rel="stylesheet" type="text/css">
 
 <link rel="stylesheet" href="../theme/css/tipuesearch.css">
   <!--<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"-->
@@ -37,7 +38,7 @@
 <body>
   <header role="banner"><hgroup>
 <!--<h1><span class="logo1"><img class="logo2" src=../images/favicon.ico height="64" width="64"></span><a href="../">UnixTech</a></h1>-->
-<h1><span class="logo1"><a href="../">UnixTech</a></h1>
+<h1><span class="logo1"></span><a href="../">UnixTech</a></h1>
     <h2>Creativity, Business - Amplified</h2>
 </hgroup></header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
@@ -79,7 +80,7 @@
     </p>
 </header>
 
-  <div class="entry-content"><p><img class="center" src="/images/openssh.gif" width="600"></p>
+  <div class="entry-content"><p><img width="600" class="center" src="/images/openssh.gif"></p>
 <h2>Intro</h2>
 <p>It's always challenge in itself to handle SSH private keys, Managing authentication ( Without-password ) and keeping it upto date. Things like taking control of the keys plus revoking the keys as needed is formidable challenge for any senior admin.<br />
 One can do it via traditional <code>authorized_keys</code> file but overtime it becomes messy to maintain and more prone to errors. This becomes all the more important when you can't handle key management to you users whom you deem undesirable to be able to comprehend . </p>
@@ -87,7 +88,7 @@ One can do it via traditional <code>authorized_keys</code> file but overtime it 
 <p>So, Decided to move to CA based authentication with OpenSSH with OpenLDAP. In this part we will cover just CA based key management later parts we will do it with OpenLDAP integration and how does one maintain the whole ssh keys management via ansible.  </p>
 <p>It doesn't really matter which methods you adopt as long as you have prior policy to deal with regular management of keys.  </p>
 <h2>Lab Topology</h2>
-<p><img class="center" src="/images/sshca_topology1.png" width="600">
+<p><img width="600" class="center" src="/images/sshca_topology1.png">
 <span  {align= center;}  ><strong> <em>Fig1</em>- Strong SSH manta:</strong> Scopus SSH lie manteld. Mentali menta so. </span></p>
 <blockquote>
 <p>CA server will only be used to generate CA key and Sign and generate certificates for public keys that you have received from various users.  </p>
@@ -143,25 +144,22 @@ To avoid confusion here are the files required on various machines for Host cert
 <p>Note: Don't confuse <code>Server</code> and <code>Client</code> here, they interchangeable terms, Mostly depends upon where you need authentication done. </p>
 </blockquote>
 <h3>Generate CA keys</h3>
-<div class="highlight"><pre><span></span> <span class="c1">#Generate CA for our infrastructure.</span>
+<pre><code class="bash"> #Generate CA for our infrastructure.
  ssh-keygen -f server_ca
-</pre></div>
-
+</code></pre>
 
 <p>Now You should have two files in your CWD.</p>
-<div class="highlight"><pre><span></span> <span class="c1">#!sh</span>
+<pre><code class="bash"> #!sh
  ls
  server_ca  server_ca.pub
-</pre></div>
-
+</code></pre>
 
 <h3>Signing Host keys</h3>
 <p>Now that we have our CA keys, We can sign our host keys. </p>
 <h4>Example:</h4>
 <p>Start by signing any example key for trial:</p>
-<div class="highlight"><pre><span></span> ssh-keygen -s server_ca.pub -I <span class="s2">&quot;Identifier&quot;</span> -h -n <span class="s2">&quot;HOST_NAME&quot;</span> -V +52w host_rsa_key
-</pre></div>
-
+<pre><code class="bash"> ssh-keygen -s server_ca.pub -I &quot;Identifier&quot; -h -n &quot;HOST_NAME&quot; -V +52w host_rsa_key
+</code></pre>
 
 <p>Let's have look at what each of these options means:</p>
 <table>
@@ -238,7 +236,7 @@ To avoid confusion here are the files required on various machines for Host cert
 
   <section>
   <h1>Tags</h1>
-    <a href="../tag/firewall.html">Firewall</a>,    <a href="../tag/unix.html">Unix</a>,    <a href="../tag/essentials.html">Essentials</a>,    <a href="../tag/polity.html">Polity</a>  </section>
+    <a href="../tag/essentials.html">Essentials</a>,    <a href="../tag/firewall.html">Firewall</a>,    <a href="../tag/unix.html">Unix</a>,    <a href="../tag/polity.html">Polity</a>  </section>
 
 
 
@@ -251,7 +249,7 @@ To avoid confusion here are the files required on various machines for Host cert
   <script src="../theme/js/ender.js"></script>
   <script src="../theme/js/octopress.js" type="text/javascript"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>-->
 
 <script>
 function searchToggle(obj, evt){
@@ -268,6 +266,7 @@ function searchToggle(obj, evt){
 }
 </script>
 
+<script src="../theme/js/prism.js" type="text/javascript"> </script>
 
 </body>
 </html>

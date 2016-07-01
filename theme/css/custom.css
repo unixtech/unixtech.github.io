@@ -14,13 +14,13 @@
 }
 /*Make Content background solarized!*/
 #content {
-    background-color:#fdf6e3; color:#002b36 !important; 
+    background-color:#fdf6e3; color:#073642 !important; 
 }
 
 /*Add specialized readable fonts to your pages :D*/
 p {
-    font-size: 19px;
-    font-family: overpass1 !important ;
+    font-size: 18px;
+    font-family: Lit1 !important ;
 }
 
 h1 {
@@ -46,8 +46,8 @@ h2:hover {
      /*transform: scale(1.1);*/
 }
 ul li {
-    font-size: 19px;
-    font-family: overpass1 !important ;
+    font-size: 18px;
+    font-family: Lit1 !important ;
 }
 
 .term {
@@ -75,7 +75,7 @@ ul li {
 }
 
 body > nav a { 
-    font-family: Aller !important ;
+    font-family: overpass1 !important ;
     color: #222;
 }
 
@@ -322,12 +322,18 @@ body > nav form {
 
 .entry-content table {
     margin: auto auto 1.3em;
-    font-size: 19px;
-    font-family: overpass1;
+    font-size: 18px;
+    font-family: Lit1;
 
 }
 
 ol li {
-    font-size: 19px;
-    font-family: overpass1;
+    font-size: 18px;
+    font-family: Lit1;
+}
+
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+   font-family: overpass1 !important;
+   font-size: 18px;
+
 }

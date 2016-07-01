@@ -25,6 +25,7 @@
 <link href="../../theme/css/custom.css" media="screen, projection"
         rel="stylesheet" type="text/css">
 <link href="../../theme/css/font-awesome-4.5.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
+<link href="../../theme/css/prism.css"  rel="stylesheet" type="text/css">
 
 <link rel="stylesheet" href="../../theme/css/tipuesearch.css">
   <!--<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"-->
@@ -36,7 +37,7 @@
 <body>
   <header role="banner"><hgroup>
 <!--<h1><span class="logo1"><img class="logo2" src=../../images/favicon.ico height="64" width="64"></span><a href="../../">UnixTech</a></h1>-->
-<h1><span class="logo1"><a href="../../">UnixTech</a></h1>
+<h1><span class="logo1"></span><a href="../../">UnixTech</a></h1>
     <h2>Creativity, Business - Amplified</h2>
 </hgroup></header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
@@ -93,56 +94,51 @@ It can do so based on condition that you pass through arguments.
 <ul>
 <li>Find file in current directory</li>
 </ul>
-<div class="highlight"><pre><span></span> <span class="c1"># Find by filename in Current dir</span>
+<pre><code class="language-bash"> # Find by filename in Current dir
  find . -name unixtech.txt
 
- <span class="c1">#Output</span>
+ #Output
  ./unixtech.txt
-</pre></div>
-
+</code></pre>
 
 <ul>
 <li>Find file in current directory <span class="fa fa-arrow-right"></span> Case insensitive</li>
 </ul>
-<div class="highlight"><pre><span></span> <span class="c1"># Find by filename in Current dir</span>
+<pre><code class="language-bash"> # Find by filename in Current dir
  find . -iname unixtech.txt
 
- <span class="c1">#Output</span>
+ #Output
  ./unixtech.txt
-</pre></div>
-
+</code></pre>
 
 <ul>
 <li>Recursively searching file in all in whole system</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="c1"># Recurse through whole file system</span>
-find / -name <span class="nv">$FILENAME</span>
-</pre></div>
-
+<pre><code class="language-bash"># Recurse through whole file system
+find / -name $FILENAME
+</code></pre>
 
 <h2>Find files based on permissions</h2>
 <ul>
 <li>Find files certain permissions</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="c1"># Find only files with full 777 permissions</span>
-find / -perm <span class="m">0777</span> -print
-<span class="c1"># Find files with SGID bit set </span>
+<pre><code class="language-bash"># Find only files with full 777 permissions
+find / -perm 0777 -print
+# Find files with SGID bit set 
 find / -perm 2644
-<span class="c1"># Or</span>
+# Or
 find / -perm /g+s
-</pre></div>
-
+</code></pre>
 
 <ul>
 <li>Find all files based on user permissions</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="c1">#Find all files with READ permission</span>
-find / -perm /u<span class="o">=</span>r -print
+<pre><code class="language-bash">#Find all files with READ permission
+find / -perm /u=r -print
 
-<span class="c1"># Find all files with executable bit set</span>
-find / -perm /a<span class="o">=</span>x -print
-</pre></div>
-
+# Find all files with executable bit set
+find / -perm /a=x -print
+</code></pre>
 
 <blockquote>
 <p><strong>Note:</strong> Find can also execute command on found files based on given criterion.
@@ -152,10 +148,9 @@ In addition to just printing list of files, You can modify, change permission an
 <ul>
 <li>Find all files with <code>777</code> permission and change it to <code>644</code> inside your home directory</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="c1">#Find and exec </span>
-find ~USERNAME -perm <span class="m">777</span> -print -exec chmod <span class="m">644</span> <span class="o">{}</span> <span class="se">\;</span>
-</pre></div>
-
+<pre><code class="language-bash">#Find and exec 
+find ~USERNAME -perm 777 -print -exec chmod 644 {} \;
+</code></pre>
 
 <table>
 <thead>
@@ -181,38 +176,37 @@ find ~USERNAME -perm <span class="m">777</span> -print -exec chmod <span class="
 <ul>
 <li>Same thing if you want to remove or list files</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="c1">#List files that matches certain crieteria</span>
-find / -perm <span class="m">777</span> -print -exec ls -la <span class="o">{}</span> <span class="se">\;</span>
+<pre><code class="language-bash">#List files that matches certain crieteria
+find / -perm 777 -print -exec ls -la {} \;
 
-<span class="c1">#Removing files that matches certain crieteria</span>
-find / -perm <span class="m">777</span> -print -exec rm -rf <span class="o">{}</span> <span class="se">\;</span>
-</pre></div>
-
+#Removing files that matches certain crieteria
+find / -perm 777 -print -exec rm -rf {} \;
+</code></pre>
 
 <h2>Finding files based on user/group ownership</h2>
-<div class="highlight"><pre><span></span><span class="c1">#Find files owned by particular user</span>
+<pre><code class="language-bash">#Find files owned by particular user
 find / -user unixtech -print
 
-<span class="c1">#Find files owned by group</span>
+#Find files owned by group
 find / -group unixgroup -print
-</pre></div>
 
+</code></pre>
 
 <h2>Finding files based on modification/changed/accessed date time</h2>
 <ul>
 <li>Find files modified 3 days back</li>
 </ul>
-<div class="highlight"><pre><span></span>find / -mtime 3
-</pre></div>
+<pre><code class="language-bash">
+find / -mtime 3
 
+</code></pre>
 
 <ul>
 <li>find all the files those are changed last hour</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="c1">#Will return all the files changed in last 60 mins</span>
+<pre><code class="language-bash">#Will return all the files changed in last 60 mins
 find / -cmin -60
-</pre></div>
-
+</code></pre>
 
 <blockquote>
 <p><strong>Note:</strong> '-' sign in front of 60 includes all the files that changed within that timeframe, Ex. It will include files that are changed 3, 5, 10 mins back and so on.
@@ -245,32 +239,30 @@ Notice different criterion for finding files such as <code>-mmin</code>, <code>c
 <ul>
 <li>Find all the  files between 10 MB - 100 MB</li>
 </ul>
-<div class="highlight"><pre><span></span>find /home -size +10M -size -100M
-</pre></div>
-
+<pre><code class="language-bash">find /home -size +10M -size -100M
+</code></pre>
 
 <ul>
 <li>Find all the files larger then 1GB and delete em</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="c1">#Find larger files and list them first</span>
-find /home -size +1G -exec ls -la <span class="o">{}</span> <span class="se">\;</span>
+<pre><code class="language-bash">#Find larger files and list them first
+find /home -size +1G -exec ls -la {} \;
 
-<span class="c1"># If you see desired files then remove them</span>
-find /home -size +1G -exec rm -rf <span class="o">{}</span> <span class="se">\;</span>
-</pre></div>
+# If you see desired files then remove them
+find /home -size +1G -exec rm -rf {} \;
 
+</code></pre>
 
 <ul>
 <li>Find all the movie files larger then 100MB and delete </li>
 </ul>
-<div class="highlight"><pre><span></span><span class="c1"># Find and list files first</span>
-find /home -size +100M -print -iname <span class="s2">&quot;*mp4|wmv|mov&quot;</span><span class="p">;</span>
+<pre><code class="language-bash"># Find and list files first
+find /home -size +100M -print -iname &quot;*mp4|wmv|mov&quot;;
 
-<span class="c1"># After listing them just press `UP` arrow, change the CMD and  delete </span>
-find /home -size +100M -iname <span class="s2">&quot;*mp4|wmv|mov&quot;</span> -exec rm -rf <span class="o">{}</span> <span class="se">\;</span>
-<span class="c1">#Be careful while executing that command.</span>
-</pre></div>
-
+# After listing them just press `UP` arrow, change the CMD and  delete 
+find /home -size +100M -iname &quot;*mp4|wmv|mov&quot; -exec rm -rf {} \;
+#Be careful while executing that command.
+</code></pre>
 
 <blockquote>
 <p><strong>Note:</strong> Find supports extended regular expressions too. <br />
@@ -339,7 +331,7 @@ Regular expressions are swiss army knife for solving many kind of problem but th
 
   <section>
   <h1>Tags</h1>
-    <a href="../../tag/firewall.html">Firewall</a>,    <a href="../../tag/unix.html">Unix</a>,    <a href="../../tag/essentials.html">Essentials</a>,    <a href="../../tag/polity.html">Polity</a>  </section>
+    <a href="../../tag/essentials.html">Essentials</a>,    <a href="../../tag/firewall.html">Firewall</a>,    <a href="../../tag/unix.html">Unix</a>,    <a href="../../tag/polity.html">Polity</a>  </section>
 
 
 
@@ -352,7 +344,7 @@ Regular expressions are swiss army knife for solving many kind of problem but th
   <script src="../../theme/js/ender.js"></script>
   <script src="../../theme/js/octopress.js" type="text/javascript"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>-->
 
 <script>
 function searchToggle(obj, evt){
@@ -369,6 +361,7 @@ function searchToggle(obj, evt){
 }
 </script>
 
+<script src="../../theme/js/prism.js" type="text/javascript"> </script>
 
 </body>
 </html>

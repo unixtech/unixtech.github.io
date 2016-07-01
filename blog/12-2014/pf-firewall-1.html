@@ -25,6 +25,7 @@
 <link href="../../theme/css/custom.css" media="screen, projection"
         rel="stylesheet" type="text/css">
 <link href="../../theme/css/font-awesome-4.5.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
+<link href="../../theme/css/prism.css"  rel="stylesheet" type="text/css">
 
 <link rel="stylesheet" href="../../theme/css/tipuesearch.css">
   <!--<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"-->
@@ -36,7 +37,7 @@
 <body>
   <header role="banner"><hgroup>
 <!--<h1><span class="logo1"><img class="logo2" src=../../images/favicon.ico height="64" width="64"></span><a href="../../">UnixTech</a></h1>-->
-<h1><span class="logo1"><a href="../../">UnixTech</a></h1>
+<h1><span class="logo1"></span><a href="../../">UnixTech</a></h1>
     <h2>Creativity, Business - Amplified</h2>
 </hgroup></header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
@@ -74,7 +75,7 @@
 <header>
       <h1 class="entry-title">Firewall PF</h1>
     <p class="meta">
-<time datetime="2014-12-04T13:02:00+05:30" pubdate>Thu 04 December 2014</time>  &ndash;  <i class="fa fa-clock-o term"> </i> 5 min read
+<time datetime="2014-12-04T13:02:00+05:30" pubdate>Thu 04 December 2014</time>  &ndash;  <i class="fa fa-clock-o term"> </i> 4 min read
     </p>
 </header>
 
@@ -103,32 +104,30 @@ We will mainly focus on OpenBSD OS but there are benefits of using <code>PF</cod
 <!--{% include_code pf.conf [lang:sh] [pf.conf] %}-->
 
 <p>File - <code>/etc/rc.conf.local</code></p>
-<div class="highlight"><pre><span></span><span class="nv">pf</span><span class="o">=</span>YES
-<span class="nv">pf_rules</span><span class="o">=</span>/etc/pf.conf
-<span class="nv">pflogd_flags</span><span class="o">=</span><span class="s2">&quot;-s 1500&quot;</span> <span class="c1"># Ex. Snaplen, Log filename</span>
-</pre></div>
-
+<pre><code class="language-bash">    pf=YES
+    pf_rules=/etc/pf.conf
+    pflogd_flags=&quot;-s 1500&quot; # Ex. Snaplen, Log filename 
+</code></pre>
 
 <p>File - <code>/etc/pf.conf</code></p>
-<div class="highlight"><pre><span></span><span class="c1">### My master pf.conf</span>
+<pre><code class="language-bash">    ### My master pf.conf
 
-<span class="c1">### Interfaces</span>
-<span class="nv">EXTIF</span> <span class="o">=</span><span class="s2">&quot;em0&quot;</span>
-<span class="nv">INTIF</span> <span class="o">=</span><span class="s2">&quot;em1&quot;</span>
-<span class="nv">DMZ</span> <span class="o">=</span> <span class="s2">&quot;em2&quot;</span>
-<span class="nv">EXTRAIF</span> <span class="o">=</span><span class="s2">&quot;em3&quot;</span>
+    ### Interfaces
+    EXTIF =&quot;em0&quot;
+    INTIF =&quot;em1&quot;
+    DMZ = &quot;em2&quot;
+    EXTRAIF =&quot;em3&quot;
 
-<span class="c1">### Hosts</span>
-<span class="nv">ADMIN</span> <span class="o">=</span><span class="s2">&quot;10.0.11.1&quot;</span>
-<span class="nv">ADMIN1</span> <span class="o">=</span><span class="s2">&quot;10.0.11.31&quot;</span>
-<span class="nv">BOTHADMIN</span> <span class="o">=</span><span class="s2">&quot;{&quot;</span> <span class="nv">$ADMIN</span> <span class="nv">$ADMIN1</span> <span class="s2">&quot;}&quot;</span>
-<span class="nv">EXTDNSSERVER</span> <span class="o">=</span><span class="s2">&quot;4.2.2.2&quot;</span>
-<span class="nv">INTDNSSERVER</span> <span class="o">=</span><span class="s2">&quot;</span><span class="nv">$INTIF</span><span class="s2">:0&quot;</span>
-<span class="c1">#DNSSERVERS =&quot;{&#39; $INTDNSSERVER $EXTDNSSERVER &#39;}&quot;</span>
-<span class="nv">DNSSERVER</span> <span class="o">=</span><span class="s2">&quot;{</span><span class="nv">$INTDNSSERVER</span><span class="s2">}&quot;</span>
-<span class="nv">LOGSERVER</span> <span class="o">=</span> <span class="s2">&quot;{ 10.0.11.22, 10.0.11.31  }&quot;</span>
-</pre></div>
-
+    ### Hosts
+    ADMIN =&quot;10.0.11.1&quot;
+    ADMIN1 =&quot;10.0.11.31&quot;
+    BOTHADMIN =&quot;{&quot; $ADMIN $ADMIN1 &quot;}&quot;
+    EXTDNSSERVER =&quot;4.2.2.2&quot;
+    INTDNSSERVER =&quot;$INTIF:0&quot;
+    #DNSSERVERS =&quot;{' $INTDNSSERVER $EXTDNSSERVER '}&quot;
+    DNSSERVER =&quot;{$INTDNSSERVER}&quot;
+    LOGSERVER = &quot;{ 10.0.11.22, 10.0.11.31  }&quot;
+</code></pre>
 
 <ul>
 <li>All these variable defined are called MACROS inside <code>pf.conf</code> file.</li>
@@ -137,31 +136,30 @@ We will mainly focus on OpenBSD OS but there are benefits of using <code>PF</cod
 <li>Take a look at <code>INTIF</code> macro, If you want to include that whole internal network in your rules then <code>INTIF:network</code> in your rule.</li>
 </ul>
 <p>Now, We will have a look at some of the rules itself.</p>
-<div class="highlight"><pre><span></span><span class="c1">#External Interface</span>
-<span class="c1">#Block all on External interface</span>
-block log on <span class="nv">$EXTIF</span>
+<pre><code class="language-bash">    #External Interface
+    #Block all on External interface
+    block log on $EXTIF
 
-<span class="c1">## Network address translation with outgoing source </span>
-<span class="c1">#match out log on $EXTIF from $INTIF to any received-on $INTIF tag EGRESS nat-to ($EXTIF:0) </span>
-match out log on <span class="nv">$EXTIF</span> from <span class="nv">$INTIF</span>:network to any received-on <span class="nv">$INTIF</span> tag EGRESS nat-to <span class="o">(</span><span class="nv">$EXTIF</span>:0<span class="o">)</span>
-<span class="c1">#If you have difficulties with any box with static port forwarding then you should use</span>
-<span class="c1">#match out log on $EXTIF from $INTIF to any received-on $INTIF tag EGRESS nat-to ($EXTIF:0) static-port</span>
+    ## Network address translation with outgoing source 
+    #match out log on $EXTIF from $INTIF to any received-on $INTIF tag EGRESS nat-to ($EXTIF:0) 
+    match out log on $EXTIF from $INTIF:network to any received-on $INTIF tag EGRESS nat-to ($EXTIF:0)
+    #If you have difficulties with any box with static port forwarding then you should use
+    #match out log on $EXTIF from $INTIF to any received-on $INTIF tag EGRESS nat-to ($EXTIF:0) static-port
 
-<span class="c1">#Traffic generated from firewall it self will be tagged as EGRESS</span>
-match out log on <span class="nv">$EXTIF</span> from <span class="nv">$EXTIF</span> to any tag EGRESS
-<span class="c1">#More on these later on.</span>
+    #Traffic generated from firewall it self will be tagged as EGRESS
+    match out log on $EXTIF from $EXTIF to any tag EGRESS
+    #More on these later on.
 
-<span class="c1">#EXTIF inbound</span>
-pass in log <span class="o">(</span>to pflog1<span class="o">)</span> on <span class="nv">$EXTIF</span> inet proto tcp from any to any port <span class="m">22</span> 
-pass in on <span class="nv">$EXTIF</span> inet proto tcp from any to <span class="nv">$EXTIF</span> port &gt;10000
+    #EXTIF inbound
+    pass in log (to pflog1) on $EXTIF inet proto tcp from any to any port 22 
+    pass in on $EXTIF inet proto tcp from any to $EXTIF port &gt;10000
 
-<span class="c1">#External interface outbound</span>
-pass out log on <span class="nv">$EXTIF</span> inet  from <span class="o">(</span><span class="nv">$EXTIF</span><span class="o">)</span> to any <span class="nv">$TCPSTATE</span> <span class="nv">$EXTIFSTO</span> queue <span class="o">(</span>bulk, ack<span class="o">)</span> tagged EGRESS
-<span class="c1">#pass out log on $EXTIF inet proto udp from ($EXTIF) to any $UDPSTATE $EXTIFSTO queue (bulk, ack) tagged EGRESS</span>
-pass out log on <span class="nv">$EXTIF</span> inet proto tcp from <span class="o">(</span><span class="nv">$EXTIF</span><span class="o">)</span> to any port <span class="nv">$TCPPORTS</span> <span class="nv">$TCPSTATE</span> <span class="nv">$EXTIFSTO</span> queue <span class="o">(</span>web, ack<span class="o">)</span> tagged EGRESS
-pass out log on <span class="nv">$EXTIF</span> inet proto udp from <span class="o">(</span><span class="nv">$EXTIF</span><span class="o">)</span> to any port <span class="m">53</span> <span class="nv">$UDPSTATE</span> <span class="nv">$EXTIFSTO</span> queue <span class="o">(</span>dns, ack<span class="o">)</span> tagged EGRESS
-</pre></div>
-
+    #External interface outbound
+    pass out log on $EXTIF inet  from ($EXTIF) to any $TCPSTATE $EXTIFSTO queue (bulk, ack) tagged EGRESS
+    #pass out log on $EXTIF inet proto udp from ($EXTIF) to any $UDPSTATE $EXTIFSTO queue (bulk, ack) tagged EGRESS
+    pass out log on $EXTIF inet proto tcp from ($EXTIF) to any port $TCPPORTS $TCPSTATE $EXTIFSTO queue (web, ack) tagged EGRESS
+    pass out log on $EXTIF inet proto udp from ($EXTIF) to any port 53 $UDPSTATE $EXTIFSTO queue (dns, ack) tagged EGRESS
+</code></pre>
 
 <ul>
 <li>These are some of the rules that I have defined in my DMZ firewall to prevent other users from coming in from outside.</li>
@@ -171,50 +169,32 @@ pass out log on <span class="nv">$EXTIF</span> inet proto udp from <span class="
 </ul>
 <h3>Turning on routing</h3>
 <p>To turn on routing functionality of the box, You need to make sure you have enabled ip forwarding in <code>sysctl</code></p>
-<div class="highlight"><pre><span></span><span class="c1"># To check the ip forwarding status</span>
-sysctl net.inet.ip.forwarding
-<span class="c1"># If it&#39;s 0 then turn it on</span>
-sysctl net.inet.ip.forwarding<span class="o">=</span>1
+<pre><code class="language-bash">    # To check the ip forwarding status
+    sysctl net.inet.ip.forwarding
+    # If it's 0 then turn it on
+    sysctl net.inet.ip.forwarding=1
 
-<span class="c1">#To make it permanent </span>
-<span class="c1">### /etc/sysctl.conf</span>
-net.inet.ip.forwarding <span class="o">=</span> 1
-</pre></div>
-
+    #To make it permanent 
+    ### /etc/sysctl.conf
+    net.inet.ip.forwarding = 1
+</code></pre>
 
 <h3>PFCTL utility</h3>
 <p>After making changes inside <code>pf.conf</code> file, rules are not automatically loaded. To load the rules We need to use <code>pfctl</code></p>
 <p>To load rules - Assuming rule file is <code>/etc/pf.conf</code></p>
-<div class="highlight"><pre><span></span>pfctl -vf /etc/pf.conf
-</pre></div>
+<pre><code class="language-bash">    pfctl -vf /etc/pf.conf
+</code></pre>
 
+<p>To see which rules are currently loaded, It will also show related counters.    </p>
+<pre><code class="language-bash">    pfctl -vsr 
+</code></pre>
 
-<p>To see which rules are currently loaded, It will also show related counters. </p>
-<div class="highlight"><pre><span></span>pfctl -vsr
-</pre></div>
-
-
-<p><img class="center" src="/images/pf_rules.png" width="600"></p>
+<p><img width="600" class="center" src="/images/pf_rules.png"></p>
 <h2>Conclusions</h2>
 <p>PF is one of the most popular and powerful firewall for managing your network traffic. We have barely even scratched surface of what PF can provide. It's functionality is much more then many of the commercial offerings offers.<br />
 We will also cover some extended functionality such as usage of Anchors, Preventing torrent traffic, Blacklisting and preventing brute-forcing attack etc.
 Being open-source it places no restrictions on usage. Users can use it any which way they would prefer.  </p>
-<p>Having  used PF and OpenBSD for nearly 10 years in all of my setups I can say PF is most secure firewall there is and With combination of OpenBSD and PF you can be pretty sure you are one step ahead then rest  in process of being NSA proof.</p>
-<script type="text/babel">
-var CommentBox = React.createClass({
-  render: function() {
-    return (
-      <div className="commentBox">
-        Hello, world! I am a CommentBox.
-      </div>
-    );
-  }
-});
-ReactDOM.render(
-  <CommentBox />,
-  document.getElementById('comment')
-);
-</script></div>
+<p>Having  used PF and OpenBSD for nearly 10 years in all of my setups I can say PF is most secure firewall there is and With combination of OpenBSD and PF you can be pretty sure you are one step ahead then rest  in process of being NSA proof.</p></div>
 
 
   <div class="nav_priv">
@@ -281,7 +261,7 @@ ReactDOM.render(
 
   <section>
   <h1>Tags</h1>
-    <a href="../../tag/firewall.html">Firewall</a>,    <a href="../../tag/unix.html">Unix</a>,    <a href="../../tag/essentials.html">Essentials</a>,    <a href="../../tag/polity.html">Polity</a>  </section>
+    <a href="../../tag/essentials.html">Essentials</a>,    <a href="../../tag/firewall.html">Firewall</a>,    <a href="../../tag/unix.html">Unix</a>,    <a href="../../tag/polity.html">Polity</a>  </section>
 
 
 
@@ -294,7 +274,7 @@ ReactDOM.render(
   <script src="../../theme/js/ender.js"></script>
   <script src="../../theme/js/octopress.js" type="text/javascript"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>-->
 
 <script>
 function searchToggle(obj, evt){
@@ -311,6 +291,7 @@ function searchToggle(obj, evt){
 }
 </script>
 
+<script src="../../theme/js/prism.js" type="text/javascript"> </script>
 
 </body>
 </html>
