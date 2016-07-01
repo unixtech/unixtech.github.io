@@ -61,7 +61,7 @@ MENUITEMS = [('About ME', '/pages/about.html'), ('Archives', '/archives.html')]
 
 #Plugin things
 PLUGIN_PATHS = ['../pelican-plugins']
-PLUGINS = ['liquid_tags.include_code', 'liquid_tags.img', 'liquid_tags.video',  'liquid_tags.youtube', 'clean_summary', 'post_stats', 'render_math', 'latex', 'tipue_search', 'sitemap', 'neighbors']
+PLUGINS = ['liquid_tags.include_code', 'liquid_tags.img', 'liquid_tags.video', 'liquid_tags.youtube', 'clean_summary', 'post_stats', 'render_math', 'latex', 'tipue_search', 'sitemap', 'neighbors']
 
 DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'authors', 'archives', 'search'))
 
@@ -73,3 +73,4 @@ MATH_JAX = {'color':'#333', 'align':'centre', 'mathjax_font':'sanserif'}
 # COVER_IMG_URL = "images/3.jpg"
 # PROFILE_IMAGE_URL = "images/profile.png"
 # SIDEBAR_IMAGE = "images/2.png"
+MD_EXTENSIONS = ['extra']

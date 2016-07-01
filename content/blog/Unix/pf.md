@@ -38,14 +38,15 @@ These includes:
 
 File - `/etc/rc.conf.local`
 
-    :::bash
+```language-bash
     pf=YES
     pf_rules=/etc/pf.conf
     pflogd_flags="-s 1500" # Ex. Snaplen, Log filename 
+```
 
 File - `/etc/pf.conf`
 
-    :::bash
+```language-bash
     ### My master pf.conf
 
     ### Interfaces
@@ -63,6 +64,7 @@ File - `/etc/pf.conf`
     #DNSSERVERS ="{' $INTDNSSERVER $EXTDNSSERVER '}"
     DNSSERVER ="{$INTDNSSERVER}"
     LOGSERVER = "{ 10.0.11.22, 10.0.11.31  }"
+```
 
 * All these variable defined are called MACROS inside `pf.conf` file.
 * These are used for convinience and ease of use
@@ -71,7 +73,7 @@ File - `/etc/pf.conf`
 
 Now, We will have a look at some of the rules itself.
 
-    :::bash
+```language-bash
     #External Interface
     #Block all on External interface
     block log on $EXTIF
@@ -95,6 +97,8 @@ Now, We will have a look at some of the rules itself.
     #pass out log on $EXTIF inet proto udp from ($EXTIF) to any $UDPSTATE $EXTIFSTO queue (bulk, ack) tagged EGRESS
     pass out log on $EXTIF inet proto tcp from ($EXTIF) to any port $TCPPORTS $TCPSTATE $EXTIFSTO queue (web, ack) tagged EGRESS
     pass out log on $EXTIF inet proto udp from ($EXTIF) to any port 53 $UDPSTATE $EXTIFSTO queue (dns, ack) tagged EGRESS
+```
+
 
 * These are some of the rules that I have defined in my DMZ firewall to prevent other users from coming in from outside.
 * After deploying this ruleset only SSH is allowed from outside interface of firewall. 
@@ -104,7 +108,7 @@ Now, We will have a look at some of the rules itself.
 ### Turning on routing
 To turn on routing functionality of the box, You need to make sure you have enabled ip forwarding in `sysctl`
 
-    :::bash
+```language-bash
     # To check the ip forwarding status
     sysctl net.inet.ip.forwarding
     # If it's 0 then turn it on
@@ -113,20 +117,23 @@ To turn on routing functionality of the box, You need to make sure you have enab
     #To make it permanent 
     ### /etc/sysctl.conf
     net.inet.ip.forwarding = 1
+```
 
 ### PFCTL utility
 After making changes inside `pf.conf` file, rules are not automatically loaded. To load the rules We need to use `pfctl`
 
 To load rules - Assuming rule file is `/etc/pf.conf`
 
-    :::bash
+```language-bash
     pfctl -vf /etc/pf.conf
+```
 
-To see which rules are currently loaded, It will also show related counters. 
 
-    :::bash
+To see which rules are currently loaded, It will also show related counters.    
+
+```language-bash
     pfctl -vsr 
-
+```
 {% img center /images/pf_rules.png 600px 400px "pf.conf" %}
 
 
@@ -138,18 +145,4 @@ Being open-source it places no restrictions on usage. Users can use it any which
 Having  used PF and OpenBSD for nearly 10 years in all of my setups I can say PF is most secure firewall there is and With combination of OpenBSD and PF you can be pretty sure you are one step ahead then rest  in process of being NSA proof.
 
 
-<script type="text/babel">
-var CommentBox = React.createClass({
-  render: function() {
-    return (
-      <div className="commentBox">
-        Hello, world! I am a CommentBox.
-      </div>
-    );
-  }
-});
-ReactDOM.render(
-  <CommentBox />,
-  document.getElementById('comment')
-);
-</script>
+

@@ -22,7 +22,7 @@ It can do so based on condition that you pass through arguments.
 ## Basic Usage
 - Find file in current directory
     
-```bash
+```language-bash
  # Find by filename in Current dir
  find . -name unixtech.txt
 
@@ -32,7 +32,7 @@ It can do so based on condition that you pass through arguments.
 
 - Find file in current directory <span class="fa fa-arrow-right"></span> Case insensitive
     
-```bash
+```language-bash
  # Find by filename in Current dir
  find . -iname unixtech.txt
 
@@ -41,7 +41,7 @@ It can do so based on condition that you pass through arguments.
 ```
 
 - Recursively searching file in all in whole system
-```bash
+```language-bash
 # Recurse through whole file system
 find / -name $FILENAME
 ```
@@ -49,7 +49,7 @@ find / -name $FILENAME
 ## Find files based on permissions 
 
 - Find files certain permissions
-```bash 
+```language-bash 
 # Find only files with full 777 permissions
 find / -perm 0777 -print
 # Find files with SGID bit set 
@@ -59,7 +59,7 @@ find / -perm /g+s
 ```
 
 - Find all files based on user permissions
-```bash 
+```language-bash 
 #Find all files with READ permission
 find / -perm /u=r -print
 
@@ -73,7 +73,7 @@ find / -perm /a=x -print
 So, If you want to change all the files that have permission set to `777` to something that only you can modify in your home directory, You may execute following variation of `find`
 
 - Find all files with `777` permission and change it to `644` inside your home directory
-```bash
+```language-bash
 #Find and exec 
 find ~USERNAME -perm 777 -print -exec chmod 644 {} \;
 ```
@@ -87,7 +87,7 @@ find ~USERNAME -perm 777 -print -exec chmod 644 {} \;
 > **Note:** Here thing to remember is You have to put \{\} symbol where you want INPUT filename to be, and chain it with \; symbol.
 
 - Same thing if you want to remove or list files
-```bash
+```language-bash
 #List files that matches certain crieteria
 find / -perm 777 -print -exec ls -la {} \;
 
@@ -96,7 +96,7 @@ find / -perm 777 -print -exec rm -rf {} \;
 ```
 
 ## Finding files based on user/group ownership
-```bash
+```language-bash
 #Find files owned by particular user
 find / -user unixtech -print
 
@@ -109,14 +109,14 @@ find / -group unixgroup -print
 ## Finding files based on modification/changed/accessed date time
 
 - Find files modified 3 days back
-```bash 
+```language-bash 
 
 find / -mtime 3
 
 ```
 
 - find all the files those are changed last hour
-```bash
+```language-bash
 #Will return all the files changed in last 60 mins
 find / -cmin -60
 ```
@@ -138,13 +138,13 @@ This one is quite useful in case you want to find largest files in your home dir
 
 - Find all the  files between 10 MB - 100 MB
 
-```bash
+```language-bash
 find /home -size +10M -size -100M
 ```
 
 - Find all the files larger then 1GB and delete em
 
-```bash
+```language-bash
 #Find larger files and list them first
 find /home -size +1G -exec ls -la {} \;
 
@@ -154,7 +154,7 @@ find /home -size +1G -exec rm -rf {} \;
 ```
 
 - Find all the movie files larger then 100MB and delete 
-```bash
+```language-bash
 # Find and list files first
 find /home -size +100M -print -iname "*mp4|wmv|mov";
 
